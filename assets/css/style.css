@@ -15,4 +15,8 @@ body {
   padding: 0px;
   background-color: #202020;
   color: #ffffff;
+}
+
+.navbar-brand--img {
+  height: 5rem;
 }/*# sourceMappingURL=style.css.map */
