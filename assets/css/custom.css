@@ -24,13 +24,20 @@ html {
   box-sizing: inherit;
 }
 
+nav {
+  background-color: #f4c2c3;
+}
 nav .btn-primary {
-  background-color: rgb(38, 0, 255);
+  background-color: #B6E5D8;
+  color: #222;
+  border-color: #8FDDE7;
 }
 nav .btn-primary:hover {
-  background-color: red;
+  background-color: #FBE5C8;
+  color: #222;
+  border-color: #8FDDE7;
 }
-nav .navbar-brand--img {
+nav .logo {
   height: 5rem;
 }
 nav a {
@@ -40,7 +47,8 @@ nav a {
   font-weight: 600;
 }
 nav a:hover {
-  background-color: red;
+  background-color: #B6E5D8;
+  border-radius: 23px;
 }
 nav img {
   min-width: 100%;
