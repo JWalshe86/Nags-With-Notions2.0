@@ -61,11 +61,30 @@ h1,h2,h3,h4,h5,h6{
 
 // Slider
 .slide-1{
-    background: linear-gradient(rgba(0,0,0,0.5), #000), url(/assets/images/horse-box.jpg);
+    background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/horse-box.jpg);
 }
 
 .slide-2{
-    background: linear-gradient(rgba(0,0,0,0.5), #000), url(/assets/images/pizza.jpg);
+    background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/pizza.jpg);
+}
+
+#heroSlider h6::after,
+#heroSlider h6::before{
+    content: " ";
+    width: 40px;
+    height: 4px;
+    background-color: #ffffff;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    background-color: rgba(0,0,0,0.6);
+    width: 40px;
+    height: 70px;
+    margin: auto;
 }
 
 // hero section styling end
