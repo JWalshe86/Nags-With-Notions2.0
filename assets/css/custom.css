@@ -27,7 +27,6 @@ body {
   min-width: 100%;
 }
 .navbar .collapse__content {
-  color: #222;
   text-decoration: none;
   transition: all 0.4s;
   font-weight: 600;
@@ -38,11 +37,11 @@ body {
 }
 .navbar .collapse__btn-primary {
   background-color: #B6E5D8;
-  color: #222;
-  border-color: #8FDDE7;
-  border-radius: 0;
   padding: 14px 38px;
   font-weight: 500;
+  border-radius: 10px;
+  color: #222;
+  border-color: #8FDDE7;
 }
 .navbar .collapse__btn-primary:hover {
   background-color: #FBE5C8;
@@ -57,11 +56,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-inner a.btn.carousel__btn-primary {
   background-color: #B6E5D8;
-  color: #222;
-  border-color: #8FDDE7;
-  border-radius: 0;
   padding: 14px 38px;
   font-weight: 500;
+  border-radius: 10px;
+  color: #222;
+  border-color: #8FDDE7;
 }
 .carousel-inner a.btn.carousel__btn-primary:hover {
   background-color: #FBE5C8;

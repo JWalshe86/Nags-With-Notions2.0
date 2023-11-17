@@ -1,0 +1,15 @@
+// sass mixins
+
+@mixin btnStyle() {
+    background-color: $secondaryBackgroundColor;
+    padding: 14px 38px;
+    font-weight: 500;
+    border-radius: 10px;
+    color: $textColor;
+    border-color: $quaternaryBackgroundColor;
+    &:hover{
+        background-color: $tertiaryBackgroundColor;
+        color: $textColor;
+        border-color: $quaternaryBackgroundColor;
+    }
+}
