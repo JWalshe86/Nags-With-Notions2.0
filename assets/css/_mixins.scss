@@ -1,5 +1,6 @@
 // sass mixins
 
+// button styling
 @mixin btnStyle() {
     background-color: $secondaryBackgroundColor;
     padding: 14px 38px;
@@ -12,4 +13,11 @@
         color: $textColor;
         border-color: $quaternaryBackgroundColor;
     }
+}
+
+// background image styling
+@mixin backgroundStyling(){
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }

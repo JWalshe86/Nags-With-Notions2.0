@@ -55,5 +55,17 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
+.bg-cover{
+    @include backgroundStyling();
+}
+
+// Slider
+.slide-1{
+    background: linear-gradient(rgba(0,0,0,0.5), #000), url(/assets/images/horse-box.jpg);
+}
+
+.slide-2{
+    background: linear-gradient(rgba(0,0,0,0.5), #000), url(/assets/images/pizza.jpg);
+}
 
 // hero section styling end

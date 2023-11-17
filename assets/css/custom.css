@@ -66,4 +66,18 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FBE5C8;
   color: #222;
   border-color: #8FDDE7;
+}
+
+.bg-cover {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.slide-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #000), url(/assets/images/horse-box.jpg);
+}
+
+.slide-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #000), url(/assets/images/pizza.jpg);
 }/*# sourceMappingURL=custom.css.map */
