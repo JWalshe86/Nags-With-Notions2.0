@@ -18,23 +18,27 @@ box-sizing: inherit;
     }
 
     .collapse{
-// anchor links styling
-        &__content {
-            color: $textColor;
-            text-decoration: none;
-            transition: all 0.4s;
-            font-weight: $fontWeight;
-            &:hover{
-                background-color: $secondaryBackgroundColor;
-                border-radius: 23px;
-            }
-        }
+        // anchor links styling
+                &__content {
+                    color: $textColor;
+                    text-decoration: none;
+                    transition: all 0.4s;
+                    font-weight: $fontWeight;
+                    &:hover{
+                        background-color: $secondaryBackgroundColor;
+                        border-radius: 23px;
+                    }
+                }
 
         // Order now button
+
         &__btn-primary{
             background-color: $secondaryBackgroundColor;
             color: $textColor;
             border-color: $quaternaryBackgroundColor;
+            border-radius: 0;
+            padding: 14px 38px;
+            font-weight: 500;
             &:hover{
                 background-color: $tertiaryBackgroundColor;
                 color: $textColor;
@@ -42,7 +46,6 @@ box-sizing: inherit;
             }
         }
     }
-
 }
 
 // Navbar styling end
