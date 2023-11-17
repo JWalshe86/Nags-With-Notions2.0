@@ -2,48 +2,50 @@
 @import 'variables';
 
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
-html {
-font-size: 100%;
-box-sizing: border-box;
-}
 
 *, *::before, *::after {
 box-sizing: inherit;
 }
 
-nav{
+// Navbar styling
+.navbar{
 
     background-color: $primaryBackgroundColor;
 
-    .btn-primary{
-        background-color: $secondaryBackgroundColor;
-        color: $textColor;
-        border-color: $quaternaryBackgroundColor;
-        &:hover{
-            background-color: $tertiaryBackgroundColor;
-            color: $textColor;
-            border-color: $quaternaryBackgroundColor;
-        }
-    }
-    .logo {
+    &__logo__img{
         height: 5rem;
-    }
-
-    a{
-        color: $textColor;
-        text-decoration: none;
-        transition: all 0.4s;
-        font-weight: $fontWeight;
-        &:hover{
-            background-color: $secondaryBackgroundColor;
-            border-radius: 23px;
-        }
-    }
-    
-    img{
         min-width: 100%;
     }
+
+    .collapse{
+// anchor links styling
+        &__content {
+            color: $textColor;
+            text-decoration: none;
+            transition: all 0.4s;
+            font-weight: $fontWeight;
+            &:hover{
+                background-color: $secondaryBackgroundColor;
+                border-radius: 23px;
+            }
+        }
+
+        // Order now button
+        &__btn-primary{
+            background-color: $secondaryBackgroundColor;
+            color: $textColor;
+            border-color: $quaternaryBackgroundColor;
+            &:hover{
+                background-color: $tertiaryBackgroundColor;
+                color: $textColor;
+                border-color: $quaternaryBackgroundColor;
+            }
+        }
+    }
+
 }
+
+// Navbar styling end
 
 h1,h2,h3,h4,h5,h6{
     font-weight: $fontWeight;

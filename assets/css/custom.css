@@ -15,43 +15,36 @@ body {
   color: #777;
 }
 
-html {
-  font-size: 100%;
-  box-sizing: border-box;
-}
-
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-nav {
+.navbar {
   background-color: #f4c2c3;
 }
-nav .btn-primary {
-  background-color: #B6E5D8;
-  color: #222;
-  border-color: #8FDDE7;
-}
-nav .btn-primary:hover {
-  background-color: #FBE5C8;
-  color: #222;
-  border-color: #8FDDE7;
-}
-nav .logo {
+.navbar__logo__img {
   height: 5rem;
+  min-width: 100%;
 }
-nav a {
+.navbar .collapse__content {
   color: #222;
   text-decoration: none;
   transition: all 0.4s;
   font-weight: 600;
 }
-nav a:hover {
+.navbar .collapse__content:hover {
   background-color: #B6E5D8;
   border-radius: 23px;
 }
-nav img {
-  min-width: 100%;
+.navbar .collapse__btn-primary {
+  background-color: #B6E5D8;
+  color: #222;
+  border-color: #8FDDE7;
+}
+.navbar .collapse__btn-primary:hover {
+  background-color: #FBE5C8;
+  color: #222;
+  border-color: #8FDDE7;
 }
 
 h1, h2, h3, h4, h5, h6 {
