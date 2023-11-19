@@ -1,6 +1,6 @@
 @import 'globals';
 @import 'variables';
-
+@import 'mixins';
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
 
 *, *::before, *::after {
@@ -20,7 +20,6 @@ box-sizing: inherit;
     .collapse{
         // anchor links styling
                 &__content {
-                    color: $textColor;
                     text-decoration: none;
                     transition: all 0.4s;
                     font-weight: $fontWeight;
@@ -33,17 +32,8 @@ box-sizing: inherit;
         // Order now button
 
         &__btn-primary{
-            background-color: $secondaryBackgroundColor;
-            color: $textColor;
-            border-color: $quaternaryBackgroundColor;
-            border-radius: 0;
-            padding: 14px 38px;
-            font-weight: 500;
-            &:hover{
-                background-color: $tertiaryBackgroundColor;
-                color: $textColor;
-                border-color: $quaternaryBackgroundColor;
-            }
+            @include btnStyle();
+        
         }
     }
 }
@@ -55,3 +45,47 @@ h1,h2,h3,h4,h5,h6{
     color: $textColor;
 }
 
+// hero section styling
+
+.carousel-inner{
+    a.btn.carousel{
+        &__btn-primary {
+            @include btnStyle();
+        }
+    }
+}
+
+.bg-cover{
+    @include backgroundStyling();
+}
+
+// Slider Styling
+
+.slide-1{
+    background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/horse-box.jpg);
+}
+
+.slide-2{
+    background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/pizza.jpg);
+}
+
+// #heroSlider h6::after,
+#heroSlider h6::before{
+    content: " ";
+    width: 25px;
+    height: 4px;
+    background-color: #ffffff;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    background-color: rgba(0,0,0,0.6);
+    width: 40px;
+    height: 70px;
+    margin: auto;
+}
+
+// hero section styling end

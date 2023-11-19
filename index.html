@@ -8,45 +8,95 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <!-- Nav bar template from Bootstrap v5.3 -->
-    <nav class="navbar navbar-expand-lg shadow py-3">
-        <div class="container">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-dark navbar-expand-lg shadow py-3">
+        
+    <div class="container">
+        <div class="d-flex flex-row d-md-none w-100 navbar__contain-logo-toggle">
             <a class="navbar__logo" href="#">
                 <img class="navbar__logo__img" src="assets/images/nags-with-notions-logo.png" 
                 alt="nags with notions logo">
             </a>
-            <button class="navbar-toggler togglerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon togglerIcon"></span>
+            <button class="navbar__toggler togglerBtn navbar-toggler align-self-center ml-auto" title="button" type="button" data-toggle="collapse" data-target=".navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav collapse__list mx-auto"> 
+        </div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 navbarNav">
+                <ul class="navbar-nav mr-auto collapse__list mx-auto">
                     <li class="nav-item collapse__list__item">
-                        <a class="collapse__content nav-link text-dark" href="#home">Home</a>
+                        <a class="collapse__content nav-link" href="#home">Home</a>
                     </li>
                     <li class="collapse__list__item">
-                        <a class="collapse__content nav-link text-dark" href="#about">About</a>
+                        <a class="collapse__content nav-link" href="#about">About</a>
                     </li>
                     <li class="collapse__list__item">
-                        <a class="collapse__content nav-link text-dark" href="#menu">Menu</a>
+                        <a class="collapse__content nav-link" href="#menu">Menu</a>
                     </li>
                     <li class="collapse__list__item">
-                        <a class="collapse__content nav-link text-dark" href="#features">Features</a>
+                        <a class="collapse__content nav-link" href="#features">Features</a>
                     </li>
                     <li class="collapse__list__item">
-                        <a class="collapse__content nav-link text-dark" href="#reservation">Reservation</a>
+                        <a class="collapse__content nav-link" href="#reservation">Reservation</a>
                     </li>
                     <li class="collapse__list__item">
-                        <a class="collapse__content nav-link text-dark" href="#blog">Blog</a>
+                        <a class="collapse__content nav-link" href="#blog">Blog</a>
                     </li>
                 </ul>
-                <a href="#" class="btn collapse__btn-primary">Order Now!</a>
+                <a href="#" class=" d-none d-md-block collapse__btn-primary">Order Now!</a>
             </div>
-        </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- /.Navbar -->
+
+    <!-- Hero Slider -->
+
+    <div id="heroSlider" class="carousel slide" data-ride="carousel"> 
+        <ol class="carousel-indicators">
+            <li data-target="#heroSlider" data-slide-to="1" class="active"></li>
+            <li data-target="#heroSlider" data-slide-to="2"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item text-center vh-100 active slide-1 bg-cover">
+                <div class=" container text-center h-100 d-flex align-items-center justify-content-center">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h6 class="text-white">Welcome to Nags With Notions</h6>
+                            <h1 class="display-4 fw-bold text-white">Sourdough Pizzas for any Event</h1>
+                            <a href="#" class="btn carousel__btn-primary">Order Now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item text-center vh-100 slide-2 bg-cover">
+                <div class="container h-100 text-center d-flex align-items-center justify-content-center">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h6 class="text-white">Welcome to Nags With Notions</h6>
+                            <h1 class="display-4 fw-bold text-white">Ingredients from Meaths finest producers</h1> 
+                            <a href="#" class="btn carousel__btn-primary">Order Now!</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#heroSlider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroSlider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>  
+
+    <!-- /.Hero Slider -->
+    
     <script src="assets/js/script.js"></script>
 </body>
 </html>
