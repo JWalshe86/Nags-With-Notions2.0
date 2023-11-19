@@ -51,6 +51,10 @@
 
 ### SURFACE/DESIGN<br>
 
+#### Landing Page Wireframe
+
+[Landing Page Wireframe](/assets/wireframe/landing-page-wireframe.fig)
+
 
 Color palette "afternoon-sinkers" generated using [canva](https://www.canva.com/colors/color-palettes/afternoon-sinkers/)![Color Palette](/assets/images/readme-images/nags-color-palette.png) 
 
