@@ -59,7 +59,8 @@ h1,h2,h3,h4,h5,h6{
     @include backgroundStyling();
 }
 
-// Slider
+// Slider Styling
+
 .slide-1{
     background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/horse-box.jpg);
 }
@@ -68,7 +69,7 @@ h1,h2,h3,h4,h5,h6{
     background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/pizza.jpg);
 }
 
-#heroSlider h6::after,
+// #heroSlider h6::after,
 #heroSlider h6::before{
     content: " ";
     width: 25px;
