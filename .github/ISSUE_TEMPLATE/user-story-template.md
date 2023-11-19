@@ -1,11 +1,13 @@
 ---
-name: User Story
+name: User Story Template
 about: Default user story template
 title: USER STORY <TITLE>
 labels: ''
 assignees: ''
 
 ---
+
+EPIC: < epic >
 
 As a **role** I can **capability** so that **received benefit**
 
@@ -16,3 +18,5 @@ As a **role** I can **capability** so that **received benefit**
 * Acceptance Criteria 2:
 
 * Acceptance Criteria 3:
+
+**Tasks**
