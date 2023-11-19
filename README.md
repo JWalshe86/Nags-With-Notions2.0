@@ -121,6 +121,7 @@ The project will now be cloned locally for you to use.
 ## CREDITS 💛
 
 * Inspiration for user stories [Restaurant Management System Epics & User Stories](https://www.slideshare.net/milindhg/epics-and-user-stories-57115405)
+* Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
 
 ## TOOLS 🧰
 
