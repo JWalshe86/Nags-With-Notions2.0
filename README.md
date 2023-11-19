@@ -129,6 +129,8 @@ The project will now be cloned locally for you to use.
 
 ## TOOLS 🧰
 
+* Icons from [remixicon.com](https://remixicon.com/)
+
 
 ## ACKNOWLEDGEMENTS 👏
 

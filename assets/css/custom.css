@@ -94,8 +94,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 40px;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 10vw !important;
   height: 70px;
   margin: auto;
+}
+
+footer {
+  background-color: #f4c2c3;
+}
+
+.col-lg-4 {
+  max-width: none !important;
+}
+.col-lg-4__logo__img {
+  height: 5rem;
+}
+.col-lg-4__social-links, .col-lg-4 a {
+  color: black;
 }/*# sourceMappingURL=custom.css.map */

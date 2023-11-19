@@ -82,10 +82,30 @@ h1,h2,h3,h4,h5,h6{
 
 .carousel-control-prev,
 .carousel-control-next{
-    background-color: rgba(0,0,0,0.6);
-    width: 40px;
+    background-color: rgba(0,0,0,0.9);
+    width: 10vw !important;
     height: 70px;
     margin: auto;
 }
 
 // hero section styling end
+
+// footer styling
+
+footer {
+    background-color: $primaryBackgroundColor;
+}
+
+.col-lg-4{
+
+    max-width: none !important;
+
+    &__logo__img{
+        height: 5rem;
+    }
+
+    &__social-links, a{
+        color: black;
+    }
+
+}
