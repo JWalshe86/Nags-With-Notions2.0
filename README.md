@@ -73,7 +73,9 @@ Color palette "afternoon-sinkers" generated using [canva](https://www.canva.com/
 
 - Python 🐍
 
-## BUGS OR ERRORS 🐛 😵
+## BUGS OR ERRORS 🐛 😵// Issues which take me more than 2 hours to solve
+
+
 
 #### User Stories Testing<br>
 
