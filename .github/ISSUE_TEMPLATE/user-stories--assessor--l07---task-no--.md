@@ -1,13 +1,13 @@
 ---
-name: 'User Story (Assessor) LO1: <task no.>'
-about: LO1 objectives
-title: 'User Story (Assessor) LO1: <task no. >'
+name: 'User Stories (Assessor) L07: <task no.>'
+about: LO7 Pass criteria
+title: 'User Stories (Assessor) L07: <task no.>'
 labels: ''
 assignees: ''
 
 ---
 
-EPIC: Use an Agile methodology to plan and design a Full-Stack Web application using an MVC framework and related contemporary technologies
+EPIC: Design a custom data model that fits the purpose of the project
 
 As an assessor I can verify the use of **pass requirement** so that a pass grade may be awarded.
 
