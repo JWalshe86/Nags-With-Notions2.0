@@ -1,5 +1,5 @@
 ---
-name: User Story (Assessor) L02
+name: 'User Story (Assessor) L02: <task no.>'
 about: Requirements to pass LO2
 title: 'User Story (Assessor) L02: <task no.>'
 labels: ''
