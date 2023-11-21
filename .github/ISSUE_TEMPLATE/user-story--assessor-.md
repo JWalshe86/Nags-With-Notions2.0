@@ -11,7 +11,7 @@ EPIC: <EPIC>
 
 As an assessor I can verify the use of **pass requirement** so that a pass grade may be awarded.
 
-- [ ] **Acceptance Criteria:** 
+ **Acceptance Criteria:** 
 
 - [ ] * Acceptance Criteria 1: 
 
