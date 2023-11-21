@@ -1,7 +1,7 @@
 ---
 name: User Story (Assessor)
 about: PP4 pass criteria requirements
-title: ''
+title: 'User Story (Assessor):'
 labels: ''
 assignees: ''
 
