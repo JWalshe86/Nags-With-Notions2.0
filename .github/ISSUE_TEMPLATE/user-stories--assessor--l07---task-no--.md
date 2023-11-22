@@ -13,11 +13,11 @@ As an assessor I can verify the use of **pass requirement** so that a pass grade
 
  **Acceptance Criteria:** 
 
-- [ ] * Acceptance Criteria 1: 
+* Acceptance Criteria 1: 
 
-- [ ] * Acceptance Criteria 2:
+* Acceptance Criteria 2:
 
-- [ ] * Acceptance Criteria 3:
+ * Acceptance Criteria 3:
 
 **Tasks**
 
