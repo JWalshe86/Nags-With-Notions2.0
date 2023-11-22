@@ -2,7 +2,7 @@
 name: 'User Story (Assessor) LO3: <task no.>'
 about: Pass requirements regarding authorisation of project
 title: 'User Story (Assessor) LO3: <task no.>'
-labels: ''
+labels: User Story
 assignees: ''
 
 ---
