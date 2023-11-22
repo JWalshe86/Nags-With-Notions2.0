@@ -2,7 +2,7 @@
 name: 'User Stories (Assessor) L05: <task no.>'
 about: Describe this issue template's purpose here.
 title: 'User Stories (Assessor) L05: <task no.>'
-labels: ''
+labels: User Story
 assignees: ''
 
 ---

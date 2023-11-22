@@ -2,7 +2,7 @@
 name: 'User Stories (Assessor) L07: <task no.>'
 about: LO7 Pass criteria
 title: 'User Stories (Assessor) L07: <task no.>'
-labels: ''
+labels: User Story
 assignees: ''
 
 ---
