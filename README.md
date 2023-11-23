@@ -49,6 +49,14 @@
 
 ### FLOWCHARTS 📈<br>
 
+Reasoning to flowchart: A flowchart was created to present the entire user story visually. The user is initially presented
+with a welcoming landing page. The user is informed they can choose to book the pizza box for 
+personal use or see when other events are on that they could attend and try some pizza. The pizza
+menu is displayed. If the user wishes to book they are shown the available dates. To book the user
+needs to login. If not already registered the user must sign up. Once the user is logged in they 
+can select their preferred dates. They then receive a confirmation email regarding their booking. The dates available, personal information and password data is then updated. 
+
+[Full Site Flowchart Sprint1](/assets/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
 ### SURFACE/DESIGN<br>
 
@@ -60,8 +68,6 @@
 [Full Site Wireframe Sprint1](/assets/pdfs/nags-with-notions-wireframe-sprint1.pdf)
 
 Reasoning for Wireframe structure: As a user, I want to be able to see when the Pizza Horsebox is available for private hire. As the owner, I want customers to know they can hire the horse box and when it's available. Also, I want the user of the website to know that Nags with Notions also sells pizzas at events and when these events are on. The wireframe shows websites snippets where such features have been executed successfully. Having shown this wireframe to Nags With Notions they are happy to proceed. 
-
-[Full Site Flowchart Sprint1](/assets/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
 ## FEATURES
 
