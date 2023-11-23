@@ -55,6 +55,13 @@
 
 [Landing Page Wireframe](/assets/wireframe/landing-page-wireframe.fig)
 
+Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
+for the confirmation email, logging in to book a table and showing available dates.
+
+[Full Site Wireframe Sprint1](/assets/pdfs/Nags-With-Notions-Wireframe-Sprint1.pdf)
+
+https://www.figma.com/file/25JQ5CpFYLYxH3QXzpFetH/Nags-With-Notions-Wireframe?type=design&node-id=0-1&mode=design
+
 
 Color palette "afternoon-sinkers" generated using [canva](https://www.canva.com/colors/color-palettes/afternoon-sinkers/)![Color Palette](/assets/images/readme-images/nags-color-palette.png) 
 

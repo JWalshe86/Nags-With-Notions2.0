@@ -28,6 +28,7 @@ body {
 }
 .navbar .collapse__content {
   text-decoration: none;
+  color: black !important;
   transition: all 0.4s;
   font-weight: 600;
 }

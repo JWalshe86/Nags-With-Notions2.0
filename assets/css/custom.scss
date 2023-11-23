@@ -21,6 +21,7 @@ box-sizing: inherit;
         // anchor links styling
                 &__content {
                     text-decoration: none;
+                    color: black !important;
                     transition: all 0.4s;
                     font-weight: $fontWeight;
                     &:hover{
