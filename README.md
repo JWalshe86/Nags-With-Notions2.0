@@ -1,4 +1,4 @@
-# PIZZA ORDER SYSTEM
+# Nags With Notions2.0
   - [OVERVIEW](#overview)
   - [UX/UI](#uxui)
     - [STRATEGY](#strategy)
@@ -51,24 +51,20 @@
 
 ### SURFACE/DESIGN<br>
 
-#### Landing Page Wireframe
+#### Wireframes
 
-[Landing Page Wireframe](/assets/wireframe/landing-page-wireframe.fig)
-
-Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
-for the confirmation email, logging in to book a table and showing available dates.
-
-[Full Site Wireframe Sprint1](/assets/pdfs/Nags-With-Notions-Wireframe-Sprint1.pdf)
-
-https://www.figma.com/file/25JQ5CpFYLYxH3QXzpFetH/Nags-With-Notions-Wireframe?type=design&node-id=0-1&mode=design
+[Initial Landing Page Wireframe](/assets/wireframe/landing-page-wireframe.fig)
 
 
-Color palette "afternoon-sinkers" generated using [canva](https://www.canva.com/colors/color-palettes/afternoon-sinkers/)![Color Palette](/assets/images/readme-images/nags-color-palette.png) 
+[Full Site Wireframe Sprint1](/assets/pdfs/nags-with-notions-wireframe-sprint1.pdf)
+
+Reasoning for Wireframe structure: As a user, I want to be able to see when the Pizza Horsebox is available for private hire. As the owner, I want customers to know they can hire the horse box and when it's available. Also, I want the user of the website to know that Nags with Notions also sells pizzas at events and when these events are on. The wireframe shows websites snippets where such features have been executed successfully. Having shown this wireframe to Nags With Notions they are happy to proceed. 
+
+[Full Site Flowchart Sprint1](/assets/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
 ## FEATURES
 
 ### EXISTING FEATURES
-
 
 
 ### FUTURE FEATURES 🚀
@@ -133,8 +129,9 @@ The project will now be cloned locally for you to use.
 
 ## CREDITS 💛
 
-* Inspiration for user stories [Restaurant Management System Epics & User Stories](https://www.slideshare.net/milindhg/epics-and-user-stories-57115405)
 * Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
+* Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
+for the confirmation email, logging in to book a table and showing available dates in the wireframe.
 
 ## TOOLS 🧰
 
