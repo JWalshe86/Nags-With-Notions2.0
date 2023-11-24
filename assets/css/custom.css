@@ -101,6 +101,30 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
+.intro-text {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text p {
+  max-width: 500px;
+  margin: 16px auto 0 auto;
+}
+
+#menu .nav-pills .nav-link {
+  background-color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #222;
+  border-radius: 100px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+#menu .nav-pills .nav-link.active {
+  background-color: #f4c2c3;
+  color: #ffffff;
+}
+
 footer {
   background-color: #f4c2c3;
   padding-top: 5vh;
