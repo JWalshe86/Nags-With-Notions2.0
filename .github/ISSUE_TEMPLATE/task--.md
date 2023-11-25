@@ -2,7 +2,7 @@
 name: 'Task: '
 about: Describe this issue template's purpose here.
 title: ''
-labels: task
+labels: bug, task
 assignees: ''
 
 ---
