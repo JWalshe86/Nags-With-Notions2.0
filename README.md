@@ -32,7 +32,7 @@
 
 #### Goals 🥅<br> 
 
-
+[Customer Journey Map](/assets/pdfs/nags-with-notions-customer-jouryney-map.pdf)
 
 #### User Stories 📖<br>
 
@@ -143,6 +143,7 @@ for the confirmation email, logging in to book a table and showing available dat
 ## TOOLS 🧰
 
 * Icons from [remixicon.com](https://remixicon.com/)
+* [Figma](www.figma.com) was used to create the wireframes & user story map
 
 
 ## ACKNOWLEDGEMENTS 👏
