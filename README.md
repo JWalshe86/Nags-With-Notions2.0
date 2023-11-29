@@ -97,7 +97,7 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 ### CREATING THE WEBSITE
 
-
+[Mentor Meeting 1 Feedback](/assets/pdfs/mentor-meeting1-291123-notes.txt)
   
 ### DEPLOYING ON HEROKU
 
@@ -139,6 +139,18 @@ The project will now be cloned locally for you to use.
 * Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
+
+### Suggested links from Slack Meeting 291123
+https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
+https://github.com/IuliiaKonovalova/start-with-django
+
+https://www.youtube.com/watch?v=ByGJQzlzxQg
+https://www.youtube.com/watch?v=cuEtnrL9-H0
+
+https://www.youtube.com/@ColtSteeleCode
+https://www.youtube.com/@KevinPowell
+
+https://wesbos.com/
 
 ## TOOLS 🧰
 

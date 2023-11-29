@@ -1,0 +1,13 @@
+Notes from first Mentor Meeting 29.11.23
+
+more backend
+focus on functionality first
+Book from database
+Book without payments system first
+admin section
+nail down booking system
+book in first without logging 
+start readMe
+start working on UI
+show dates first without calendar - track availability without calendar
+add login to meet project requirements
