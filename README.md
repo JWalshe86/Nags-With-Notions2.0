@@ -143,6 +143,7 @@ for the confirmation email, logging in to book a table and showing available dat
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
 https://github.com/IuliiaKonovalova/start-with-django
+[for testing](https://github.com/Abibubble/ms4-lead-shot-hazard)
 
 https://www.youtube.com/watch?v=ByGJQzlzxQg
 https://www.youtube.com/watch?v=cuEtnrL9-H0

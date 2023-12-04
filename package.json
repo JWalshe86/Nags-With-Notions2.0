@@ -1,16 +1,26 @@
 {
-  "name": "nags-with-notions2.0",
+  "name": "jest1",
   "version": "1.0.0",
-  "description": "- [OVERVIEW](#overview)\r   - [UX/UI](#uxui)\r     - [STRATEGY](#strategy)\r       - [Goals<br>](#goals)\r       - [User Stories<br>](#user-stories)\r     - [SCOPE<br>](#scope)\r     - [STRUCTURE<br>](#structure)\r     - [FLOWCHARTS<br>](#flowcharts)\r     - [SURFACE/DESIGN<br>](#surfacedesign)\r     - [EXISTING FEATURES<br>](#existing-features)\r     - [FUTURE FEATURES<br>](#future-features)\r   - [BUGS OR ERRORS](#bugs-or-errors)\r   - [TESTING](#testing)\r   - [MODULES IMPORTED](#modules-imported)\r   - [DEPLOYMENT](#deployment)\r     - [CREATING THE WEBSITE](#creating-the-website)\r     - [DEPLOYING ON HEROKU](#deploying-on-heroku)\r     - [FORK THE REPOSITORY](#fork-the-repository)\r     - [CLONE THE REPOSITORY](#clone-the-repository)\r   - [CREDITS](#credits)\r   - [TOOLS](#tools)\r   - [ACKNOWLEDGEMENTS](#acknowledgements)",
+  "description": "![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWalshe86/jest1.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWalshe86/jest1/issues"
+  },
+  "homepage": "https://github.com/JWalshe86/jest1#readme",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^29.7.0",
+    "jquery": "^3.7.1"
   }
 }
