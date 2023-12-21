@@ -2,13 +2,19 @@
  * @jest-environment jsdom
  */
 
-const { game } = require("../script");
+const { menu } = require("../script");
 
-describe("game object contains correct keys", () => {
-    test("score key exists", () => {
-        expect("score" in game).toBe(true);
-    })
-})
+describe("menu object contains correct keys", () => {
+    test("pizzas key exists", () => {
+        expect("pizzas" in menu).toBe(true);
+    });
+    test("dips key exists", () => {
+        expect("dips" in menu).toBe(true);
+    });
+    test("drinks key exists", () => {
+        expect("drinks" in menu).toBe(true);
+    });
+});
 
 
 

@@ -130,6 +130,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
+#priceTag {
+  background-color: pink;
+  padding: 5px;
+}
+
 #pills-pizzas > div > div:nth-child(2) > div > p {
   margin-top: -20px;
 }
