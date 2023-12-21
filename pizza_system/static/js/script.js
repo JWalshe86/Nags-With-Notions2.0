@@ -7,3 +7,4 @@ $(document).ready(function () {
     $("p:nth-child(2)").css("background-color", "pink").css('padding', '5px'); //background color of prices pink & padding 5px; 
 });
 
+console.log('yo yo yo');
