@@ -1,0 +1,9 @@
+asgiref==3.7.2
+dj-database-url==0.5.0
+Django==4.2.8
+packaging==23.2
+psycopg2==2.9.9
+sqlparse==0.4.4
+tzdata==2023.3
+waitress==2.1.2
+whitenoise==6.6.0
