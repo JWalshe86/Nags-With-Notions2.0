@@ -1,0 +1,1 @@
+web: waitress-serve --port=$PORT nags_with_notions.wsgi:application  
