@@ -58,6 +58,9 @@ can select their preferred dates. They then receive a confirmation email regardi
 
 [Full Site Flowchart Sprint1](/assets/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
+### Entity Relationship Diagrams
+![Book ERP](/static/admin/img/readme-images/Book_ERD.png)
+
 ### SURFACE/DESIGN<br>
 
 #### Wireframes
