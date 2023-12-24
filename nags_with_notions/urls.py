@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('pizza_system/', include('pizza_system.urls')),
+    path('', include('pizza_system.urls')),
     path('admin/', admin.site.urls),
 ]

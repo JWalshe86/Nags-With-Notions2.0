@@ -74,9 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nags_with_notions.wsgi.application'
 
-
-print(dj_database_url.config())
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
