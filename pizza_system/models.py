@@ -1,15 +1,14 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Blog(models.Model):
+class Booking(models.Model):
     email = models.EmailField(max_length=254)
-    phone = models.PhoneNumberField()
-    event_date = 
-    location =
-    guest_nos =
-    message =
-    create_on = 
+    phone = models.IntegerField()
+    event_date = models.DateTimeField(null=True)
+    location = models.CharField(("address"), max_length=128, blank=True)
+    guest_nos = models.IntegerField()
+    message = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
     
