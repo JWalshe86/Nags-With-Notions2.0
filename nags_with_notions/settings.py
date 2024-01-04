@@ -96,7 +96,8 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
-    "https://nags-with-notions-f8a098968cba.herokuapp.com/"
+    "https://*.herokuapp.com",
+    "https://nags-with-notions-f8a098968cba.herokuapp.com",
 ]
 
 # Password validation
