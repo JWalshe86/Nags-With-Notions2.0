@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pizza_system',
     'booking',
     'phonenumber_field',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
