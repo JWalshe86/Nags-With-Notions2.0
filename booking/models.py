@@ -16,3 +16,5 @@ class Booking(models.Model):
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     
+    def __str__(self):
+        return f"Collaboration request from {self.name}"

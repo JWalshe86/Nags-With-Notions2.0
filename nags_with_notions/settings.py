@@ -37,6 +37,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost:8000/','nags-with-notions-f8a098968cba.
 # Application definition
 
 INSTALLED_APPS = [
+    'pizza_system.apps.PizzaSystemConfig',
+    'booking.apps.BookingConfig',
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,8 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pizza_system',
-    'booking',
     'phonenumber_field',
     'django_summernote',
 ]
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'nags_with_notions.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR), "pizza_system/templates"],
+        'DIRS': [os.path.join(BASE_DIR), "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
