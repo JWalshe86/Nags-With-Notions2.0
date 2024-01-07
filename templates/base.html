@@ -22,26 +22,43 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <!-- <a class="navbar-brand" href=""><span class="brand">c<span class="red-o">o</span>de<span
-                        class="thin">|star</span></span></a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <!-- <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="#">Home</a> -->
-                    </li>
+    <!-- Navbar  -->
 
+    <nav class="navbar navbar-dark navbar-expand-lg shadow py-3">
+
+        <div class="container">
+            <div class="d-flex flex-row d-md-none w-100 navbar__contain-logo-toggle">
+                <a class="navbar__logo" href="#">
+                    <img class="navbar__logo__img" src="assets/images/nags-with-notions-logo.png"
+                        alt="nags with notions logo">
+                </a>
+                <button class="navbar__toggler togglerBtn navbar-toggler align-self-center ml-auto" title="button"
+                    type="button" data-toggle="collapse" data-target=".navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 navbarNav">
+                <ul class="navbar-nav mr-auto collapse__list mx-auto">
+                    <li class="nav-item collapse__list__item">
+                        <a class="collapse__content nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="#about">About</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="#reservation">Reservation</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="#blog">Blog</a>
+                    </li>
                 </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
+                <a href="bookings/" class=" d-none d-md-block collapse__btn-primary">Book Now!</a>
             </div>
         </div>
     </nav>
@@ -54,15 +71,56 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Code Instituters</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
-        </p>
+    <!-- footer -->
+
+    <footer>
+        <div class="footer-top">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4">
+                            <img class="col-lg-4__logo__img mb-3" src="/assets/images/nags-with-notions-logo.png"
+                                alt="pink horse with Nags logo">
+                            <p><i>Sourdough Pizzas from Meaths finest food producers</i></p>
+                        </div>
+                        <div class="col-lg-4__social-links mx-auto">
+                            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                            <a href="#"><i class="ri-instagram-fill"></i></a>
+                            <a href="#"><i class="ri-github-fill"></i></a>
+                            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mx-auto">
+                        <h6 class="mt-4">CONTACT</h6>
+                        <p class="mb-1">0863371314</p>
+                        <p class="mb-1">caroline@nagswithnotions.ie</p>
+                        <p class="mb-1">0867506453</p>
+                        <p class="mb-0">tamara@nagswithnotions.ie </p>
+                    </div>
+                    <div class="col-lg-2 mx-auto">
+                        <h6 class="mx-auto mt-4">Opening Hours</h6>
+                        <p class="mb-1">Friday: 5 - 9pm</p>
+                        <p class="mb-1">Saturday: 1 - 9pm</p>
+                        <p>Sunday: 1 - 8pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">Copyrights all rights reserved</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="mb-0">Designed by <a href="#">John</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- /.footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
