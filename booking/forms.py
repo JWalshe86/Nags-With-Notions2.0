@@ -17,7 +17,6 @@ class BookingForm(forms.ModelForm):
         }
         
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Name'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter phone number'}),
             'booking_date': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter booking date'}),
             'guest_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter guest numbers'}),

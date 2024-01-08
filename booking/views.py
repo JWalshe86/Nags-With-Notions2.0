@@ -8,13 +8,11 @@ def booking(request):
     """
     Renders the booking page
     """
-    print('request.get', request.GET)
     submitted = False
     if request.method == "POST":
         booking_form = BookingForm(request.POST)
         print('booking form valid', booking_form.is_valid(), booking_form.errors)
         if booking_form.is_valid():
-            print('booking form valid', booking_form.is_valid())
             booking_form.save()
             return HttpResponseRedirect('/bookings?submitted=True')
     else:
