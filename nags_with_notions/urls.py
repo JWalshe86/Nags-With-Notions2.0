@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('pizza_system.urls')),
+    path("accounts/", include("allauth.urls")),
     path('', include('booking.urls')),
     path('admin/', admin.site.urls),
 ]
