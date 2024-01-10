@@ -156,6 +156,7 @@ https://wesbos.com/
 
 - Follow Sprints #TODO
 - Add user story points #TODO
+- Change comments to reviews #TODO
 
 ## TOOLS 🧰
 
