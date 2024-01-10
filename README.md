@@ -150,7 +150,12 @@ https://www.youtube.com/watch?v=cuEtnrL9-H0
 https://www.youtube.com/@ColtSteeleCode
 https://www.youtube.com/@KevinPowell
 
-https://wesbos.com/
+https://wesbos.com/ 
+
+### Slack Meeting Suggestion 100124
+
+- Follow Sprints #TODO
+- Add user story points #TODO
 
 ## TOOLS 🧰
 
@@ -159,7 +164,4 @@ https://wesbos.com/
 
 
 ## ACKNOWLEDGEMENTS 👏
-
-
-
 
