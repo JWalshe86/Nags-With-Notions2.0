@@ -6,7 +6,12 @@
 
     <h1>Your Bookings</h1>
 
-    {{ bookings_list }}
+    {% for booking in bookings_list %}
+
+    {{booking.message}}
+
+    {% endfor %}
+
 
     {% endblock content %}
 </body>
