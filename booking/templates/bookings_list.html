@@ -7,11 +7,16 @@
     <h1>Your Bookings</h1>
 
     {% for booking in bookings_list %}
+    <strong>Date booked: {{booking.booking_date}}</strong>
+    <ul>
+        <li>Address: {{booking.location}}</li>
+        <li>Guest Numbers: {{booking.guest_number}}</li>
+        <li>Message: {{booking.message}}</li>
+        <li>Phone: {{booking.phone}}</li>
+        <li>Status: {{booking.status}}</li>
 
-    {{booking.message}}
-
+    </ul>
+    <br />
     {% endfor %}
-
-
     {% endblock content %}
 </body>

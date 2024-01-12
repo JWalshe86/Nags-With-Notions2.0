@@ -9,6 +9,7 @@ class Booking(models.Model):
     name = models.ForeignKey(
         User, on_delete=models.CASCADE,
     )
+    location = models.TextField()
     phone = PhoneNumberField()
     booking_date = models.DateTimeField()
     guest_number = models.IntegerField()
