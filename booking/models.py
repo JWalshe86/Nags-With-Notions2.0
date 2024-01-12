@@ -17,4 +17,4 @@ class Booking(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     
     def __str__(self):
-        return f"Collaboration request from {self.name}"
+        return f"Booking request from {self.name}"
