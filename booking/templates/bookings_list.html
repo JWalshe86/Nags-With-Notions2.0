@@ -4,17 +4,24 @@
 
     {% block content %}
 
-    <h1>Your Bookings</h1>
+    <form method="post" action="{% url 'bookings-list' %}">
+        <table>
+            <h1>Your Bookings</h1>
 
-    {% for booking in bookings_list %}
-    <strong>Date booked: {{booking.booking_date}}</strong>
-    <ul>
-        <li>Address: {{booking.location}}</li>
-        <li>Guest Numbers: {{booking.guest_number}}</li>
-        <li>Message: {{booking.message}}</li>
-        <li>Phone: {{booking.phone}}</li>
-        <li>Status: {{booking.status}}</li>
-    <br />
+            {% for booking in bookings_list %}
+            <strong>Date booked: {{booking.booking_date}}</strong>
+            <input value="delete" class="btn btn-secondary" type="submit"></input>
+            <ul>
+                <li>Address: {{booking.location}}</li>
+                <li>Guest Numbers: {{booking.guest_number}}</li>
+                <li>Message: {{booking.message}}</li>
+                <li>Phone: {{booking.phone}}</li>
+                <li>Status: {{booking.status}}</li>
+
+            </ul>
+            <br />
+        </table>
+    </form>
     {% endfor %}
     {% endblock content %}
 </body>
