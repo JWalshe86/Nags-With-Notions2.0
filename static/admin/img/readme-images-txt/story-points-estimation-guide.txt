@@ -1,0 +1,9 @@
+https://youtu.be/vvr-Fd1xYCI?si=tzzn-Ekcf0cX8P9_
+
+Use relative value for story point estimation
+Story points used to tell the effort required for a given user story 
+relative to others
+Work volume, risk and complexity all affect effort levels
+Fibonacci sequence 1,2,3,5,8,13,21,34
+Find 1/2 user stories as references for effort - other story user points
+calculated by comparing to this reference user story

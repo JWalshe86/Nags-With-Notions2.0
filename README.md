@@ -139,6 +139,7 @@ The project will now be cloned locally for you to use.
 * Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
+* [Display data from database on browser](https://youtu.be/H3joYTIRqKk?si=qAek5PaXluQp_lLa)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/

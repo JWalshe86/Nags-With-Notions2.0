@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import BookingForm
+from .models import Booking
 
 # Create your views here.
 
@@ -30,3 +31,14 @@ def booking(request):
             "submitted": submitted
         },
     )
+    
+def all_bookings(request):
+    bookings_list = Booking.objects.all()
+    return render(
+        request,
+        "bookings_list.html",
+        {
+            "bookings_list": bookings_list,
+        },
+    )
+    

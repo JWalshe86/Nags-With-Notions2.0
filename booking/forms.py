@@ -6,9 +6,10 @@ from .models import Booking
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ("name", "phone", "booking_date", "guest_number", "message", "status")
+        fields = ("name", "location","phone", "booking_date", "guest_number", "message", "status")
         labels = {
             'name': '',
+            'location': '',
             'phone': '',
             'booking_date': '',
             'guest_number': '',
@@ -17,6 +18,7 @@ class BookingForm(forms.ModelForm):
         }
         
         widgets = {
+            'location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter venue address'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter phone number'}),
             'booking_date': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter booking date'}),
             'guest_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter guest numbers'}),

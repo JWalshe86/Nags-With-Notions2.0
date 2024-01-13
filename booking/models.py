@@ -9,6 +9,7 @@ class Booking(models.Model):
     name = models.ForeignKey(
         User, on_delete=models.CASCADE,
     )
+    location = models.TextField()
     phone = PhoneNumberField()
     booking_date = models.DateTimeField()
     guest_number = models.IntegerField()
@@ -17,4 +18,4 @@ class Booking(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     
     def __str__(self):
-        return f"Collaboration request from {self.name}"
+        return f"Booking request from {self.name}"
