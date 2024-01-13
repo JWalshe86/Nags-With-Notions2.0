@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<body>
+
+    {% block content %}
+
+    <h1>Your Bookings</h1>
+
+    {% for booking in bookings_list %}
+    <strong>Date booked: {{booking.booking_date}}</strong>
+    <ul>
+        <li>Address: {{booking.location}}</li>
+        <li>Guest Numbers: {{booking.guest_number}}</li>
+        <li>Message: {{booking.message}}</li>
+        <li>Phone: {{booking.phone}}</li>
+        <li>Status: {{booking.status}}</li>
+    </ul>
+    <button name="delete">Delete</button>
+    <br />
+    {% endfor %}
+    {% endblock content %}
+</body>
