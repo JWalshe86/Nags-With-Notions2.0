@@ -34,6 +34,15 @@ def booking(request):
     
 def all_bookings(request):
     bookings_list = Booking.objects.all()
+    if request.method == 'POST':
+        if 'delete' in request.POST:
+            pk = request.POST.get('delete')
+            print('holler!', pk)
+            booking = Booking.objects.get(id=pk)
+            booking.delete()
+            
+    
+    
     return render(
         request,
         "bookings_list.html",
