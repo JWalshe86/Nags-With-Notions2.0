@@ -12,7 +12,9 @@
             {% for booking in bookings_list %}
             <li>{{booking}}</li>
             <strong>Date booked: {{booking.booking_date}}</strong>
-            <button name='delete' value="{{booking.id}}" class="btn btn-secondary">Delete</button>
+            <button formnovalidate name='edit' value="{{booking.id}}" class="btn btn-secondary">Edit</button>
+            <button formnovalidate name='delete' value="{{booking.id}}" class="btn btn-secondary">Delete</button>
+
             <ul>
                 <li>Booking ID: #{{booking.id}}</li>
                 <li>Address: {{booking.location}}</li>
