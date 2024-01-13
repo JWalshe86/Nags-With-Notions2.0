@@ -7,6 +7,7 @@
         <div class="col-12 col-md-6 my-5">
             <h2>Add Booking To Database</h2>
 
+
             {% if submitted %}
             Your booking was submitted Successfully!!
             {% else %}
@@ -24,6 +25,33 @@
             {% endif %}
         </div>
     </div>
+
+    <form method="post" action="{% url 'bookings' %}">
+        {% csrf_token %}
+        <table>
+            <h1>Your Bookings</h1>
+
+            {% for booking in bookings_list %}
+            <li>{{booking}}</li>
+            <strong>Date booked: {{booking.booking_date}}</strong>
+            <button formnovalidate name='edit' value="{{booking.id}}" class="btn btn-secondary">Edit</button>
+            <button formnovalidate name='delete' value="{{booking.id}}" class="btn btn-secondary">Delete</button>
+
+            <ul>
+                <li>Booking ID: #{{booking.id}}</li>
+                <li>Address: {{booking.location}}</li>
+                <li>Guest Numbers: {{booking.guest_number}}</li>
+                <li>Message: {{booking.message}}</li>
+                <li>Phone: {{booking.phone}}</li>
+                <li>Status: {{booking.status}}</li>
+
+            </ul>
+            <br />
+        </table>
+    </form>
+
+    {% endfor %}
+
 
     {% endblock content %}
 </body>
