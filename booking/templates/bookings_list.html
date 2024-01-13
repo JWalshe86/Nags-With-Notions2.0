@@ -4,7 +4,7 @@
 
     {% block content %}
 
-    <form method="post" action="{% url 'bookings-list' %}">
+    <form method="post" action="{% url 'bookings' %}">
         {% csrf_token %}
         <table>
             <h1>Your Bookings</h1>

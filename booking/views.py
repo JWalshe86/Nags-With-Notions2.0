@@ -9,11 +9,22 @@ def booking(request):
     """
     Renders the booking page
     """
+    booking_form = BookingForm()
+    bookings_list = Booking.objects.all()
     submitted = False
     if request.method == "POST":
         booking_form = BookingForm(request.POST)
         print('booking form valid', booking_form.is_valid(), booking_form.errors)
-        if booking_form.is_valid():
+        if 'delete' in request.POST:
+            pk = request.POST.get('delete')
+            booking = Booking.objects.get(id=pk)
+            booking.delete()
+        elif 'edit' in request.POST:
+            pk = request.POST.get('edit')
+            booking = Booking.objects.get(id=pk)
+            booking_form = BookingForm(instance=booking)
+            print('editeor',booking_form)
+        elif booking_form.is_valid():
             booking_form.save()
             return HttpResponseRedirect('/bookings?submitted=True')
     else:
@@ -21,33 +32,13 @@ def booking(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    booking_form = BookingForm()
-
     return render(
         request,
         "bookings.html",
         {
             "booking_form": booking_form,
-            "submitted": submitted
-        },
-    )
-    
-def all_bookings(request):
-    bookings_list = Booking.objects.all()
-    if request.method == 'POST':
-        if 'delete' in request.POST:
-            pk = request.POST.get('delete')
-            print('holler!', pk)
-            booking = Booking.objects.get(id=pk)
-            booking.delete()
-            
-    
-    
-    return render(
-        request,
-        "bookings_list.html",
-        {
             "bookings_list": bookings_list,
+            "submitted": submitted
         },
     )
     
