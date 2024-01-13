@@ -5,13 +5,16 @@
     {% block content %}
 
     <form method="post" action="{% url 'bookings-list' %}">
+        {% csrf_token %}
         <table>
             <h1>Your Bookings</h1>
 
             {% for booking in bookings_list %}
+            <li>{{booking}}</li>
             <strong>Date booked: {{booking.booking_date}}</strong>
-            <input value="delete" class="btn btn-secondary" type="submit"></input>
+            <button name='delete' value="{{booking.id}}" class="btn btn-secondary">Delete</button>
             <ul>
+                <li>Booking ID: #{{booking.id}}</li>
                 <li>Address: {{booking.location}}</li>
                 <li>Guest Numbers: {{booking.guest_number}}</li>
                 <li>Message: {{booking.message}}</li>
