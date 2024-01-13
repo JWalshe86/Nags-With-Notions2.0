@@ -22,8 +22,8 @@ def booking(request):
         elif 'edit' in request.POST:
             pk = request.POST.get('edit')
             booking = Booking.objects.get(id=pk)
+            print('booking',booking)
             booking_form = BookingForm(instance=booking)
-            print('editeor',booking_form)
         elif booking_form.is_valid():
             booking_form.save()
             return HttpResponseRedirect('/bookings?submitted=True')
