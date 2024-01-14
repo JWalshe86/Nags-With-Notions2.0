@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<p>{{booking.name}} are you sure you want to delete booking ref #{{booking.id}}</p>
+
+<form action="{% url 'delete_booking' booking.id %}" method="POST">
+    {% csrf_token %}
+
+    <a href="{% url 'bookings' %}">Cancel</a>
+
+    <input type="submit" name="confirm">
+</form>
+{% endblock %}
