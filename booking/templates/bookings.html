@@ -11,8 +11,8 @@
 
             {% for booking in bookings_list %}
             <strong>Date booked: {{booking.booking_date}}</strong>
-            <a class="btn btn-sm btn-danger" href="{% url 'update_booking' booking.id %}">Update</a>
-            <button formnovalidate name='delete' value="{{booking.id}}" class="btn btn-secondary">Delete</button>
+            <a class="btn btn-sm btn-info" href="{% url 'update_booking' booking.id %}">Update</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'delete_booking' booking.id %}">Delete</a>
 
             <ul>
                 <li>Booking ID: #{{booking.id}}</li>
