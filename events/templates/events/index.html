@@ -21,8 +21,14 @@
                             <a href="#" class="event-link">
                                 <h2 class="card-title">{{ event.title }}</h2>
                             </a>
+                            <a href="#" class="event-link">
+                                {% if event.event_image %}
+                                <h2 class="card-title"><img src="{{ event.event_image.url }}" width="300" height="300">
+                                </h2>
+                                {% endif %}
+                            </a>
 
-                            <p class="event-content">{{ event.content }}</p>
+                            <!-- <p class="event-content">{{ event.content }}</p> -->
 
                             <hr />
                             <p class="card-text text-muted h6">{{ event.created_on}}
