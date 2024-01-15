@@ -77,11 +77,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slide-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/assets/images/horse-box.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/blue-cheese.JPG);
 }
 
 .slide-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/assets/images/pizza.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-img1-300px.jpg);
 }
 
 #heroSlider h6::before {
