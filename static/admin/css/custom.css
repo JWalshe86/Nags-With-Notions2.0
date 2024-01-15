@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slide-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-img1-300px.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-horsebox.jpg);
 }
 
 #heroSlider h6::before {
