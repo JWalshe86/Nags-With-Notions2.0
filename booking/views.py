@@ -25,6 +25,7 @@ def booking(request):
 def createBooking(request):
     
     form = BookingForm()
+    form_class = BookingForm
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
