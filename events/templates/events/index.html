@@ -27,12 +27,11 @@
                                 </h2>
                                 {% endif %}
                             </a>
-
-                            <!-- <p class="event-content">{{ event.content }}</p> -->
-
                             <hr />
                             <p class="card-text text-muted h6">{{ event.created_on}}
                             </p>
+                            <a class="btn btn-sm btn-info" href="{% url 'update_event' event.id %}">Update</a>
+                            <a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a>
                         </div>
                     </div>
                 </div>
