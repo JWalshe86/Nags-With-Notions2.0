@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<p>Are you sure you want to delete event ref#{{event.id}}</p>
+
+<form action="{% url 'delete_event' event.id %}" method="POST">
+    {% csrf_token%}
+
+    <a href="{% url 'events' %}">Cancel</a>
+
+    <input type="submit" name="Confirm">
+</form>
+
+
+{% endblock %}
