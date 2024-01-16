@@ -140,7 +140,9 @@ The project will now be cloned locally for you to use.
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
 * [Display data from database on browser - Codemy](https://youtu.be/H3joYTIRqKk?si=qAek5PaXluQp_lLa)
-* [Upload images with djgango - Codemy](https://youtu.be/bNXmU-941iY?si=3EYbBp2vkRvsg1hC)
+* [Upload images with django - Codemy](https://youtu.be/bNXmU-941iY?si=3EYbBp2vkRvsg1hC)
+* [Use diff forms for diff users - Codemy](https://youtu.be/z8m9MW56hkg?si=ea5b6R78VgPU4U2F)
+* [Dennis Ivy CRUD with Model Forms](https://youtu.be/EX6Tt-ZW0so?si=j9mncTFJLuVmly83)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
