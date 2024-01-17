@@ -15,10 +15,10 @@ def createEvent(request):
     
     form = EventForm()
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/events')
             
     context={'form': form}
     return render(request, 'events/event_form.html', context)
@@ -28,7 +28,7 @@ def updateEvent(request, pk):
     event = Event.objects.get(id=pk)
     form = EventForm(instance=event)
     if request.method == 'POST':
-        form = EventForm(request.POST, instance=event)
+        form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
             return redirect('/')
@@ -41,7 +41,7 @@ def deleteEvent(request, pk):
     event = Event.objects.get(id=pk)
     if request.method == "POST":
         event.delete()
-        return redirect('/')
+        return redirect('/events')
     context = {'event': event}
     return render(request, 'events/delete.html', context)
     
