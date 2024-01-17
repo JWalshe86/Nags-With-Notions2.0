@@ -141,7 +141,8 @@ The project will now be cloned locally for you to use.
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
 * [Display data from database on browser - Codemy](https://youtu.be/H3joYTIRqKk?si=qAek5PaXluQp_lLa)
 * [Upload images with django - Codemy](https://youtu.be/bNXmU-941iY?si=3EYbBp2vkRvsg1hC)
-* [Use diff forms for diff users - Codemy](https://youtu.be/z8m9MW56hkg?si=ea5b6R78VgPU4U2F)
+* [Style Django forms with Bootstrap - Codemy](https://youtu.be/6-XXvUENY_8?si=7Q3HWX7ivY8DhTAX)
+* [Django Permissions - Very Academy](https://youtu.be/AR5hjQ8nla0?si=L6d7-AdgmsIMR8rg)
 * [Dennis Ivy CRUD with Model Forms](https://youtu.be/EX6Tt-ZW0so?si=j9mncTFJLuVmly83)
 
 ### Suggested links from Slack Meeting 291123

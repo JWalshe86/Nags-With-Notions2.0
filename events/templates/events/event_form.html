@@ -2,12 +2,15 @@
 {% load static %}
 {% block content %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form }}
+<div class="form-group">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Add Event</h1>
+        {{ form.as_p }}
 
-    <input type="submit" name="submit">
-</form>
+        <input type="submit" name="submit">
+    </form>
+</div>
 
 
 {% endblock %}
