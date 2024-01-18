@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
 from .forms import BookingForm
 from .models import Booking
 
@@ -11,7 +10,6 @@ def booking(request):
     """
     booking_form = BookingForm()
     bookings_list = Booking.objects.all()
-
 
     return render(
         request,
