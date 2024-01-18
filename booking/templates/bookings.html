@@ -9,12 +9,18 @@
         {% csrf_token %}
         <table>
 
+
             {% for booking in bookings_list %}
+
+
+            {% if user == booking.name %}
+
             <strong>Date booked: {{booking.booking_date}}</strong>
             <a class="btn btn-sm btn-info" href="{% url 'update_booking' booking.id %}">Update</a>
             <a class="btn btn-sm btn-danger" href="{% url 'delete_booking' booking.id %}">Delete</a>
 
             <ul>
+                <li>{{booking.name}}</li>
                 <li>Booking ID: #{{booking.id}}</li>
                 <li>Address: {{booking.location}}</li>
                 <li>Guest Numbers: {{booking.guest_number}}</li>
@@ -26,6 +32,7 @@
             <br />
         </table>
     </form>
+    {% endif %}
 
     {% endfor %}
 

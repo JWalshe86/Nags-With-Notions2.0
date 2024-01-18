@@ -31,7 +31,7 @@ def updateEvent(request, pk):
         form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/events')
     context = {'form': form}
     return render(request, 'events/event_form.html', context)
     
