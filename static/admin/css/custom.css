@@ -250,6 +250,7 @@ footer .col-lg-4__social-links:hover, footer .col-lg-4 a:hover {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    margin-bottom: 15px;
 }
 
 .strength-meter::before{
