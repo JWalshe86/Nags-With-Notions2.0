@@ -1,0 +1,172 @@
+{% load static %}
+
+{% url 'home' as home_url %}
+{% url 'events' as events_url %}
+{% url 'bookings' as booking_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+    <title>Nags With Notions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/admin/css/custom.css">
+    <!-- TODO add css here to dynamic css file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="d-flex flex-column h-100 main-bg">
+    <!-- Navbar  -->
+
+    <nav class="navbar navbar-dark navbar-expand-lg shadow py-3">
+
+        <div class="container">
+            <div class="d-flex flex-row d-md-none w-100 d-flex justify-content-between navbar__contain-logo-toggle">
+                <a class="navbar__logo" href="#">
+                    <img class="navbar__logo__img" src="/static/admin/img/nags-with-notions-logo.png"
+                        alt="nags with notions logo">
+                </a>
+                <button class="navbar__toggler toggler Btn navbar-toggler align-self-center ml-auto" title="button"
+                    type="button" data-toggle="collapse" data-target=".navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 navbarNav">
+                <ul class="navbar-nav mr-auto collapse__list mx-auto">
+                    <li class="nav-item collapse__list__item">
+                        <a class="nav-link ollapse__content nav-link
+                            {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="{% url 'bookings' %}">Bookings</a>
+                    </li>
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="{% url 'events' %}">Events</a>
+                    </li>
+                    {% if perms.event.can_add_new_event %}
+                    <li class="collapse__list__item">
+                        <a class="collapse__content nav-link" href="{% url 'create_event' %}">Create Event</a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+                <a href="{% url 'create_booking' %}" class=" d-none d-md-block collapse__btn-primary">Book Now!</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
+
+
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+    </main>
+
+
+
+    <!-- footer -->
+
+    <footer>
+        <div class="footer-top">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="col-lg-4">
+                            <img class="col-lg-4__logo__img mb-3" src="/static/admin/img/nags-with-notions-logo.png"
+                                alt="pink horse with Nags logo">
+                            <p><i>Sourdough Pizzas from Meaths finest food producers</i></p>
+                        </div>
+                        <div class="col-lg-4__social-links mx-auto">
+                            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                            <a href="#"><i class="ri-instagram-fill"></i></a>
+                            <a href="#"><i class="ri-github-fill"></i></a>
+                            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mx-auto">
+                        <h6 class="mt-4">CONTACT</h6>
+                        <p class="mb-1">0863371314</p>
+                        <p class="mb-1">caroline@nagswithnotions.ie</p>
+                        <p class="mb-1">0867506453</p>
+                        <p class="mb-0">tamara@nagswithnotions.ie </p>
+                    </div>
+                    <div class="col-lg-2 mx-auto">
+                        <h6 class="mx-auto mt-4">Opening Hours</h6>
+                        <p class="mb-1">Friday: 5 - 9pm</p>
+                        <p class="mb-1">Saturday: 1 - 9pm</p>
+                        <p>Sunday: 1 - 8pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">Copyrights all rights reserved</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="mb-0">Designed by <a href="#">John</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- /.footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static '/js/script.js'%}"></script>
+</body>
+
+</html>

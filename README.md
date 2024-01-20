@@ -139,6 +139,11 @@ The project will now be cloned locally for you to use.
 * Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
+* [Display data from database on browser - Codemy](https://youtu.be/H3joYTIRqKk?si=qAek5PaXluQp_lLa)
+* [Upload images with django - Codemy](https://youtu.be/bNXmU-941iY?si=3EYbBp2vkRvsg1hC)
+* [Style Django forms with Bootstrap - Codemy](https://youtu.be/6-XXvUENY_8?si=7Q3HWX7ivY8DhTAX)
+* [Django Permissions - Very Academy](https://youtu.be/AR5hjQ8nla0?si=L6d7-AdgmsIMR8rg)
+* [Dennis Ivy CRUD with Model Forms](https://youtu.be/EX6Tt-ZW0so?si=j9mncTFJLuVmly83)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
@@ -151,7 +156,13 @@ https://www.youtube.com/watch?v=cuEtnrL9-H0
 https://www.youtube.com/@ColtSteeleCode
 https://www.youtube.com/@KevinPowell
 
-https://wesbos.com/
+https://wesbos.com/ 
+
+### Slack Meeting Suggestion 100124
+
+- Follow Sprints #TODO
+- Add user story points #TODO
+- Change comments to reviews #TODO
 
 ## TOOLS 🧰
 
@@ -160,7 +171,4 @@ https://wesbos.com/
 
 
 ## ACKNOWLEDGEMENTS 👏
-
-
-
 

@@ -1,0 +1,12 @@
+42a6f5a0ac3fe2ec65003da7cdd8b3da255db816 create comment model works
+e563004d6f2aff08697ab8c2618bd3d40739b514 events displaying on browser works
+9c946664eb259432733e8305f6bde5eff5e1ee9c add queryset on events list works
+4a09fb7a0b0d32793f6390aa5258b28f97e268d5 add summernote functionality doesn't work - error occurs when adding summernote
+Adding path('summernote/', include('django_summernote.urls')), to main url settings causes the import url error when migrating
+From stackoverflow https://stackoverflow.com/questions/70319606/importerror-cannot-import-name-url-from-django-conf-urls-after-upgrading-to
+
+"django.conf.urls.url() was deprecated in Django 3.0, and is removed in Django 4.0+."
+
+Going into site packages and importing path in django_summernote appears to have fixed the issue and allowed me to use django 4
+Content not displaying on events add when summernote is installed
+Looks like summernote content only works on version django-summernote==0.8.20.0
