@@ -3,15 +3,23 @@
 const strengthMeter = document.getElementById('strength-meter');
 const passwordInput = document.getElementById('id_password')
 const reasonsContainer = document.getElementById('reasons');
+var clicked = false;
 
-passwordInput.addEventListener('input', updateStrengthMeter)
+
+passwordInput.addEventListener('input', updateStrengthMeter);
+passwordInput.addEventListener('input', clicked1);
 updateStrengthMeter()
+
+function clicked1() {
+    clicked = true;
+}
 
 function updateStrengthMeter() {
     const weaknesses = calculatePasswordStrength(passwordInput.value);
     let strength = 100;
     reasonsContainer.innerHTML = '';
     weaknesses.forEach(weakness => {
+        console.log('weakness', weakness)
         if (weakness == null) return
         strength -= weakness.deduction;
         const messageElement = document.createElement('div');
@@ -37,14 +45,14 @@ function calculatePasswordStrength(password) {
 function lengthWeakness(password) {
     const length = password.length;
 
-    if (length <= 5) {
+    if (length <= 5 && clicked) {
         return {
             message: 'Your password is too short',
             // deducts from password strength
             deduction: 40
         }
     }
-    if (length <= 10) {
+    if (length <= 10 && clicked) {
         return {
             message: 'Your password could be longer',
             // deducts from password strength
@@ -71,13 +79,13 @@ function specialCharactersWeakness(password) {
 
 function characterTypeWeakness(password, regex, type) {
     const matches = password.match(regex) || [];
-    if (matches.length === 0) {
+    if (matches.length === 0 && clicked) {
         return {
             message: `Your password has no ${type}`,
             deduction: 20,
         }
     }
-    if (matches.length <= 2) {
+    if (matches.length <= 2 && clicked) {
         return {
             message: `Your password could use more ${type}`,
             deduction: 5,
@@ -88,10 +96,11 @@ function characterTypeWeakness(password, regex, type) {
 function repeatCharactersWeakness(password) {
     // detects 2 of the same characters in a row
     const matches = password.match(/(.)\1/g) || [];
-    if (matches.length > 0) {
+    if (matches.length > 0 && clicked) {
         return {
             message: 'Your password has repeat characters',
             deduction: matches.length * 10,
         }
     }
 }
+

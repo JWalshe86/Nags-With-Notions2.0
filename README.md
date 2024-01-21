@@ -144,6 +144,8 @@ for the confirmation email, logging in to book a table and showing available dat
 * [Style Django forms with Bootstrap - Codemy](https://youtu.be/6-XXvUENY_8?si=7Q3HWX7ivY8DhTAX)
 * [Django Permissions - Very Academy](https://youtu.be/AR5hjQ8nla0?si=L6d7-AdgmsIMR8rg)
 * [Dennis Ivy CRUD with Model Forms](https://youtu.be/EX6Tt-ZW0so?si=j9mncTFJLuVmly83)
+* [How to build a javascript password strength meter with regex - Web Dev Simplified](https://youtu.be/7-1VZ2wF8pw?si=c7_yong1oqQD4naz)
+* [Style login page bootstrap - Codemy](https://youtu.be/0Z_3APyKwQ4?si=HcRplqpnrJF9BBps)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/

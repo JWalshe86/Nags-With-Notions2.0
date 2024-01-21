@@ -18,20 +18,31 @@
         first.{% endblocktrans %}</p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+  <div class="row form-group">
+    <div class="col-md-8 mt-3 offset-md-2 form-group">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <p><input type="text" class="form-group" placeholder="username" autofocus aria-labelledby="username"
+            name="login" placeholder="Username" autocomplete="username" maxlength="150" required id="id_login"></p>
+        <p> <input type="text" class="form-group" placeholder="password" autofocus aria-labelledby="password"
+            name="password" placeholder="Password" autocomplete="current-password" required id="id_password"></p>
+        <input value="submit" class="btn btn-secondary" type="submit"></input>
+        <br>
+        <br>
         <h6>Password Strength Test</h6>
         <div class="strength-meter" id="strength-meter"></div>
         <div id="reasons" class="reasons"></div>
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <input value="submit" class="btn btn-secondary" type="submit"></input>
+
+
       </form>
     </div>
   </div>
 </div>
+
+
+
 {% endblock %}
