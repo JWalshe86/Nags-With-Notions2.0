@@ -3,15 +3,7 @@
 const strengthMeter = document.getElementById('strength-meter');
 const passwordInput = document.getElementById('id_password')
 const reasonsContainer = document.getElementById('reasons');
-const usernameInput = document.getElementsByClassName('login')[0][1];
-const remember = document.getElementsByClassName('login')[0][3];
 var clicked = false;
-
-// had to set custom html for login here as couldn't access django admin html for this
-usernameInput.value = 'Please enter username';
-passwordInput.value = '';
-remember.style.display = "none";
-remember.labels[0].style.display = 'none';
 
 
 passwordInput.addEventListener('input', updateStrengthMeter);
@@ -27,6 +19,7 @@ function updateStrengthMeter() {
     let strength = 100;
     reasonsContainer.innerHTML = '';
     weaknesses.forEach(weakness => {
+        console.log('weakness', weakness)
         if (weakness == null) return
         strength -= weakness.deduction;
         const messageElement = document.createElement('div');
@@ -110,3 +103,4 @@ function repeatCharactersWeakness(password) {
         }
     }
 }
+
