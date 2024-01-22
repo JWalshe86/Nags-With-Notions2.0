@@ -85,7 +85,12 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 ## BUGS OR ERRORS 🐛 😵// Issues which take me more than 2 hours to solve
 
+## Testing
 
+### Manual Tests to assess javascript functionality
+
+All tests on functionality were passed. 
+[Javascript tests on functionality](/static/pdfs/testing/Manual%20Test%20to%20Assess%20Javascript%20Functionality.pdf)
 
 #### User Stories Testing<br>
 
