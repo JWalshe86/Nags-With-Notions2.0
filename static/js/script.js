@@ -19,7 +19,6 @@ function updateStrengthMeter() {
     let strength = 100;
     reasonsContainer.innerHTML = '';
     weaknesses.forEach(weakness => {
-        console.log('weakness', weakness)
         if (weakness == null) return
         strength -= weakness.deduction;
         const messageElement = document.createElement('div');
