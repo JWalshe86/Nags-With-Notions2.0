@@ -92,6 +92,14 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 All tests on functionality were passed. 
 [Javascript tests on functionality](/static/pdfs/testing/Manual%20Test%20to%20Assess%20Javascript%20Functionality.pdf)
 
+### Model Testing
+
+Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database.
+
+### Booking Model tests
+
+
+
 #### User Stories Testing<br>
 
 

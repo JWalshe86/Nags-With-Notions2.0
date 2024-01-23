@@ -27,7 +27,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -107,7 +106,7 @@ DATABASES = {
         'USER': 'bxavbsbh',
         'PASSWORD': 'BCi1AkMTZQzBfA0cyktpuMTwD5lzNrn9',
         'HOST': 'mel.db.elephantsql.com', 
-        'PORT': '',                     
+        'PORT': '',              
     }
 }
 
