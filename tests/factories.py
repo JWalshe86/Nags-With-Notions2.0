@@ -1,11 +1,10 @@
 import factory
-from events.models import Event
+from booking.models import Booking
 
-class EventFactory(factory.Factory):
+class BookingFactory(factory.Factory):
     class Meta:
-        model = Event
+        model = Booking
 
-
-def test_factory_fixture(event_factory):
-    title = event_factory(name="Charles Dickens")
-    assert title.name == "Charles Dickens"
+def test_factory_fixture(booking_factory):
+    location = booking_factory(name="Ratoath")
+    assert location.name == "Ratoath"

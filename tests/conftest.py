@@ -1,5 +1,5 @@
 from pytest_factoryboy import register
 
-from .factories import EventFactory
+from .factories import BookingFactory
 
-register(EventFactory)  # => author_factory
+register(BookingFactory)  # => author_factory

@@ -94,7 +94,7 @@ All tests on functionality were passed.
 
 ### Model Testing
 
-Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database.
+Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database. [First successful use of Pytest](/static/pdfs/testing/first-successful-use-of-pytest.docx)
 
 ### Booking Model tests
 
@@ -159,6 +159,7 @@ for the confirmation email, logging in to book a table and showing available dat
 * [Dennis Ivy CRUD with Model Forms](https://youtu.be/EX6Tt-ZW0so?si=j9mncTFJLuVmly83)
 * [How to build a javascript password strength meter with regex - Web Dev Simplified](https://youtu.be/7-1VZ2wF8pw?si=c7_yong1oqQD4naz)
 * [Style login page bootstrap - Codemy](https://youtu.be/0Z_3APyKwQ4?si=HcRplqpnrJF9BBps)
+*[Writing your first Django test using pytest-django Pybites](https://youtu.be/L5jWFU2sVXQ?si=7jORatCMS2P8wz1o)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
