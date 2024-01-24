@@ -71,36 +71,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-cover {
-  background-position: center !important;
+  background-position: center center!important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
 
-.slide-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/blue-cheese.JPG);
+
+.hero-image{
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
 }
 
-.slide-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-horsebox.jpg);
-}
-
-#heroSlider h6::before {
-  content: " ";
-  width: 25px;
-  height: 4px;
-  background-color: #ffffff;
-  display: inline-block;
-  margin: 5px;
-  vertical-align: middle;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.9);
-  width: 10vw !important;
-  height: 70px;
-  margin: auto;
-}
 
 .intro-text {
   margin-bottom: 40px;

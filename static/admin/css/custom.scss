@@ -46,16 +46,6 @@ h1,h2,h3,h4,h5,h6{
     color: $textColor;
 }
 
-// hero section styling
-
-.carousel-inner{
-    a.btn.carousel{
-        &__btn-primary {
-            @include btnStyle();
-        }
-    }
-}
-
 .bg-cover{
     @include backgroundStyling();
 }
@@ -70,26 +60,6 @@ h1,h2,h3,h4,h5,h6{
     background: linear-gradient(rgba(0,0,0,0.3), #000), url(/assets/images/pizza.jpg);
 }
 
-// #heroSlider h6::after,
-#heroSlider h6::before{
-    content: " ";
-    width: 25px;
-    height: 4px;
-    background-color: #ffffff;
-    display: inline-block;
-    margin: 5px;
-    vertical-align: middle;
-}
-
-.carousel-control-prev,
-.carousel-control-next{
-    background-color: rgba(0,0,0,0.9);
-    width: 10vw !important;
-    height: 70px;
-    margin: auto;
-}
-
-// hero section styling end
 
 // Menu styling
 

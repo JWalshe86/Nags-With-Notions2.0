@@ -6,51 +6,24 @@
 
 <body>
 
-    <!-- Hero Slider -->
 
     {% block content %}
 
-    <div id="heroSlider" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#heroSlider" data-slide-to="1" class="active"></li>
-            <li data-target="#heroSlider" data-slide-to="2"></li>
-        </ol>
+    <!-- Hero Image -->
 
-        <div class="carousel-inner">
-            <div class="carousel-item text-center vh-100 active slide-1 bg-cover">
-                <div class=" container text-center h-100 d-flex align-items-center justify-content-center">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <h6 class="text-white">Welcome to Nags With Notions</h6>
-                            <h1 class="display-4 fw-bold text-white">Sourdough Pizzas for any Event</h1>
-                            <a href="{% url 'create_booking' %}" class="btn carousel__btn-primary">Book Now!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item text-center vh-100 slide-2 bg-cover">
-                <div class="container h-100 text-center d-flex align-items-center justify-content-center">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <h6 class="text-white">Welcome to Nags With Notions</h6>
-                            <h1 class="display-4 fw-bold text-white">Ingredients from Meaths finest producers</h1>
-                            <a href="#" class="btn carousel__btn-primary">Order Now!</a>
-                        </div>
-                    </div>
+    <div id="hero" class="vh-100 hero-image bg-cover">
+        <div class="h-100 text-center d-flex align-items-center justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h6 class="text-white">Welcome to Nags With Notions</h6>
+                    <h1 class="display-4 fw-bold text-white">Ingredients from Meaths finest producers</h1>
+                    <a href="{% url 'create_booking' %}" class="btn carousel__btn-primary">Book Now!</a>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#heroSlider" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#heroSlider" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 
-    <!-- /.Hero Slider -->
+    <!-- /.Hero Image End -->
 
     <!-- Menu   -->
 
@@ -154,7 +127,8 @@
                                     </div>
                                     <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Butternut
                                             Squash</a></h5>
-                                    <p class="small">Sourdough Base, Mozzorella cheese, Carmelised onions, prosciutto
+                                    <p class="small">Sourdough Base, Mozzorella cheese, Carmelised onions,
+                                        prosciutto
                                         ham, butternut squash, extra virgin olive Oil
                                         <i>G</i> <i>D</i>
                                     </p>
@@ -203,7 +177,8 @@
                                             <i class="ri-star-fill"></i>
                                         </span>
                                     </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">No Animals
+                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">No
+                                            Animals
                                             Here</a></h5>
                                     <p class="small">Sourdough Base, Tomato Sauce, Vegan Mozzorella, Carmelised
                                         Onion, Green Olives, Vegan Pesto & Fresh Rocket <i>G</i> <i>H</i></p>
@@ -229,7 +204,8 @@
                                     </div>
                                     <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Who's
                                             taking the Horse to France?</a></h5>
-                                    <p class="small">Sourdough Base with Garlic Butter, Mozzarella & Rosemary <i>G</i>
+                                    <p class="small">Sourdough Base with Garlic Butter, Mozzarella & Rosemary
+                                        <i>G</i>
                                         <i>D</i>
                                     </p>
                                 </div>
@@ -253,7 +229,8 @@
                                 <img id="aioli" class="img-fluid" src="/static/images/menu-images/Garlic-aioli-8.jpg"
                                     alt="image-of-garlic-aioli-dip">
                                 <div class="menu-item-content p-4">
-                                    <div></div> <!--empty div so jquery can catch it along with others with star div-->
+                                    <div></div>
+                                    <!--empty div so jquery can catch it along with others with star div-->
                                     <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Garlic
                                             Aioli</a></h5>
                                     <p class="small">Mayonaisse, garlic, lemon juice, black pepper, salt</p>
@@ -266,7 +243,8 @@
                                 <img id="chili-honey" class="img-fluid w-100"
                                     src="/static/images/menu-images/chili-honey-dip.jpg" alt="image-of-chili-dip">
                                 <div class="menu-item-content p-4">
-                                    <div></div> <!--empty div so jquery can catch it along with others with star div-->
+                                    <div></div>
+                                    <!--empty div so jquery can catch it along with others with star div-->
                                     <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Chili
                                             Honey Dip</a></h5>
                                     <p class="small">Chili flakes, chili powder, garlic & honey</p>
@@ -279,7 +257,8 @@
                                 <img class="img-fluid w-100" src="/static/images/menu-images/mayonaisse.jpg"
                                     alt="image-of-mayonaisse-dip">
                                 <div class="menu-item-content p-4">
-                                    <div></div> <!--empty div so jquery can catch it along with others with star div-->
+                                    <div></div>
+                                    <!--empty div so jquery can catch it along with others with star div-->
                                     <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black"
                                             href="#">Mayonaisse</a></h5>
                                     <p class="small">Eggs, mustard, sunflower oil, lemon juice</p>
@@ -292,7 +271,8 @@
                                 <img class="img-fluid w-100" src="/static/images/menu-images/ketchup.jpg"
                                     alt="image-of-ketchup-sauce">
                                 <div class="menu-item-content p-4">
-                                    <div></div> <!--empty div so jquery can catch it along with others with star div-->
+                                    <div></div>
+                                    <!--empty div so jquery can catch it along with others with star div-->
                                     <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black"
                                             href="#">Ketchup</a></h5>
                                     <p class="small">Tomato, vinegar, sugar, garlic, mustard</p>
