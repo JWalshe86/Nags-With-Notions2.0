@@ -58,6 +58,23 @@ can select their preferred dates. They then receive a confirmation email regardi
 
 [Full Site Flowchart Sprint1](/assets/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
+#### Sprints
+
+* Sprint 1
+[Sprint 1](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/19)
+
+Sprint 1 was overdue by one month as the django lms learning material took much longer than expected. The real project has started now and I expect to work through the issues at a quicker pace. Upon reflection, and advice from slack meeting 110124 I should implement story points to get a better grasp on what can be achieved between sprints and what to prioritise. I will also pivot towards putting crud functionality on bookings rather than comments
+
+* Sprint 2
+
+[Sprint 2](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/20)
+
+Sprint 2 saw the completion of 50% of it's tasks. Story points were introduced to get a better grasp on the workload, and this may allow one to gain a better understanding of what can be realistically achieved in Sprint 3. Considerable time was put into automatic testing, which is not a requirement for the pass criteria; so in sprint 3 effort will be directed into other areas. During Sprint 2 much of the functional objectives were achieved. In Sprint 3 I hope to divest more energy into testing. 46 open issues were passed forward from Sprint 2 to Sprint 3. 159 story points were completed in Sprint 2. 147 story points have been passed for to Sprint 3, which makes this workload realistically achievable by the end of Sprint 3.
+
+* Sprint 3 
+
+[Sprint 3](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/21)
+
 ### SURFACE/DESIGN<br>
 
 #### Wireframes
