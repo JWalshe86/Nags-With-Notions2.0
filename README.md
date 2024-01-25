@@ -78,7 +78,7 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 ## Technologies used 🧑‍💻
 
-- Snapedit to blur background 
+- Snapedit to blur background in hero image 
 ## Languages used
 
 - Python 🐍
