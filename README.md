@@ -32,7 +32,7 @@
 
 #### Goals 🥅<br> 
 
-[Customer Journey Map](/assets/pdfs/nags-with-notions-customer-jouryney-map.pdf)
+[Customer Journey Map](/static/pdfs/nags-with-notions-customer-jouryney-map.pdf)
 
 #### User Stories 📖<br>
 
@@ -44,7 +44,10 @@
 
 ### STRUCTURE☠<br> 
 
+#### Database diagrams
 
+* [Database diagram #1](/static/pdfs/drawSQL-version1.png)
+* [Database diagram #2](/static/pdfs/drawSQL-version2.png)
 
 
 ### FLOWCHARTS 📈<br>
@@ -56,7 +59,7 @@ menu is displayed. If the user wishes to book they are shown the available dates
 needs to login. If not already registered the user must sign up. Once the user is logged in they 
 can select their preferred dates. They then receive a confirmation email regarding their booking. The dates available, personal information and password data is then updated. 
 
-[Full Site Flowchart Sprint1](/assets/pdfs/nags-with-notions-flowchart-sprint1.pdf)
+[Full Site Flowchart Sprint1](/static/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
 #### Sprints
 
@@ -69,7 +72,7 @@ Sprint 1 was overdue by one month as the django lms learning material took much 
 
 [Sprint 2](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/20)
 
-Sprint 2 saw the completion of 50% of it's tasks. Story points were introduced to get a better grasp on the workload, and this may allow one to gain a better understanding of what can be realistically achieved in Sprint 3. Considerable time was put into automatic testing, which is not a requirement for the pass criteria; so in sprint 3 effort will be directed into other areas. During Sprint 2 much of the functional objectives were achieved. In Sprint 3 I hope to divest more energy into testing. 46 open issues were passed forward from Sprint 2 to Sprint 3. 159 story points were completed in Sprint 2. 147 story points have been passed for to Sprint 3, which makes this workload realistically achievable by the end of Sprint 3.
+Sprint 2 saw the completion of 50% of its tasks. Story points were introduced to get a better grasp on the workload, and this may allow one to gain a better understanding of what can be realistically achieved in Sprint 3. Considerable time was put into automatic testing, which is not a requirement for the pass criteria; so in sprint 3 effort will be directed into other areas. During Sprint 2 much of the functional objectives were achieved. In Sprint 3 I hope to divest more energy into testing. 46 open issues were passed forward from Sprint 2 to Sprint 3. 159 story points were completed in Sprint 2. 147 story points have been passed for to Sprint 3, which makes this workload realistically achievable by the end of Sprint 3.
 
 * Sprint 3 
 
@@ -96,6 +99,8 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 ## Technologies used 🧑‍💻
 
 - Snapedit to blur background in hero image 
+- drawSQL to create database diagrams
+
 ## Languages used
 
 - Python 🐍
