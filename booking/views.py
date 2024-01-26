@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .forms import BookingForm
 from .models import Booking
 
@@ -20,6 +21,8 @@ def booking(request):
         },
     )
     
+    
+@login_required(login_url='login')
 def createBooking(request):
     
     form = BookingForm()
