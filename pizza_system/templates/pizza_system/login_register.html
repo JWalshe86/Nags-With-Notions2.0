@@ -11,18 +11,18 @@
 <div class="content-section d-flex justify-content-center">
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
-        <fieldset class="form-group">
+        <fieldset class="form-group shadow-lg p-3 mb-5 mt-5 bg-white rounded">
             <legend class="border-bottom mb-4">Register Today</legend>
             {{ form|crispy}}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                </small>
+            </div>
         </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
-        </div>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
-            </small>
-        </div>
     </form>
 </div>
 

@@ -87,11 +87,11 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0 main-bg position-relative">
         {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user }}</p>
+        <p class="m-3 position-absolute end-0 text-white">You are logged in as {{ user }}</p>
         {% else %}
-        <p class="position-absolute end-0 text-white m-3">You are not logged in</p>
+        <p class="position-absolute text-white m-3">You are not logged in</p>
         {% endif %}
 
 
