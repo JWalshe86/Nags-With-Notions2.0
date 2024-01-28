@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from pizza_system import views as user_views
 
 urlpatterns = [
     path('', include('pizza_system.urls')),
@@ -26,4 +27,5 @@ urlpatterns = [
     path("events/", include("events.urls"), name="events-urls"),
     path('', include('booking.urls')),
     path('admin/', admin.site.urls),
+    path('register/', user_views.registerUser, name='register'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -6,10 +6,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 STATUS = (('draft', "Draft"), ('booked', "Booked"))
 
 class Booking(models.Model):
-    name = models.ForeignKey(
-        User, on_delete=models.CASCADE,
-    )
-    location = models.TextField()
+    name = models.CharField(
+max_length=150    )
+    location = models.CharField(max_length=150)
     phone = PhoneNumberField()
     booking_date = models.DateField()
     guest_number = models.IntegerField(default='')

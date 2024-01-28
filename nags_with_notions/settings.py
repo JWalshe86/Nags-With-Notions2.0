@@ -23,6 +23,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -58,6 +60,9 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_summernote',
     'events',
+    'widget_tweaks',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 SITE_ID = 1

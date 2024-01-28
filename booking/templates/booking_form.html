@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% load static %}
 {% block content %}
-<h1>Add Booking</h1>
-<div class="form-group">
+<div class="form-group d-flex justify-content-center">
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        <h1>Add Booking</h1>
+
+        {% render_field form.name placeholder='Name' class+="form-control w-auto" %}
+        {% render_field form.location placeholder='Location' class+="form-control w-auto" %}
+        {% render_field form.phone placeholder='phone' class+="form-control w-auto" %}
+        {% render_field form.booking_date class+="form-control w-auto" type='date' %}
+        {% render_field form.guest_number class+="form-control w-auto" %}
+        {% render_field form.message placeholder='Enter any additional information' class+="form-control w-auto"%}
+        {% render_field form.status class+="form-control w-auto" %}
 
         <input type="submit" name="submit">
     </form>
 </div>
-
-
 
 
 {% endblock %}

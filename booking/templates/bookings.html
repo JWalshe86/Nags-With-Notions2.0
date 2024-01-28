@@ -10,7 +10,6 @@
         <table>
             {% for booking in bookings_list %}
 
-            {% if user == booking.name %}
 
             <ul>
                 <li>{{booking.name}}</li>
@@ -27,7 +26,6 @@
         <a class="btn btn-sm btn-danger" href="{% url 'delete_booking' booking.id %}">Delete</a>
     </form>
     <br>
-    {% endif %}
 
     {% endfor %}
 
