@@ -100,6 +100,7 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 - Snapedit to blur background in hero image 
 - drawSQL to create database diagrams
+- tinypng.com to compress images
 
 ## Languages used
 
