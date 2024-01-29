@@ -63,12 +63,27 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat !important;
 }
 
+@media (max-width: 768px){
+    #hero{
+      height: 55vh !important;
+    }
+    .bg-cover{
+      background-position: 0% !important;
+    }
+}
+
 .hero-btn{
   color: white;
 }
 
 .hero-image{
   background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
+}
+
+#hero-text{
+  background-color:  #f4c2c34f;
+  border-radius: 5px;
+  padding-top: 5px;
 }
 
 
