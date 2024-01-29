@@ -18,11 +18,6 @@ def loginUser(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        
-        try:
-            user = User.objects.get(username=user)
-        except:
-            messages.error(request, 'Username does not exist')
             
         user = authenticate(request, username=username, password=password)
             

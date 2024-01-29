@@ -30,28 +30,31 @@
 
 {% else %}
 
-<h3>Account Login</h3>
-<p>Welcome Back!</p>
-
-<form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-
-    <div class="mb-3">
-        <input type="text" name="username" class="form-control w-auto" placeholder="Username">
-    </div>
-
-    <div class="mb-3">
-        <input type="password" name="password" class="form-control w-auto" placeholder="Password">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Login</button>
-    <br>
-
-    Not Registered? Sign up <a href="{% url 'register' %}">here...</a>
-
-
-</form>
+<div class="content-section d-flex justify-content-center">
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group shadow-lg p-3 mb-5 mt-5 bg-white rounded">
+            <h3>Account Login</h3>
+            <p>Welcome Back!</p>
+            <div class="mb-3">
+                <input type="text" name="username" class="form-control w-auto" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <input type="password" name="password" class="form-control w-auto" placeholder="Password">
+            </div>
+            {{ form|crispy}}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Don't Have An Account? <a class="ml-2" href="{% url 'register' %}">Register</a>
+                </small>
+            </div>
+        </fieldset>
+    </form>
 </div>
+
 
 
 {% endif %}
