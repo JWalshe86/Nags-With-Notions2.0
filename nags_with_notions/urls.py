@@ -28,4 +28,6 @@ urlpatterns = [
     path('', include('booking.urls')),
     path('admin/', admin.site.urls),
     path('register/', user_views.registerUser, name='register'),
+    path('login/', views.loginUser, name='login'),
+    path('logout/', views.logoutUser, name='logout'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
