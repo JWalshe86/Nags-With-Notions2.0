@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Spline Sans, sans-serif;
+  line-height: 1.7;
+  color: #777;
+  background-color: var(--bs-primary-bg-subtle) !important;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.navbar {
+  background-color: #f4c2c3;
+}
+.navbar__logo__img {
+  height: 5rem;
+  min-width: 100%;
+}
+.navbar .collapse__content {
+  text-decoration: none;
+  color: black !important;
+  transition: all 0.4s;
+  font-weight: 600;
+}
+.navbar .collapse__content:hover {
+  background-color: #B6E5D8;
+  border-radius: 23px;
+}
+.navbar .collapse__btn-primary {
+  background-color: #B6E5D8;
+  padding: 14px 38px;
+  font-weight: 500;
+  border-radius: 10px;
+  color: #222;
+  border-color: #8FDDE7;
+}
+.navbar .collapse__btn-primary:hover {
+  background-color: #FBE5C8;
+  color: #222;
+  border-color: #8FDDE7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #222;
+}
+
+.carousel-inner a.btn.carousel__btn-primary {
+  background-color: #B6E5D8;
+  padding: 14px 38px;
+  font-weight: 500;
+  border-radius: 10px;
+  color: #222;
+  border-color: #8FDDE7;
+}
+.carousel-inner a.btn.carousel__btn-primary:hover {
+  background-color: #FBE5C8;
+  color: #222;
+  border-color: #8FDDE7;
+}
+
+.bg-cover {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.slide-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/assets/images/horse-box.jpg);
+}
+
+.slide-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/assets/images/pizza.jpg);
+}
+
+#heroSlider h6::before {
+  content: " ";
+  width: 25px;
+  height: 4px;
+  background-color: #ffffff;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 10vw !important;
+  height: 70px;
+  margin: auto;
+}
+
+.intro-text {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text p {
+  max-width: 500px;
+  margin: 16px auto 0 auto;
+}
+
+#menu .nav-pills .nav-link {
+  background-color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #222;
+  border-radius: 100px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+  max-width: 100%;
+}
+
+#menu-item2 {
+  aspect-ratio: 1/1.33;
+  margin-bottom: 20px;
+}
+
+#pills-pizzas > div > div:nth-child(2) > div > p {
+  margin-top: -20px;
+}
+
+#pills-pizzas > div > div:nth-child(3) > div > p {
+  margin-top: -2px;
+}
+
+#pills-pizzas > div > div:nth-child(4) > div > p {
+  margin-top: -2px;
+}
+
+#pills-pizzas > div > div:nth-child(6) > div > p {
+  margin-top: 3px;
+}
+
+@media screen and (min-width: 500px) {
+  #menu-item3 {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1198px) {
+  #menu-item3 {
+    margin-bottom: 1px;
+  }
+}
+/* (mobile first) If screen size is more than 600px wide, set the margin-bottom of <div> to 30px */
+@media screen and (min-width: 500px) {
+  #menu-item4 {
+    aspect-ratio: 1/1.335;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #menu-item4 {
+    aspect-ratio: 1/1.3;
+    margin-bottom: 1px;
+  }
+}
+#menu-item5 {
+  aspect-ratio: 1/1.3;
+}
+
+#menu-item6 {
+  aspect-ratio: 1/1.3;
+  margin-bottom: -6px;
+}
+
+#chili-honey {
+  aspect-ratio: 1/1;
+}
+
+#aioli {
+  aspect-ratio: 1/1;
+}
+
+.menu-item .stars {
+  color: #f4c2c3;
+}
+
+#menu .nav-pills .nav-link.active {
+  background-color: #f4c2c3;
+  color: #ffffff;
+}
+
+.shadow-on-hover {
+  transition: all 0.3s;
+}
+
+.shadow-on-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background-color: #f4c2c3;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+footer .footer-bottom {
+  padding-top: 1vh;
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+}
+footer .footer-bottom a {
+  color: black;
+}
+footer .col-lg-4 {
+  max-width: none !important;
+  margin-left: -17px;
+}
+footer .col-lg-4__logo__img {
+  height: 5rem;
+}
+footer .col-lg-4__social-links, footer .col-lg-4 a {
+  color: black;
+  font-weight: normal;
+  font-size: 5vh;
+  margin-left: -10px;
+  margin-right: 2vw;
+  text-decoration: none !important;
+}
+footer .col-lg-4__social-links:hover, footer .col-lg-4 a:hover {
+  color: #FBE5C8;
+}/*# sourceMappingURL=custom.css.map */

@@ -6,7 +6,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 STATUS = (('draft', "Draft"), ('booked', "Booked"))
 
 class Booking(models.Model):
-    name = models.CharField(
+    username = models.CharField(
 max_length=150    )
     location = models.CharField(max_length=150)
     phone = PhoneNumberField()
@@ -17,4 +17,4 @@ max_length=150    )
     status = models.CharField(max_length=10, choices=STATUS, default="draft")
     
     def __str__(self):
-        return f"Booking request from {self.name}"
+        return f"Booking request from {self.username}"
