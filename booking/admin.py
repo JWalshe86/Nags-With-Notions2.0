@@ -6,7 +6,7 @@ from .models import Booking
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('username', 'status', 'created_on')
+    list_display = ['name']
     
 
 

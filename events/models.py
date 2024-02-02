@@ -1,9 +1,32 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+from django.db import models
+
 # Create your models here.
+
+class ToDoList(models.Model):
+    name = models.CharField(max_length=200, default='test')
+    
+    def __str__(self):
+        return self.name
+    
+class Item(models.Model):
+    
+    class Meta:
+        order_with_respect_to = 'todolist'
+    
+    
+    todolist = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
+    text = models.CharField(max_length=300)
+    complete = models.BooleanField()
+
+    def __str__(self):
+        return self.text
+
+
+
 class Event(models.Model):
     author =  models.CharField(max_length=200, unique=True)
     title = models.CharField(max_length=200, unique=True)
@@ -17,15 +40,6 @@ class Event(models.Model):
     def __str__(self):
         return f"{self.title}"
     
+
     
-class Comment(models.Model):
-    event = models.ForeignKey(
-        Event, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="commenter")
-    body = models.TextField()
-    approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-    class Meta:
-        ordering = ["created_on"]
     

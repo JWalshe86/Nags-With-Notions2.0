@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from .forms import BookingForm
 from .models import Booking
 
@@ -9,17 +10,12 @@ def booking(request):
     """
     Renders the booking page
     """
-    booking_form = BookingForm()
-    bookings_list = Booking.objects.all()
-
-    return render(
-        request,
-        "bookings.html",
-        {
-            "booking_form": booking_form,
-            "bookings_list": bookings_list,
-        },
-    )
+    ls = Booking.objects.all()
+    
+    return HttpResponse("<h1>%s</h1>" %(ls.item_set))
+    # booking_form = BookingForm()
+    # bookings_list = Booking.objects.all()
+    
     
     
 @login_required(login_url='login')
