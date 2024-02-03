@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
+/* Core Styles */
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
 html {
   font-size: 100%;
@@ -16,16 +16,18 @@ body {
   background-color: var(--bs-primary-bg-subtle) !important;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #222;
+}
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
+/* site header */
 .navbar {
   background-color: #f4c2c3;
-}
-.navbar__logo__img {
-  height: 5rem;
-  min-width: 100%;
 }
 .navbar .collapse__content {
   text-decoration: none;
@@ -51,41 +53,39 @@ body {
   border-color: #8FDDE7;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: #222;
+.navbar__logo__img {
+  height: 5rem;
+  min-width: 100%;
 }
 
-
+/* page header */
 .bg-cover {
-  background-position: center center!important;
+  background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
 
-@media (max-width: 768px){
-    #hero{
-      height: 55vh !important;
-    }
-    .bg-cover{
-      background-position: 0% !important;
-    }
+@media (max-width: 768px) {
+  #hero {
+    height: 55vh !important;
+  }
+  .bg-cover {
+    background-position: 0% !important;
+  }
 }
-
-.hero-btn{
+.hero-btn {
   color: white;
 }
 
-.hero-image{
+.hero-image {
   background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
 }
 
-#hero-text{
-  background-color:  #f4c2c34f;
+#hero-text {
+  background-color: rgba(244, 194, 195, 0.3098039216);
   border-radius: 5px;
   padding-top: 5px;
 }
-
 
 .intro-text {
   margin-bottom: 40px;
@@ -97,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 16px auto 0 auto;
 }
 
+/* menu style */
 #menu .nav-pills .nav-link {
   background-color: #fff;
   margin-left: 8px;
@@ -202,7 +203,7 @@ footer .footer-bottom {
   padding-top: 1vh;
   border-top: 2px solid rgba(255, 255, 255, 0.4);
 }
-footer .footer-bottom a {
+footer.a {
   color: black;
 }
 footer .col-lg-4 {
@@ -212,7 +213,7 @@ footer .col-lg-4 {
 footer .col-lg-4__logo__img {
   height: 5rem;
 }
-footer .col-lg-4__social-links, footer .col-lg-4 a {
+footer .col-lg-4__social-links, footer footer .col-lg-4 a {
   color: black;
   font-weight: normal;
   font-size: 5vh;
@@ -220,54 +221,51 @@ footer .col-lg-4__social-links, footer .col-lg-4 a {
   margin-right: 2vw;
   text-decoration: none !important;
 }
-footer .col-lg-4__social-links:hover, footer .col-lg-4 a:hover {
+footer .col-lg-4__social-links:hover, footer footer .col-lg-4 a:hover {
   color: #FBE5C8;
 }
 
-
 /* -------------password styling----------------- */
-
 .strength-meter {
-    height: 2rem;
-    width: 90%;
-    border: 3px solid;
-    border-radius: 1rem;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 15px;
+  height: 2rem;
+  width: 90%;
+  border: 3px solid;
+  border-radius: 1rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
-.strength-meter::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    height: 100%;
-    /* sets width variable so width can be edited in js */
-    width: calc(1% * var(--strength, 0));  
-    background-color: #777;
-    transition: width 200ms;
+.strength-meter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  /* sets width variable so width can be edited in js */
+  width: calc(1% * var(--strength, 0));
+  background-color: #777;
+  transition: width 200ms;
 }
 
 .password-input {
   width: 90%;
-  padding: .25rem .75rem;
+  padding: 0.25rem 0.75rem;
   background-color: #f4c2c3;
-  color: rgb(40, 37, 37%);
+  color: rgb(40, 37, 94);
   border: 1px solid hsl(262, 5%, 42%);
   outline: none;
   text-align: center;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
 
 .password-input:focus {
   border-color: hsl(261, 77%, 37%);
-  color: rgb(40, 37, 87%);
-
+  color: rgb(40, 37, 222);
 }
 
 .reasons > * {
-  margin-top: .5rem;
-
+  margin-top: 0.5rem;
 }
 
+/*# sourceMappingURL=style.css.map */
