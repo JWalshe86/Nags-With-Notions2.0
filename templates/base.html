@@ -2,7 +2,6 @@
 
 {% url 'home' as home_url %}
 {% url 'events' as events_url %}
-{% url 'bookings' as booking_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -56,7 +55,6 @@
                             href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="collapse__list__item">
-                        <a class="collapse__content nav-link" href="{% url 'bookings' %}">Bookings</a>
                     </li>
                     <li class="collapse__list__item">
                         <a class="collapse__content nav-link" href="{% url 'events' %}">Events</a>
@@ -106,7 +104,7 @@
             {% endblock content %}
         </div>
 
-
+        <p>{{name}}</p>
 
     </main>
 
@@ -115,6 +113,7 @@
     <!-- footer -->
 
     <footer>
+
         <div class="footer-top">
             <div class="container-fluid">
                 <div class="row no-gutter">

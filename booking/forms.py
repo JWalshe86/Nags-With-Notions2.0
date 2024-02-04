@@ -1,11 +1,9 @@
 from django import forms
-from .models import Booking
 
 
 # Create a booking form
-class BookingForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = ['name']
+class BookingForm(forms.Form):
+    name = forms.CharField(label="Name", max_length=200)
+    check = forms.BooleanField(required=False)
         
 

@@ -7,7 +7,7 @@ from .forms import CustomUserCreationForm
 # Create your views here.
 def myview(request):
     print('request:', request)
-    return render(request, "index.html")
+    return render(request, "index.html", {})
 
 def loginUser(request):
     page = 'login'

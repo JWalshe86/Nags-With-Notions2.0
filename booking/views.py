@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import BookingForm
-from .models import Booking, Item
+from .models import Booking
 
 # Create your views here.
 
@@ -10,9 +10,10 @@ def booking(request, id):
     """
     Renders the booking page
     """
-    ls = Booking.objects.get(id=id)
-    item = ls.item_set.get(id=1)
-    return HttpResponse("<h1>%s</h1><br></br><p>%s</p>" %(ls.name, str(item.location)))
+    booking = Booking.objects.get(id=id)
+    
+    
+    return render(request,"bookings.html", {'booking': booking})
     # booking_form = BookingForm()
     # bookings_list = Booking.objects.all()
     
@@ -20,14 +21,15 @@ def booking(request, id):
     
 @login_required(login_url='login')
 def createBooking(request):
-    
-    form = BookingForm()
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/')
-            
+            n = form.cleaned_data["name"]
+            t = Booking(name=n)
+            t.save()
+            return HttpResponseRedirect('bookings/%i' %t.id)
+    else:
+        form = BookingForm()
     
     context = {'form': form}
     return render(request, 'booking_form.html', context)
