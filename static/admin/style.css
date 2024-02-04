@@ -11,14 +11,21 @@ html {
 
 body {
   font-family: Spline Sans, sans-serif;
-  line-height: 1.7;
-  color: #777;
-  background-color: var(--bs-primary-bg-subtle) !important;
+  background-color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: #222;
+header {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
 }
 
 *, *::before, *::after {
@@ -30,17 +37,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f4c2c3;
 }
 .navbar .collapse__content {
-  text-decoration: none;
   color: black !important;
   transition: all 0.4s;
   font-weight: 600;
 }
 .navbar .collapse__content:hover {
-  background-color: #B6E5D8;
+  background-color: #8FDDE7;
   border-radius: 23px;
 }
 .navbar .collapse__btn-primary {
-  background-color: #B6E5D8;
+  background-color: #8FDDE7;
   padding: 14px 38px;
   font-weight: 500;
   border-radius: 10px;
@@ -48,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #8FDDE7;
 }
 .navbar .collapse__btn-primary:hover {
-  background-color: #FBE5C8;
+  background-color: #f4c2c3;
   color: #222;
   border-color: #8FDDE7;
 }
@@ -222,7 +228,7 @@ footer .col-lg-4__social-links, footer footer .col-lg-4 a {
   text-decoration: none !important;
 }
 footer .col-lg-4__social-links:hover, footer footer .col-lg-4 a:hover {
-  color: #FBE5C8;
+  color: #f4c2c3;
 }
 
 /* -------------password styling----------------- */

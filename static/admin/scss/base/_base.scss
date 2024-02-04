@@ -11,15 +11,21 @@ html {
 
 body {
   font-family: Spline Sans, sans-serif;
-  line-height: 1.7;
-  color: #777;
-  background-color: var(--bs-primary-bg-subtle) !important;
+  background-color: #fff;
 }
 
+header {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: #222;
+ul{
+  list-style-type: none;
+}
+
+img{
+  max-width: 100%;
 }
 
 

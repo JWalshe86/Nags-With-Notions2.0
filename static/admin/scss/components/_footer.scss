@@ -1,6 +1,6 @@
 
 footer {
-    background-color: #f4c2c3;
+    background-color: $pink;
     padding-top: 5vh;
     padding-bottom: 5vh;
 
@@ -28,7 +28,7 @@ footer {
         text-decoration: none !important;
       }
       .col-lg-4__social-links:hover, footer .col-lg-4 a:hover {
-        color: #FBE5C8;
+        color: $pink;
       }
   }
    

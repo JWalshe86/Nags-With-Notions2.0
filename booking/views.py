@@ -2,17 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import BookingForm
-from .models import Booking
+from .models import Booking, Item
 
 # Create your views here.
 
-def booking(request):
+def booking(request, id):
     """
     Renders the booking page
     """
-    ls = Booking.objects.all()
-    
-    return HttpResponse("<h1>%s</h1>" %(ls.item_set))
+    ls = Booking.objects.get(id=id)
+    item = ls.item_set.get(id=1)
+    return HttpResponse("<h1>%s</h1><br></br><p>%s</p>" %(ls.name, str(item.location)))
     # booking_form = BookingForm()
     # bookings_list = Booking.objects.all()
     

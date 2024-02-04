@@ -1,29 +1,28 @@
 /* site header */
 .navbar {
-    background-color: #f4c2c3;
+    background-color: $pink;
 
     .collapse__content {
-      text-decoration: none;
       color: black !important;
       transition: all 0.4s;
       font-weight: 600;
     }
     .collapse__content:hover {
-      background-color: #B6E5D8;
+      background-color: $light-blue;
       border-radius: 23px;
     }
     .collapse__btn-primary {
-      background-color: #B6E5D8;
+      background-color: $light-blue;
       padding: 14px 38px;
       font-weight: 500;
       border-radius: 10px;
       color: #222;
-      border-color: #8FDDE7;
+      border-color: $light-blue;
     }
     .collapse__btn-primary:hover {
-      background-color: #FBE5C8;
+      background-color: $pink;
       color: #222;
-      border-color: #8FDDE7;
+      border-color: $light-blue;
     }
 
   }
