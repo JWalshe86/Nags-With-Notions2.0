@@ -22,27 +22,22 @@ def booking(request):
 @login_required(login_url='login')
 def createBooking(request):
     if request.method == 'POST':
-        formset = BookingForm(request.POST)
+        form = BookingForm(request.POST)
         
-        if formset.is_valid():
-            print('in here', formset)
-            formset.save()
+        if form.is_valid():
+            form.save()
             
             return redirect('/view')
     else:
-        formset = BookingForm()
-        return render(request, 'booking_form.html', {'formset': formset})
+        form = BookingForm()
+        context = {'form': form}
+        return render(request, 'booking_form.html', context)
 
 def updateBooking(request, pk):
     
     booking = Booking.objects.get(id=pk)
-    form = BookingForm(instance=booking)
+    form = BookingForm(instance=booking)    
     
-    if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('/bookings/')
     
     context = {'form': form}
     return render(request, 'booking_form.html', context)

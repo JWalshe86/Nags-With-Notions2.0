@@ -2,13 +2,25 @@
 
 {% block content %}
 {{form}}
-user bookiong: {{user.booking.name}}
 {% for booking in user.booking.all %}
-{{booking.name}}
-<P>Location:{{booking.location}}</P>
-{{booking.booking_date}}
-{{booking.location}}
-{{booking.guest_number}}
-{{booking.message}}
+<form method="POST">
+    <div class="list-group container mt-5">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <ul>
+                    {{booking.user}}
+                    {{booking.name}}
+                    <li class="list-group-item">{{booking.booking_date}}</li>
+                    <li class="list-group-item">{{booking.location}}</li>
+                    <li class="list-group-item">{{booking.guest_number}}</li>
+                    <li class="list-group-item">{{booking.message}}</li>
+                    <a class=" col-1  btn-sm btn-info" href="{% url 'update_booking' booking.id %}">Update</a>
+                    <button class=" col-1 btn btn-sm btn-danger">Delete</button>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
 {% endfor %}
 {% endblock %}
