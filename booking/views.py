@@ -6,33 +6,32 @@ from .models import Booking
 
 # Create your views here.
 
-def booking(request, id):
+def booking(request):
     """
     Renders the booking page
     """
-    booking = Booking.objects.get(id=id)
+    booking = Booking.objects.all()
+            
+    # user specific bookings
+    if booking in request.user.booking.all():
+        return render(request,"view.html", {'booking': booking})
     
-    
-    return render(request,"bookings.html", {'booking': booking})
-    # booking_form = BookingForm()
-    # bookings_list = Booking.objects.all()
-    
+    return render(request,"view.html", {})
     
     
 @login_required(login_url='login')
 def createBooking(request):
     if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            n = form.cleaned_data["name"]
-            t = Booking(name=n)
-            t.save()
-            return HttpResponseRedirect('bookings/%i' %t.id)
+        formset = BookingForm(request.POST)
+        
+        if formset.is_valid():
+            print('in here', formset)
+            formset.save()
+            
+            return redirect('/view')
     else:
-        form = BookingForm()
-    
-    context = {'form': form}
-    return render(request, 'booking_form.html', context)
+        formset = BookingForm()
+        return render(request, 'booking_form.html', {'formset': formset})
 
 def updateBooking(request, pk):
     
@@ -60,6 +59,8 @@ def deleteBooking(request, pk):
     return render(request, 'delete.html', context)
     
     
+def view(request):
+    return render(request, "view.html", {} )
     
     
     

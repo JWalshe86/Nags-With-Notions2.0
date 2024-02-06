@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: Spline Sans, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
 }
 
@@ -37,6 +37,7 @@ img {
   background-color: #f4c2c3;
 }
 .navbar .collapse__content {
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   color: black !important;
   transition: all 0.4s;
   font-weight: 600;
@@ -88,6 +89,7 @@ img {
 }
 
 #hero-text {
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   background-color: rgba(244, 194, 195, 0.3098039216);
   border-radius: 5px;
   padding-top: 5px;
@@ -105,6 +107,7 @@ img {
 
 /* menu style */
 #menu .nav-pills .nav-link {
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   background-color: #fff;
   margin-left: 8px;
   margin-right: 8px;

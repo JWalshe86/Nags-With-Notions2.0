@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{form}}
+user bookiong: {{user.booking.name}}
+{% for booking in user.booking.all %}
+{{booking.name}}
+<P>Location:{{booking.location}}</P>
+{{booking.booking_date}}
+{{booking.location}}
+{{booking.guest_number}}
+{{booking.message}}
+{% endfor %}
+{% endblock %}
