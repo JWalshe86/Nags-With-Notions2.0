@@ -91,7 +91,10 @@ img {
 #hero-text {
   font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   background-color: rgba(244, 194, 195, 0.3098039216);
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
   padding-top: 5px;
 }
 
@@ -112,12 +115,19 @@ img {
   margin-left: 8px;
   margin-right: 8px;
   color: #222;
-  border-radius: 100px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item img {
   max-width: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
 }
 
 #menu-item2 {
@@ -265,6 +275,9 @@ footer .col-lg-4__social-links:hover, footer footer .col-lg-4 a:hover {
   border: 1px solid hsl(262, 5%, 42%);
   outline: none;
   text-align: center;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
   border-radius: 0.3rem;
 }
 

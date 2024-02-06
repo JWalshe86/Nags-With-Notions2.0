@@ -6,12 +6,13 @@
     margin-left: 8px;
     margin-right: 8px;
     color: #222;
-    border-radius: 100px;
+    @include border-radius(50px);
     box-shadow: 0 $m-space 40px rgba(0, 0, 0, 0.1);
   }
   
   .menu-item img {
     max-width: 100%;
+    @include border-radius(20px);
   }
   
   #menu-item2 {

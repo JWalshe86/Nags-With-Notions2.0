@@ -8,3 +8,11 @@ $m-space: 15px;
 // Fonts
 $Helvetica:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 $Rockwell:"Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+
+// Mixins
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
