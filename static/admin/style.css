@@ -78,7 +78,7 @@ img {
   font-weight: 600;
 }
 .navbar .collapse__content:hover {
-  background-color: #0860d4;
+  background-color: white;
   border-radius: 23px;
 }
 .navbar .collapse__btn-primary {
