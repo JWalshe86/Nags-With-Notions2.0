@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.contrib import messages
 from .forms import CustomUserCreationForm
 
 # Create your views here.
 def myview(request):
     print('request:', request)
-    return render(request, "index.html")
+    return render(request, "index.html", {})
 
 def loginUser(request):
     page = 'login'
@@ -60,3 +60,12 @@ def registerUser(request):
     
     context = {'page': page, 'form': form}
     return render(request, 'pizza_system/login_register.html', context)
+
+# todo list views
+
+def index(response):
+    return HttpResponse("<h1>tech with John</>")
+
+def v1(response):
+    return HttpResponse("<h1>view 1</h1>")
+

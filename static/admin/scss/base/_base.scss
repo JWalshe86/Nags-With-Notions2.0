@@ -1,0 +1,34 @@
+/* Core Styles */
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $Helvetica;
+  background-color: #fff;
+}
+
+header {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul{
+  list-style-type: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}

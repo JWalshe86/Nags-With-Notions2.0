@@ -1,0 +1,35 @@
+
+footer {
+    background-color: $pink;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+
+    .footer-bottom {
+        padding-top: 1vh;
+        border-top: 2px solid rgba(255, 255, 255, 0.4);
+      }
+      
+      &.a {
+        color: black;
+      }
+      .col-lg-4 {
+        max-width: none !important;
+        margin-left: -17px;
+      }
+      .col-lg-4__logo__img {
+        height: 5rem;
+      }
+      .col-lg-4__social-links, footer .col-lg-4 a {
+        color: black;
+        font-weight: normal;
+        font-size: 5vh;
+        margin-left: -$m-space;
+        margin-right: 2vw;
+        text-decoration: none !important;
+      }
+      .col-lg-4__social-links:hover, footer .col-lg-4 a:hover {
+        color: $pink;
+      }
+  }
+   
+  

@@ -1,0 +1,39 @@
+/* page header */
+
+.bg-cover {
+    background-position: center center!important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  @media (max-width: 768px){
+      #hero{
+        height: 55vh !important;
+      }
+      .bg-cover{
+        background-position: 0% !important;
+      }
+  }
+  
+  
+  .hero-image{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
+  }
+  
+  #hero-text{
+    font-family: $Rockwell;
+    background-color:  #f4c2c34f;
+    @include border-radius(10px);
+    padding-top: 5px;
+  }
+  
+  
+  .intro-text {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .intro-text p {
+    max-width: 500px;
+    margin: 16px auto 0 auto;
+  }

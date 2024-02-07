@@ -1,0 +1,99 @@
+/* menu style */
+
+#menu .nav-pills .nav-link {
+    font-family: $Rockwell;
+    background-color: #fff;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #222;
+    @include border-radius(50px);
+    box-shadow: 0 $m-space 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-item img {
+    max-width: 100%;
+    @include border-radius(20px);
+  }
+  
+  #menu-item2 {
+    aspect-ratio: 1/1.33;
+    margin-bottom: 20px;
+  }
+  
+  #priceTag {
+    background-color: pink;
+    padding: 5px;
+  }
+  
+  #pills-pizzas > div > div:nth-child(2) > div > p {
+    margin-top: -20px;
+  }
+  
+  #pills-pizzas > div > div:nth-child(3) > div > p {
+    margin-top: -2px;
+  }
+  
+  #pills-pizzas > div > div:nth-child(4) > div > p {
+    margin-top: -2px;
+  }
+  
+  #pills-pizzas > div > div:nth-child(6) > div > p {
+    margin-top: 3px;
+  }
+  
+  @media screen and (min-width: 500px) {
+    #menu-item3 {
+      margin-bottom: $m-space;
+    }
+  }
+  @media screen and (min-width: 1198px) {
+    #menu-item3 {
+      margin-bottom: 1px;
+    }
+  }
+  /* (mobile first) If screen size is more than 600px wide, set the margin-bottom of <div> to 30px */
+  @media screen and (min-width: 500px) {
+    #menu-item4 {
+      aspect-ratio: 1/1.335;
+      margin-bottom: $m-space;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    #menu-item4 {
+      aspect-ratio: 1/1.3;
+      margin-bottom: 1px;
+    }
+  }
+  #menu-item5 {
+    aspect-ratio: 1/1.3;
+  }
+  
+  #menu-item6 {
+    aspect-ratio: 1/1.3;
+    margin-bottom: -6px;
+  }
+  
+  #chili-honey {
+    aspect-ratio: 1/1;
+  }
+  
+  #aioli {
+    aspect-ratio: 1/1;
+  }
+  
+  .menu-item .stars {
+    color: $pink;
+  }
+  
+  #menu .nav-pills .nav-link.active {
+    background-color: $pink;
+    color: #ffffff;
+  }
+  
+  .shadow-on-hover {
+    transition: all 0.3s;
+  }
+  
+  .shadow-on-hover:hover {
+    box-shadow: 0 $m-space 40px rgba(0, 0, 0, 0.2);
+  }

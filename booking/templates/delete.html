@@ -2,14 +2,16 @@
 {% load static %}
 {% block content %}
 
-
-<p>Are you sure you want to delete booking ref #{{booking.id}}</p>
+<div class="container d-flex align-items-center flex-column">
+    <br>
+<p>Are you sure you want to delete booking ref #{{booking.id}} ?</p>
 
 <form action="{% url 'delete_booking' booking.id %}" method="POST">
     {% csrf_token %}
 
-    <a href="{% url 'bookings' %}">Cancel</a>
+    <a class="btn btn-warning" href="{% url 'view' %}">Cancel</a>
 
-    <input type="submit" name="confirm">
+    <input class="btn btn-primary" type="submit" name="confirm">
 </form>
+</div>
 {% endblock %}

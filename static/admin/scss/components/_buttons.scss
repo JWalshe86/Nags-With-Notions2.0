@@ -1,0 +1,41 @@
+
+.btn {
+    min-width: 100px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #333333;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    @include border-radius(5px);
+  }
+  .btn-warning {
+    @extend .btn;
+    border-color: $warning-red;
+    color: $warning-red;
+  
+    &:hover,
+    &:focus{
+      background-color: $warning-red;
+      color:#ffffff ;
+      border-color: white;
+    }
+  }
+
+  .btn-primary{
+    @extend .btn;
+    border-color: $light-blue;
+    color: $light-blue;
+  
+    &:hover,
+    &:focus{
+      background-color: $light-blue;
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+  
+  }
+
+  

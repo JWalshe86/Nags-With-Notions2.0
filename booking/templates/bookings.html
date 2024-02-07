@@ -3,35 +3,18 @@
 <body>
 
     {% block content %}
+    <h1>Booking Page</h1>
+    <h1>{{booking.name}}</h1>
 
-
-    <form method="post" action="{% url 'bookings' %}">
-        {% csrf_token %}
-
-        <table>
-            {% for booking in bookings_list %}
-            <div class="content-section d-flex justify-content-center">
-                <fieldset class="form-group shadow-lg p-3 col-md-6 mb-5 mt-5 bg-white rounded">
-                    <ul class="list-unstyled">
-                        <li>Booking ID: #{{booking.id}}</li>
-                        <li>Booking Date: {{booking.booking_date}}</li>
-                        <li>Address: {{booking.location}}</li>
-                        <li>Guest Numbers: {{booking.guest_number}}</li>
-                        <li>Message: {{booking.message}}</li>
-                        <li>Phone: {{booking.phone}}</li>
-                        <li>Status: {{booking.status}}</li>
-                    </ul>
-                    <a class="btn btn-sm btn-info" href="{% url 'update_booking' booking.id %}">Update</a>
-                    <a class="btn btn-sm btn-danger" href="{% url 'delete_booking' booking.id %}">Delete</a>
-        </table>
-        </fieldset>
-        </div>
-    </form>
-    <br>
-
-    {% endfor %}
-
-
+    <ul>
+        {% for item in booking.item_set.all %}
+        <li>{{item.location}}</li>
+        <li>{{item.phone}}</li>
+        <li>{{item.booking_date}}</li>
+        <li>{{item.guest_number}}</li>
+        <li>{{item.message}}</li>
+        {% endfor %}
+    </ul>
 
     {% endblock content %}
 </body>

@@ -1,0 +1,324 @@
+/* Core Styles */
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Nosifer&family=Roboto&family=Spline+Sans:wght@400;500;600;700&display=swap");
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+}
+
+header {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.btn, .btn-primary, .btn-warning {
+  min-width: 100px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #333333;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.btn-warning {
+  border-color: red;
+  color: red;
+}
+.btn-warning:hover, .btn-warning:focus {
+  background-color: red;
+  color: #ffffff;
+  border-color: white;
+}
+
+.btn-primary {
+  border-color: #0860d4;
+  color: #0860d4;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0860d4;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* site header */
+.navbar {
+  background-color: #f4c2c3;
+}
+.navbar .collapse__content {
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+  color: black !important;
+  transition: all 0.4s;
+  font-weight: 600;
+}
+.navbar .collapse__content:hover {
+  background-color: white;
+  border-radius: 23px;
+}
+.navbar .collapse__btn-primary {
+  background-color: #0860d4;
+  padding: 15px 38px;
+  font-weight: 500;
+  border-radius: 15px;
+  color: #222;
+  border-color: #0860d4;
+}
+.navbar .collapse__btn-primary:hover {
+  background-color: #f4c2c3;
+  color: #222;
+  border-color: #0860d4;
+}
+
+.navbar__logo__img {
+  height: 5rem;
+  min-width: 100%;
+}
+
+/* page header */
+.bg-cover {
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 55vh !important;
+  }
+  .bg-cover {
+    background-position: 0% !important;
+  }
+}
+.hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
+}
+
+#hero-text {
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+  background-color: rgba(244, 194, 195, 0.3098039216);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+
+.intro-text {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text p {
+  max-width: 500px;
+  margin: 16px auto 0 auto;
+}
+
+/* menu style */
+#menu .nav-pills .nav-link {
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+  background-color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #222;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+  max-width: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+
+#menu-item2 {
+  aspect-ratio: 1/1.33;
+  margin-bottom: 20px;
+}
+
+#priceTag {
+  background-color: pink;
+  padding: 5px;
+}
+
+#pills-pizzas > div > div:nth-child(2) > div > p {
+  margin-top: -20px;
+}
+
+#pills-pizzas > div > div:nth-child(3) > div > p {
+  margin-top: -2px;
+}
+
+#pills-pizzas > div > div:nth-child(4) > div > p {
+  margin-top: -2px;
+}
+
+#pills-pizzas > div > div:nth-child(6) > div > p {
+  margin-top: 3px;
+}
+
+@media screen and (min-width: 500px) {
+  #menu-item3 {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1198px) {
+  #menu-item3 {
+    margin-bottom: 1px;
+  }
+}
+/* (mobile first) If screen size is more than 600px wide, set the margin-bottom of <div> to 30px */
+@media screen and (min-width: 500px) {
+  #menu-item4 {
+    aspect-ratio: 1/1.335;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #menu-item4 {
+    aspect-ratio: 1/1.3;
+    margin-bottom: 1px;
+  }
+}
+#menu-item5 {
+  aspect-ratio: 1/1.3;
+}
+
+#menu-item6 {
+  aspect-ratio: 1/1.3;
+  margin-bottom: -6px;
+}
+
+#chili-honey {
+  aspect-ratio: 1/1;
+}
+
+#aioli {
+  aspect-ratio: 1/1;
+}
+
+.menu-item .stars {
+  color: #f4c2c3;
+}
+
+#menu .nav-pills .nav-link.active {
+  background-color: #f4c2c3;
+  color: #ffffff;
+}
+
+.shadow-on-hover {
+  transition: all 0.3s;
+}
+
+.shadow-on-hover:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background-color: #f4c2c3;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+footer .footer-bottom {
+  padding-top: 1vh;
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+}
+footer.a {
+  color: black;
+}
+footer .col-lg-4 {
+  max-width: none !important;
+  margin-left: -17px;
+}
+footer .col-lg-4__logo__img {
+  height: 5rem;
+}
+footer .col-lg-4__social-links, footer footer .col-lg-4 a {
+  color: black;
+  font-weight: normal;
+  font-size: 5vh;
+  margin-left: -15px;
+  margin-right: 2vw;
+  text-decoration: none !important;
+}
+footer .col-lg-4__social-links:hover, footer footer .col-lg-4 a:hover {
+  color: #f4c2c3;
+}
+
+/* -------------password styling----------------- */
+.strength-meter {
+  height: 2rem;
+  width: 90%;
+  border: 3px solid;
+  border-radius: 1rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.strength-meter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  /* sets width variable so width can be edited in js */
+  width: calc(1% * var(--strength, 0));
+  background-color: #777;
+  transition: width 200ms;
+}
+
+.password-input {
+  width: 90%;
+  padding: 0.25rem 0.75rem;
+  background-color: #f4c2c3;
+  color: rgb(40, 37, 94);
+  border: 1px solid hsl(262, 5%, 42%);
+  outline: none;
+  text-align: center;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+}
+
+.password-input:focus {
+  border-color: hsl(261, 77%, 37%);
+  color: rgb(40, 37, 222);
+}
+
+.reasons > * {
+  margin-top: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

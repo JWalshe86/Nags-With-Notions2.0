@@ -1,0 +1,19 @@
+// Colors
+$pink: #f4c2c3;
+$light-blue: #0860d4;
+$warning-red: red;
+
+// Spacing
+$m-space: 15px;
+
+// Fonts
+$Helvetica:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$Rockwell:"Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+
+// Mixins
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}

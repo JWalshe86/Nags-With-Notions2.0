@@ -1,0 +1,33 @@
+/* site header */
+.navbar {
+    background-color: $pink;
+
+    .collapse__content {
+      font-family: $Rockwell;
+      color: black !important;
+      transition: all 0.4s;
+      font-weight: 600;
+    }
+    .collapse__content:hover {
+      background-color: white;
+      border-radius: 23px;
+    }
+    .collapse__btn-primary {
+      background-color: $light-blue;
+      padding: $m-space 38px;
+      font-weight: 500;
+      border-radius: $m-space;
+      color: #222;
+      border-color: $light-blue;
+    }
+    .collapse__btn-primary:hover {
+      background-color: $pink;
+      color: #222;
+      border-color: $light-blue;
+    }
+
+  }
+  .navbar__logo__img {
+    height: 5rem;
+    min-width: 100%;
+  }
