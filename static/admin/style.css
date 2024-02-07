@@ -32,6 +32,41 @@ img {
   box-sizing: inherit;
 }
 
+.btn, .btn-primary, .btn-warning {
+  min-width: 100px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #333333;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.btn-warning {
+  border-color: red;
+  color: red;
+}
+.btn-warning:hover, .btn-warning:focus {
+  background-color: red;
+  color: #ffffff;
+  border-color: white;
+}
+
+.btn-primary {
+  border-color: #0860d4;
+  color: #0860d4;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0860d4;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 /* site header */
 .navbar {
   background-color: #f4c2c3;
@@ -43,21 +78,21 @@ img {
   font-weight: 600;
 }
 .navbar .collapse__content:hover {
-  background-color: #8FDDE7;
+  background-color: #0860d4;
   border-radius: 23px;
 }
 .navbar .collapse__btn-primary {
-  background-color: #8FDDE7;
+  background-color: #0860d4;
   padding: 15px 38px;
   font-weight: 500;
   border-radius: 15px;
   color: #222;
-  border-color: #8FDDE7;
+  border-color: #0860d4;
 }
 .navbar .collapse__btn-primary:hover {
   background-color: #f4c2c3;
   color: #222;
-  border-color: #8FDDE7;
+  border-color: #0860d4;
 }
 
 .navbar__logo__img {
@@ -80,10 +115,6 @@ img {
     background-position: 0% !important;
   }
 }
-.hero-btn {
-  color: white;
-}
-
 .hero-image {
   background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
 }

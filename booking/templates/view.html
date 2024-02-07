@@ -9,14 +9,12 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 <ul>
-                    {{booking.user}}
-                    {{booking.name}}
                     <li class="list-group-item">{{booking.booking_date}}</li>
                     <li class="list-group-item">{{booking.location}}</li>
                     <li class="list-group-item">{{booking.guest_number}}</li>
                     <li class="list-group-item">{{booking.message}}</li>
-                    <a class=" col-1  btn-sm btn-info" href="{% url 'update_booking' booking.id %}">Update</a>
-                    <button class=" col-1 btn btn-sm btn-danger">Delete</button>
+                    <a class="btn btn-primary" href="{% url 'update_booking' booking.id %}">Update</a>
+                    <a class="btn btn-warning">Delete</a>
                 </ul>
             </div>
         </div>
