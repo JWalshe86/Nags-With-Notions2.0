@@ -48,7 +48,7 @@ def deleteBooking(request, pk):
     if request.method == "POST":
         print('POSTED')
         booking.delete()
-        return redirect('/bookings/')
+        return redirect('/view/')
         
     context = {'booking': booking}
     return render(request, 'delete.html', context)

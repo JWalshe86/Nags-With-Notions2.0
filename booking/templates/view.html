@@ -14,7 +14,7 @@
                     <li class="list-group-item">{{booking.guest_number}}</li>
                     <li class="list-group-item">{{booking.message}}</li>
                     <a class="btn btn-primary" href="{% url 'update_booking' booking.id %}">Update</a>
-                    <a class="btn btn-warning">Delete</a>
+                    <a class="btn btn-warning"href="{% url 'delete_booking' booking.id %}">Delete</a>
                 </ul>
             </div>
         </div>
