@@ -38,15 +38,19 @@ def updateBooking(request, pk):
     booking = Booking.objects.get(id=pk)
     form = BookingForm(instance=booking)    
     
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('/view')
+        
     
     context = {'form': form}
     return render(request, 'booking_form.html', context)
 
 def deleteBooking(request, pk):
     booking = Booking.objects.get(id=pk)
-    print('in deletebooking', booking, request)
     if request.method == "POST":
-        print('POSTED')
         booking.delete()
         return redirect('/view/')
         
