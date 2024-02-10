@@ -1,62 +1,69 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect
+from django.forms import BaseModelForm
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+from django.contrib.auth.views import LoginView
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .forms import BookingForm
 from .models import Booking
 
-# Create your views here.
+class CustomLoginView(LoginView):
+    template_name = 'booking/login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True
+    
+    def get_success_url(self): 
+        return reverse_lazy('view')
 
-def booking(request):
+class BookingList(LoginRequiredMixin, ListView):
     """
     Renders the booking page
     """
-    booking = Booking.objects.all()
-            
-    # user specific bookings
-    if booking in request.user.booking.all():
-        return render(request,"view.html", {'booking': booking})
+    model = Booking
+    context_object_name = 'bookings'
+    template_name = 'booking/bookings.html'
     
-    return render(request,"view.html", {})
+    # users can only see own data
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['bookings'] = context['bookings'].filter(user=self.request.user)
+        return context
     
-    
-@login_required(login_url='login')
-def createBooking(request):
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        
-        if form.is_valid():
-            form.save()
-            
-            return redirect('/view')
-    else:
-        form = BookingForm()
-        context = {'form': form}
-        return render(request, 'booking_form.html', context)
+class BookingDetail(LoginRequiredMixin, DetailView):
 
-def updateBooking(request, pk):
+    model = Booking
+    context_object_name = 'booking'
+    template_name = 'booking/booking.html'   
     
-    booking = Booking.objects.get(id=pk)
-    form = BookingForm(instance=booking)    
+class BookingCreate(LoginRequiredMixin, CreateView):
     
-    if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('/view')
-        
+    model = Booking
+    fields = ['booking_date', 'location', 'guest_number', 'message']
+    success_url = reverse_lazy('view')
     
-    context = {'form': form}
-    return render(request, 'booking_form.html', context)
-
-def deleteBooking(request, pk):
-    booking = Booking.objects.get(id=pk)
-    if request.method == "POST":
-        booking.delete()
-        return redirect('/view/')
-        
-    context = {'booking': booking}
-    return render(request, 'delete.html', context)
+    # over-ride is valid method
+    def form_valid(self, form):
+        # user can't create bookings for other users
+        form.instance.user = self.request.user
+        return super(BookingCreate, self).form_valid(form)
     
+class BookingUpdate(LoginRequiredMixin, UpdateView):
+    
+    model = Booking
+    fields = ['booking_date', 'location', 'guest_number', 'message']
+    success_url = reverse_lazy('view')
+    
+class BookingDelete(LoginRequiredMixin, DeleteView):
+    
+    model = Booking
+    context_object_name = 'booking'
+    success_url = reverse_lazy('view') 
     
 def view(request):
     return render(request, "view.html", {} )

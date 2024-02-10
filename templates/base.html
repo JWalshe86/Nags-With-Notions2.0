@@ -4,7 +4,6 @@
 {% url 'events' as events_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -67,17 +66,7 @@
                         <a class="collapse__content nav-link" href="{% url 'create_event' %}">Create Event</a>
                     </li>
                     {% endif %}
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="text-secondary nav-link {% if request.path == logout_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'login' %}">Login/Register</a>
-                    </li>
-                    {% endif %}
+                    
 
                 </ul>
                 {% if user.is_authenticated %}

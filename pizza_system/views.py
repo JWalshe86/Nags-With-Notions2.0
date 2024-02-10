@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout
 from django.http import HttpResponse
 from django.contrib import messages
 from .forms import CustomUserCreationForm
@@ -29,10 +28,7 @@ def loginUser(request):
             
     return render(request, 'pizza_system/login_register.html' )
 
-def logoutUser(request):
-    logout(request)
-    messages.error(request, 'User was logged out!')
-    return redirect('login')
+
 
 def registerUser(request):
     page = 'register'

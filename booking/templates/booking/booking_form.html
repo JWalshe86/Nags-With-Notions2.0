@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<h3>Booking Form</h3>
+<a href="{% url 'view' %}">Go back</a>
 <form method="POST">
     {% csrf_token %}
 
@@ -9,7 +10,7 @@
             <h2 class="text-center">Create New Booking</h2>
             {{ form.as_p}}
 
-            <button type="submit" class="btn btn-primary mt-2">Create New</button>
+            <input value="submit" type="submit" class="btn btn-primary mt-2"></input>
         </fieldset>
     </div>
 </form>

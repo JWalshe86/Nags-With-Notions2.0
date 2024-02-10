@@ -2,16 +2,18 @@
 {% load static %}
 {% block content %}
 
+<a href="{% url 'view' %}">Go back</a>
 <div class="container d-flex align-items-center flex-column">
     <br>
-<p>Are you sure you want to delete booking ref #{{booking.id}} ?</p>
 
-<form action="{% url 'delete_booking' booking.id %}" method="POST">
+<form method="POST">
     {% csrf_token %}
+    <p>Are you sure you want to delete booking ref #{{booking}} ?</p>
+
 
     <a class="btn btn-warning" href="{% url 'view' %}">Cancel</a>
 
-    <input class="btn btn-primary" type="submit" name="confirm">
+    <input class="btn btn-primary" type="submit" value="Delete" name="confirm">
 </form>
 </div>
 {% endblock %}
