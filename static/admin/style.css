@@ -89,15 +89,26 @@ img {
   background-size: cover !important;
   background-repeat: no-repeat !important; }
 
+.hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover; }
+
 @media (max-width: 768px) {
   #hero {
     height: 55vh !important; }
 
   .bg-cover {
-    background-position: 0% !important; } }
-.hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png); }
+    background-position: 0% !important; }
 
+  .hero-image {
+    height: auto; }
+
+  #hero-text {
+    margin-top: 10vh; } }
 #hero-text {
   font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   background-color: #f4c2c34f;
