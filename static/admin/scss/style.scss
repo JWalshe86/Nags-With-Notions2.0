@@ -7,14 +7,5 @@
 @import './components/menu';
 @import './components/footer';
 @import './components/passwords';
+@import './components/lists-content'
 
-#id_message:hover, #id_guest_number:hover, #id_location:hover, #id_booking_date:hover{
-    background-color: darken(#ea65b7, 2%);
-}
-
-#bookings_header{
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-    background: linear-gradient(90deg, #90cfee 0%, #2a3789 43%, #35209d 100%);
-    color: white;
-}

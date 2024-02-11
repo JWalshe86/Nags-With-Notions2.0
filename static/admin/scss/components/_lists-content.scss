@@ -1,0 +1,14 @@
+#id_message:hover, #id_guest_number:hover, #id_location:hover, #id_booking_date:hover{
+    background-color: darken(#ea65b7, 2%);
+}
+
+#bookings_header{
+    padding: 10px;
+    @include border-radius(20px);
+    background: linear-gradient(90deg, #a732ad 0%, #5c65a1 43%, #847cab 100%);
+    color: white;
+}
+
+.container{
+    @include center-block();
+}

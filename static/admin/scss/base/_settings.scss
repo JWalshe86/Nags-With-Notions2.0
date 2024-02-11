@@ -17,3 +17,12 @@ $Rockwell:"Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
     -ms-border-radius: $radius;
     border-radius: $radius;
 }
+
+// Mixins
+
+@mixin center-block(){
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
