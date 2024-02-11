@@ -27,5 +27,4 @@ urlpatterns = [
     path("events/", include("events.urls"), name="events-urls"),
     path('', include('booking.urls')),
     path('admin/', admin.site.urls),
-    path('register/', user_views.registerUser, name='register'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

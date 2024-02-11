@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+
+<!-- render register or login form depending on page argument -->
+
+{% if page == 'register' %}
+
+<div class="content-section d-flex justify-content-center">
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group shadow-lg p-3 mb-5 mt-5 bg-white rounded">
+            <legend class="border-bottom mb-4">Register Today</legend>
+            {{ form|crispy}}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                </small>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+
+{% else %}
+
+<div class="content-section d-flex justify-content-center">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group shadow-lg p-3 mb-5 mt-5 bg-white rounded">
+            <h1>Register</h1>
+            {{ form|crispy}}
+            <div class="form-group">
+                <input class="btn btn-outline-info" value="register" type="submit"></input>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Have An Account? <a class="ml-2" href="{% url 'login' %}">Login</a>
+                </small>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+
+{% endif %}
+
+{% endblock content %}

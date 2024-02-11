@@ -261,4 +261,7 @@ footer {
 .reasons > * {
   margin-top: .5rem; }
 
+#id_message:hover, #id_guest_number:hover, #id_location:hover, #id_booking_date:hover {
+  background-color: #e95cb3; }
+
 /*# sourceMappingURL=style.css.map */

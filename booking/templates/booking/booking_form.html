@@ -5,10 +5,12 @@
 <form method="POST">
     {% csrf_token %}
 
-    <div class="content-section d-flex justify-content-center">
-        <fieldset class=" shadow-lg p-3 col-md-6 mb-5 mt-5 bg-white rounded">
+    <div  class="content-section d-flex justify-content-center">
+        <fieldset  class=" shadow-lg p-3 col-md-6 mb-5 mt-5 bg-white rounded">
             <h2 class="text-center">Create New Booking</h2>
+           <div id='bookingform'>
             {{ form.as_p}}
+           </div> 
 
             <input value="submit" type="submit" class="btn btn-primary mt-2"></input>
         </fieldset>

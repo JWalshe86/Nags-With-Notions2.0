@@ -6,4 +6,8 @@
 @import './components/page-header';
 @import './components/menu';
 @import './components/footer';
-@import './components/passwords'
+@import './components/passwords';
+
+#id_message:hover, #id_guest_number:hover, #id_location:hover, #id_booking_date:hover{
+    background-color: darken(#ea65b7, 2%);
+}
