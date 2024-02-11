@@ -1,35 +1,25 @@
+{% extends 'base.html' %}
 
-{% if request.user.is_authenticated %}
-<p>{{request.user}}</p>
+{% block content %}
+<a class="btn btn-primary" href="{% url 'create_booking' %}">Create booking</a>
 
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">logout</button>
-</form>
+<div class="container d-flex flex-column align-items-center align-content-center">
+    <hr>
+<h1 id="bookings_header" class="">{{request.user}}'s Bookings</h1>
 
-{% else %}
-<a href="{% url 'login' %}">Login</a>
-{% endif %}
-
-<hr>
-<h1>My booking list</h1>
-<a href="{% url 'create_booking' %}">Create booking</a>
-
-<table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-        <th></th>
-    </tr>
     {% for booking in bookings %}
-    <tr>
-        <td>{{booking.message}}</td>
-        <td><a href="{% url 'booking_detail' booking.id %}">View</a></td>
-        <td><a href="{% url 'update_booking' booking.id %}">Edit</a></td>
-        <td><a href="{% url 'delete_booking' booking.id %}">Delete</a></td>
-        {{booking.id}}
-    </tr>
+    <ul class="border border-secondary rounded p-5">
+        <li>Date: {{booking.booking_date}}</li>
+        <li>Address: {{booking.location}}</li>
+        <li>Guest Numbers: {{booking.guest_number}}</li>
+        <li class="mb-5">Message: {{booking.message}}</li>
+        <a class="btn-primary text-decoration-none"  href="{% url 'update_booking' booking.id %}">Edit</a>
+        <a class="btn-warning text-decoration-none" href="{% url 'delete_booking' booking.id %}">Delete</a>
+    </ul>
     {% empty %}
     <h3>No items in list</h3>
     {% endfor %}
-</table>
+</div>
+
+
+{% endblock %}

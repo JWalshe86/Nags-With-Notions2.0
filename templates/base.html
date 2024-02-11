@@ -66,6 +66,15 @@
                         <a class="collapse__content nav-link" href="{% url 'create_event' %}">Create Event</a>
                     </li>
                     {% endif %}
+                    {% if request.user.is_authenticated %}
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="submit">logout</button>
+                    </form>
+
+                    {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    {% endif %}
                     
 
                 </ul>

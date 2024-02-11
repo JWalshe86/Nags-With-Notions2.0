@@ -264,4 +264,10 @@ footer {
 #id_message:hover, #id_guest_number:hover, #id_location:hover, #id_booking_date:hover {
   background-color: #e95cb3; }
 
+#bookings_header {
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(90deg, #90cfee 0%, #2a3789 43%, #35209d 100%);
+  color: white; }
+
 /*# sourceMappingURL=style.css.map */

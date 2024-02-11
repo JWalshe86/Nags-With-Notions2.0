@@ -37,8 +37,6 @@ class RegisterPage(FormView):
             return redirect('view')
         return super(RegisterPage, self).get(*args, **kwargs)
     
-    
-
 
 class BookingList(LoginRequiredMixin, ListView):
     """
