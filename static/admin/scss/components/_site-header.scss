@@ -2,6 +2,10 @@
 .navbar {
     background-color: $pink;
 
+    .container{
+      padding-bottom: 30px;
+    }
+
     .collapse__content {
       font-family: $Rockwell;
       color: black !important;
@@ -31,3 +35,4 @@
     height: 5rem;
     min-width: 100%;
   }
+

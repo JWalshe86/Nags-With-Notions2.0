@@ -3,10 +3,13 @@
 }
 
 #bookings_header{
+    
     padding: 10px;
     @include border-radius(20px);
-    background: linear-gradient(90deg, #a732ad 0%, #5c65a1 43%, #847cab 100%);
+    background: linear-gradient(90deg, $pink 100%, white 43%, white 0%);
     color: white;
+
+    
 }
 
 .container{

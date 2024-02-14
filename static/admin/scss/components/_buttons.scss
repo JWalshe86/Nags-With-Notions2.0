@@ -14,29 +14,31 @@
     @include border-radius(5px);
   }
   .btn-warning {
-    @extend .btn;
-    border-color: $warning-red;
-    color: $warning-red;
-  
+    // pseudo selectors
     &:hover,
     &:focus{
       background-color: $warning-red;
       color:#ffffff ;
       border-color: white;
     }
+    //selector styles
+    @extend .btn;
+    border-color: $warning-red;
+    color: $warning-red;
   }
 
   .btn-primary{
-    @extend .btn;
-    border-color: $light-blue;
-    color: $light-blue;
-  
+    // pseudo selectors
     &:hover,
     &:focus{
       background-color: $light-blue;
       border-color: #ffffff;
       color: #ffffff;
     }
+    //selector styles
+    @extend .btn;
+    border-color: $light-blue;
+    color: $light-blue;
   
   }
 

@@ -59,6 +59,8 @@ img {
 /* site header */
 .navbar {
   background-color: #f4c2c3; }
+  .navbar .container {
+    padding-bottom: 30px; }
   .navbar .collapse__content {
     font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
     color: black !important;
@@ -95,7 +97,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-size: cover; }
+  background-size: cover;
+  margin-top: -2%; }
 
 @media (max-width: 768px) {
   #hero {
@@ -214,8 +217,8 @@ footer {
   footer .footer-bottom {
     padding-top: 1vh;
     border-top: 2px solid rgba(255, 255, 255, 0.4); }
-  footer.a {
-    color: black; }
+    footer .footer-bottom.a {
+      color: black; }
   footer .col-lg-4 {
     max-width: none !important;
     margin-left: -17px; }
@@ -281,7 +284,7 @@ footer {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   border-radius: 20px;
-  background: linear-gradient(90deg, #a732ad 0%, #5c65a1 43%, #847cab 100%);
+  background: linear-gradient(90deg, #f4c2c3 100%, white 43%, white 0%);
   color: white; }
 
 .container {

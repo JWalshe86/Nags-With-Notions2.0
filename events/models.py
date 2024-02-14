@@ -6,27 +6,6 @@ from django.db import models
 
 # Create your models here.
 
-class ToDoList(models.Model):
-    name = models.CharField(max_length=200, default='test')
-    
-    def __str__(self):
-        return self.name
-    
-class Item(models.Model):
-    
-    class Meta:
-        order_with_respect_to = 'todolist'
-    
-    
-    todolist = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
-    text = models.CharField(max_length=300)
-    complete = models.BooleanField()
-
-    def __str__(self):
-        return self.text
-
-
-
 class Event(models.Model):
     author =  models.CharField(max_length=200, unique=True)
     title = models.CharField(max_length=200, unique=True)

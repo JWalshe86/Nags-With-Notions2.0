@@ -192,7 +192,8 @@ for the confirmation email, logging in to book a table and showing available dat
 * [Style login page bootstrap - Codemy](https://youtu.be/0Z_3APyKwQ4?si=HcRplqpnrJF9BBps)
 * [User Login, Logout and Flash Messages](https://youtu.be/naIgdcxUT_w?si=7doNH4wgCOqfm42N)
 * [Writing your first Django test using pytest-django Pybites](https://youtu.be/L5jWFU2sVXQ?si=7jORatCMS2P8wz1o)
-*[Make your Django Project Live on internet Fix Error While Deploying to Heroku Servers](https://youtu.be/lKijcNqLL7A?si=ezxh8rGUcP3PQ9pB)
+* [Make your Django Project Live on internet Fix Error While Deploying to Heroku Servers](https://youtu.be/lKijcNqLL7A?si=ezxh8rGUcP3PQ9pB)
+* [Bootstrap alert](https://youtu.be/UTZjhCH80Zg?si=w3inHIFfo3BFuTs5)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/

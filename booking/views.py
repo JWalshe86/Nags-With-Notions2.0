@@ -8,6 +8,8 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Booking
 
@@ -19,11 +21,12 @@ class CustomLoginView(LoginView):
     def get_success_url(self): 
         return reverse_lazy('view')
     
-class RegisterPage(FormView):
+class RegisterPage(SuccessMessageMixin, FormView):
     template_name = 'booking/register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy('view')
+    success_message = 'New Account Created'
+    success_url = reverse_lazy('home')
     
     # automatically login user
     def form_valid(self, form):
@@ -52,16 +55,11 @@ class BookingList(LoginRequiredMixin, ListView):
         context['bookings'] = context['bookings'].filter(user=self.request.user)
         return context
     
-class BookingDetail(LoginRequiredMixin, DetailView):
-
-    model = Booking
-    context_object_name = 'booking'
-    template_name = 'booking/booking.html'   
-    
-class BookingCreate(LoginRequiredMixin, CreateView):
+class BookingCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     
     model = Booking
     fields = ['booking_date', 'location', 'guest_number', 'message']
+    success_message = 'New booking created'
     success_url = reverse_lazy('view')
     
     # over-ride is valid method
@@ -70,16 +68,18 @@ class BookingCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super(BookingCreate, self).form_valid(form)
     
-class BookingUpdate(LoginRequiredMixin, UpdateView):
+class BookingUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     
     model = Booking
     fields = ['booking_date', 'location', 'guest_number', 'message']
+    success_message = 'Booking updated'
     success_url = reverse_lazy('view')
     
-class BookingDelete(LoginRequiredMixin, DeleteView):
+class BookingDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     
     model = Booking
     context_object_name = 'booking'
+    success_message = 'Booking deleted'
     success_url = reverse_lazy('view') 
     
 def view(request):

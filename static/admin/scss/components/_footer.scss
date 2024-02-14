@@ -6,13 +6,15 @@ footer {
 
   
     .footer-bottom {
-        padding-top: 1vh;
-        border-top: 2px solid rgba(255, 255, 255, 0.4);
-      }
-      
+      // pseudo selectors
       &.a {
         color: black;
       }
+
+        padding-top: 1vh;
+        border-top: 2px solid rgba(255, 255, 255, 0.4);
+      }
+      // style selectors
       .col-lg-4 {
         max-width: none !important;
         margin-left: -17px;
