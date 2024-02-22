@@ -12,14 +12,13 @@ class EventList(generic.ListView):
 
 @permission_required("events.view_event")
 def createEvent(request):
-    
     form = EventForm()
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/events')
-            
+            return redirect('/events')  
+        
     context={'form': form}
     return render(request, 'events/event_form.html', context)
 

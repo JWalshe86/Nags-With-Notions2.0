@@ -18,12 +18,14 @@
                                 </div>
                             </div>
                             <h2 class="card-title text-center">{{ event.title }}</h2>
-                            <a href="#" class="event-link">
                                 {% if event.event_image %}
-                                <h2 class="card-title"><img src="{{ event.event_image.url }}" width="100%">
-                                </h2>
+                                <h2 class="card-title"></h2>
+                                <div class="eventImage col-8 offset-2">
+                                    
+                                        <img src="{{ event.event_image.url }}">
+                                    
+                                </div>
                                 {% endif %}
-                            </a>
                             <hr />
                             <div class="event-content text-center">
                                 {{ event.content}}

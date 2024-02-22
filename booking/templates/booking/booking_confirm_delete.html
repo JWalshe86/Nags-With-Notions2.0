@@ -8,7 +8,7 @@
 
 <form method="POST">
     {% csrf_token %}
-    <p>Are you sure you want to delete booking ref #{{booking}} ?</p>
+    <p>Are you sure you want to delete booking for the {{booking.booking_date}} ?</p>
 
 
     <a class="btn btn-warning" href="{% url 'view' %}">Cancel</a>

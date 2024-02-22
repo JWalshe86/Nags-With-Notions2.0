@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 <h3>Booking Form</h3>
 <a href="{% url 'view' %}">Go back</a>
@@ -6,11 +8,11 @@
     {% csrf_token %}
 
     <div  class="content-section d-flex justify-content-center">
-        <fieldset  class=" shadow-lg p-3 col-md-6 mb-5 mt-5 bg-white rounded">
+        <fieldset  class="shadow-lg p-3 col-md-6 mb-5 mt-5 bg-white rounded">
             <h2 class="text-center">Create New Booking</h2>
-           <div id='bookingform'>
-            {{ form.as_p}}
-           </div> 
+            <div id='bookingform'>
+            {{ form| crispy}}
+            </div> 
 
             <input value="submit" type="submit" class="btn btn-primary mt-2"></input>
         </fieldset>

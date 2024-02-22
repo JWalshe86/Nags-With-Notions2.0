@@ -19,7 +19,7 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
     
     def get_success_url(self): 
-        return reverse_lazy('view')
+        return reverse_lazy('home')
     
 class RegisterPage(SuccessMessageMixin, FormView):
     template_name = 'booking/register.html'
