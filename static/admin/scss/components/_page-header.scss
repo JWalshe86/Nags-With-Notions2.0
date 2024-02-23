@@ -8,7 +8,7 @@
   
   
   .hero-image{
-    background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-800.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/snapedit_1706121419741.png);
     height: 1000px; 
     display: flex; 
     flex-direction: column; 
@@ -16,11 +16,7 @@
     background-size: cover;
     margin-top: -2%;
   }
-  @media (max-width: 400px){
-    .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image300px.png);
-    }
-  }
+
 
   @media (max-width: 768px){
     #hero{
