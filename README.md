@@ -99,6 +99,7 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 ## Technologies used 🧑‍💻
 
 - Snapedit to blur background in hero image 
+- Imagor to give pink hue & size images https://github.com/cshum/imagor
 - drawSQL to create database diagrams
 - tinypng.com to compress images
 
@@ -219,6 +220,7 @@ https://wesbos.com/
 
 * Icons from [remixicon.com](https://remixicon.com/)
 * [Figma](www.figma.com) was used to create the wireframes & user story map
+*[tinypng](tinypng.com) was used to compress images
 
 
 ## ACKNOWLEDGEMENTS 👏
