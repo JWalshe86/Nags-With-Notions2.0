@@ -11,3 +11,15 @@ $(document).ready(function(){
     })
 
 })
+
+$(document).ready(function(){
+    $('.btn.btn-primary').click(function(){
+        $('#myAlert2').show('fade');
+    })
+
+    $('#linkClose2').click(function(){
+        $('#myAlert2').hide('fade');
+
+    })
+
+})

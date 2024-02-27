@@ -7,7 +7,7 @@
         <div class="d-flex flex-row  w-100 d-flex justify-content-between navbar__contain-logo-toggle">
             <a class="navbar__logo" href="{% url 'home' %}">
                 <img class="navbar__logo__img" src="{% static '/admin/img/nags-with-notions-logo.webp' %}"
-                srcset="/static/admin/img/nags-with-notions-logo100x95px.webp 200w"
+                srcset="/static/admin/img/nags-with-notions-logo100x95px.webp 200w sizes=(max-width: 200px) 200px 100vw"
                     alt="nags with notions logo">
             </a>
             <button class="navbar__toggler toggler Btn navbar-toggler align-self-center ml-auto" title="button"
@@ -37,18 +37,20 @@
                     <a class="collapse__content nav-link" href="{% url 'create_event' %}">Create Event</a>
                 </li>
                 {% endif %}
-            </ul>
+            
             {% if not request.user.is_authenticated %}
-            <a href="{% url 'view' %}" role="presentation" type="button" aria-label="brings user to boooking page" class="btn btn-primary">Book Now!</a>
+            <a href="{% url 'view' %}" role="presentation" aria-label="brings user to boooking page" >Book Now!</a>
             <div id="myAlert" class="alert alert-warning collapse">
                 <strong>You must login to book!</strong>
                 <a id="linkClose" href="#" class="close" >&times;</a>
             </div>
             {% endif %}
+            
             {% if user.is_authenticated %}
-            <a href="{% url 'create_booking' %}" type="button" role="navigation" class="btn btn-primary">Book Now!</a>
+            <a target="{% url 'create_booking' %}" role="navigation">Book Now!</a>
             {% endif %}
             
+
             <li class="p-1 m-3 list-unstyled">
                 {% if request.user.is_authenticated %}
             <div class="collapse__list__item nav-link text-dark">
@@ -65,6 +67,7 @@
                 <a class="text-dark btn btn-primary" href="{% url 'login' %}">Login</a>
                 {% endif %}
             </li>
+           </ul>
         </div>
     </div>
 </nav>

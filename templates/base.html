@@ -5,12 +5,11 @@
 {% url 'account_signup' as signup_url %}
 {% load static %}
 
-<!DOCTYPE html>
-<html class="h-100" lang="en">
+<!DOCTYPE html class="h-100" lang="en">
 
 <head>
     <title>Nags With Notions</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A site to book a pizza horsebox for events">
 
     <!-- Google Fonts CSS -->
@@ -26,9 +25,9 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="/static/admin/css/custom.css"> -->
     <link rel="stylesheet" href="/static/admin/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" 
+    integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" >
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
@@ -68,7 +67,7 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="col-lg-4">
                             <img class="col-lg-4__logo__img mb-3" src="/static/admin/img/nags-with-notions-logo.webp"
-                            srcset="/static/admin/img/nags-with-notions-logo100x95px.webp 200w"
+                            srcset="/static/admin/img/nags-with-notions-logo100x95px.webp 200w sizes=(max-width: 220px) 220px 100vw' "
                                 alt="pink horse with Nags logo">
                             <p><i>Sourdough Pizzas from Meaths finest food producers</i></p>
                         </div>
@@ -122,7 +121,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{% static '/js/script.js'%}"></script>
+    <script src="{% static '/js/script.js'%}"></script>
 </body>
 
 </html>
