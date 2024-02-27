@@ -39,7 +39,7 @@
                 {% endif %}
             </ul>
             {% if not request.user.is_authenticated %}
-            <a href="{% url 'view' %}" aria-label="brings user to booking page" >Book Now!</aria-label=></a>
+            <a href="{% url 'view' %}" aria-label="brings user to booking page" >Book Now!</a>
             <div id="myAlert" class="alert alert-warning collapse">
                 <strong>You must login to book!</strong>
                 <a id="linkClose" href="#" class="close" >&times;</a>
