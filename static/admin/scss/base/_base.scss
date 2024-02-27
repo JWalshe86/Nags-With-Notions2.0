@@ -8,6 +8,12 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+//to preload images - https://stackoverflow.com/questions/1373142/preloading-css-images
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+  content:url(/static/images/hero-image-1600X1200.png) url(/static/images/hero-image-1200X900.png)
+   url(/static/images/hero-image-800px.png) url(/static/images/hero-image300px.png);   // load images
+}
 
 body {
   font-family: $Helvetica;

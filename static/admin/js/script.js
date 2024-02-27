@@ -3,7 +3,7 @@
  */
 
 let menu = {
-    pizzas: $('#pills-pizzas .menu-item img'),
+    pizzas: $('.tab-pane.fade.show .menu-item img'),
     dips: $('#pills-dips .menu-item img'),
     drinks: $('#pills-drinks .menu-item img'),
 };

@@ -4,11 +4,24 @@ footer {
     padding-top: 5vh;
     padding-bottom: 5vh;
 
-  
+    .footer-top div > div > div:nth-child(2) > h6{
+      padding-left: 3rem;
+
+    }
+    .col-lg-2.mx-auto{
+      padding-left: 3rem;
+    }
+
     .footer-bottom {
       // pseudo selectors
       &.a {
         color: black;
+      }
+
+      .mb-0 a{
+        color: black;
+        font-size: larger;
+        text-decoration-line:underline ;
       }
 
         padding-top: 1vh;
@@ -18,11 +31,18 @@ footer {
       .col-lg-4 {
         max-width: none !important;
         margin-left: -17px;
+
+        p {
+          padding-left: 3rem;
+        }
+
       }
       .col-lg-4__logo__img {
+        padding-left: 6rem;
         height: 5rem;
       }
-      .col-lg-4__social-links, footer .col-lg-4 a {
+
+      .col-lg-4__social-links.mx-auto a{
         color: black;
         font-weight: normal;
         font-size: 5vh;
@@ -30,6 +50,7 @@ footer {
         margin-right: 2vw;
         text-decoration: none !important;
       }
+
       .col-lg-4__social-links:hover, footer .col-lg-4 a:hover {
         color: $pink;
       }

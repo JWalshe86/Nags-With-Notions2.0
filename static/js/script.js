@@ -1,7 +1,7 @@
 // code adapted from kudvenkat
 //alert to login if trying to book
 $(document).ready(function(){
-    $('#btnSubmit').click(function(){
+    $('.btn.btn-primary').click(function(){
         $('#myAlert').show('fade');
     })
 

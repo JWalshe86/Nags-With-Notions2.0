@@ -10,6 +10,10 @@
     box-shadow: 0 $m-space 40px rgba(0, 0, 0, 0.1);
   }
   
+  #menu .nav-pills .nav-link.active {
+    background-color: $pink;
+  }
+
   .menu-item img {
     max-width: 100%;
     @include border-radius(20px);
@@ -26,20 +30,24 @@
     padding: 5px;
   }
   
-  #pills-pizzas > div > div:nth-child(2) > div > p {
+  .tab-pane.fade.show > div > div:nth-child(2) > div > p {
     margin-top: -20px;
   }
   
-  #pills-pizzas > div > div:nth-child(3) > div > p {
+  .tab-pane.fade.show > div > div:nth-child(3) > div > p {
     margin-top: -2px;
   }
   
-  #pills-pizzas > div > div:nth-child(4) > div > p {
+  .tab-pane.fade.show > div > div:nth-child(4) > div > p {
     margin-top: -2px;
   }
   
-  #pills-pizzas > div > div:nth-child(6) > div > p {
+  .tab-pane.fade.show > div > div:nth-child(6) > div > p {
     margin-top: 3px;
+  }
+
+  .tab-pane.fade.show .text-decoration-none {
+    color: black;
   }
   
   @media screen and (min-width: 500px) {
@@ -52,6 +60,8 @@
       margin-bottom: 1px;
     }
   }
+
+
   /* (mobile first) If screen size is more than 600px wide, set the margin-bottom of <div> to 30px */
   @media screen and (min-width: 500px) {
     #menu-item4 {
@@ -84,11 +94,6 @@
   
   .menu-item .stars {
     color: $pink;
-  }
-  
-  #menu .nav-pills .nav-link.active {
-    background-color: $pink;
-    color: #ffffff;
   }
   
   .shadow-on-hover {

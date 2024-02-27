@@ -91,22 +91,6 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 20px;
 }
 
-#pills-pizzas > div > div:nth-child(2) > div > p{
-    margin-top: -20px;
-    background-color: pink;
-}
-
-#pills-pizzas > div > div:nth-child(3) > div > p {
-    margin-top: -2px;
-}
-
-#pills-pizzas > div > div:nth-child(4) > div > p {
-    margin-top: -2px;
-}
-
-#pills-pizzas > div > div:nth-child(6) > div > p {
-    margin-top: 3px;
-}
 
 @media screen and (min-width: 500px){
     #menu-item3 {
