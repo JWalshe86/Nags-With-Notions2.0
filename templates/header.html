@@ -47,7 +47,7 @@
             {% endif %}
             
             {% if user.is_authenticated %}
-            <a target="{% url 'create_booking' %}" role="navigation">Book Now!</a>
+            <a href="{% url 'view' %}" aria-label="brings user to booking page" >Book Now!</a>
             {% endif %}
             
 
