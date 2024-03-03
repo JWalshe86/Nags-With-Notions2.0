@@ -76,7 +76,15 @@ Sprint 2 saw the completion of 50% of its tasks. Story points were introduced to
 
 * Sprint 3 
 
+The last sprint was supposed to prioritise testing but during testing I found several bugs. One bug took several days to fix. This involved ensuring that the registered user could only see their own bookings in the view bookings tab. Connecting the user as a foreign key to my booking model and using the booking id as an argument to track whether the booking belonged to a specific user or not was quite challenging to figure out. Thus during this phase only 6 tasks were completed. For the next two weeks I intend to double down on testing: starting with ensuring all the booking functionality is correct and documenting this in the readme. Still several weeks until the Mar 22 deadline so things appear to be on track.
+
 [Sprint 3](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/21)
+
+* Sprint 4
+
+The 8 days overdue for sprint 4 was a result of extra work in my internship. However, a lot of manual testing was completed which was quite tedious. This testing also highlighted many errors which took time to fix. The main focus now is to complete the testing and the user stories. 
+
+[Sprint 4](https://github.com/JWalshe86/Nags-With-Notions2.0/milestones?state=closed)
 
 ### SURFACE/DESIGN<br>
 
@@ -196,6 +204,7 @@ for the confirmation email, logging in to book a table and showing available dat
 * [Writing your first Django test using pytest-django Pybites](https://youtu.be/L5jWFU2sVXQ?si=7jORatCMS2P8wz1o)
 * [Make your Django Project Live on internet Fix Error While Deploying to Heroku Servers](https://youtu.be/lKijcNqLL7A?si=ezxh8rGUcP3PQ9pB)
 * [Bootstrap alert](https://youtu.be/UTZjhCH80Zg?si=w3inHIFfo3BFuTs5)
+* [How to set up tests and testing urls](https://youtu.be/0MrgsYswT1c?si=z0kcjuW3C6eQnEa6)
 
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/

@@ -6,6 +6,11 @@
       padding-bottom: 30px;
     }
 
+    @media screen and (max-width: 992px) {
+      .container{
+        display: inline-block !important;
+      }
+    }
     .collapse__content {
       font-family: $Rockwell;
       color: black !important;
