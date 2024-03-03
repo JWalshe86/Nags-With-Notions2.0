@@ -205,7 +205,6 @@ for the confirmation email, logging in to book a table and showing available dat
 * [Make your Django Project Live on internet Fix Error While Deploying to Heroku Servers](https://youtu.be/lKijcNqLL7A?si=ezxh8rGUcP3PQ9pB)
 * [Bootstrap alert](https://youtu.be/UTZjhCH80Zg?si=w3inHIFfo3BFuTs5)
 * [How to set up tests and testing urls](https://youtu.be/0MrgsYswT1c?si=z0kcjuW3C6eQnEa6)
-
 ### Suggested links from Slack Meeting 291123
 https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
 https://github.com/IuliiaKonovalova/start-with-django
