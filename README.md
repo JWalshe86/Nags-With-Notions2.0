@@ -36,7 +36,29 @@
 
 #### User Stories 📖<br>
 
-* As a customer interested in hiring a pizzeria horsebox service, I can request to book the horsebox online so that I can use it for a personal event. User Story #3
+* As a customer interested in hiring a pizzeria horsebox service, I can request to book the horsebox online so that I can use it for a personal event #3
+* As a website user I can see what events have occurred or will be occurring, so I can keep informed.
+* As a user I want to be able to see my current bookings displayed on the site.
+* As a user I want to only see my own bookings, so my booking information is kept private #171 #154
+* As a user I want to quickly see a 'book now' button which brings me to the booking form #163
+* As a user I want to be able to create bookings on the site #157
+* As a user I want to be able to update bookings on the site #159
+* As a user I want to be able to delete bookings on the site #156
+* As a user I want to be able to see the prices of all the food items #131 #45
+* As a user I want to see the name of each food item underneath its image #44
+* As a user I want to be able to see if I'm logged in #99
+* As a user I want to access my information once logged in #100
+* As a user I want to be able to register an account using a username and password
+* As a user I want feedback when my form completion has been successful #93 #94
+* As a user I want a dropdown toggle menu for mobile screen sizes #52
+* As a user I want a responsive header with interactive links for ease of site navigation #51 #4
+* As a user I want to be able to access social media sites from the footer #5
+
+
+* As an admin I want to be able to upload images related to events #170 #168
+* As admin I want to be able to create events but users cannot create events #168
+* As admin I want to be able to update events so new information can be added or subtracted #167
+* As admin I want to be able to delete events #167
 
 ### SCOPE 🔭<br>
 

@@ -36,9 +36,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'django-insecure-l(41ts68(20gmp-o8=)kmpqqr)nl-!&a*bfayt$mfify7ec45#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','nags-with-notions-f8a098968cba.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +46,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost','nags-with-notions-f8a098968cba.heroku
 INSTALLED_APPS = [
     'pizza_system.apps.PizzaSystemConfig',
     'booking.apps.BookingConfig',
+    'nags_with_notions',
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
