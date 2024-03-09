@@ -34,7 +34,7 @@ ul {
 }
 
 img {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 *, *::before, *::after {
@@ -52,7 +52,7 @@ img {
   font-size: 12px;
   font-weight: bold;
   background-color: #e9e1eb;
-  color: contrast-switch(#e9e1eb, #060305, #eee);
+  color: #060305;
   border: 1px solid #a21280;
   margin-top: 5px;
   margin-bottom: 5px;
