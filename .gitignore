@@ -1,5 +1,3 @@
-# Hide passwords in settings.py #
-/nags_with_notions/settings.py
 
 # Django #
 *.log
