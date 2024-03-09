@@ -1,8 +1,5 @@
 
 .env
 
-# Django #
 
-db.sqlite3
 
-/venv
