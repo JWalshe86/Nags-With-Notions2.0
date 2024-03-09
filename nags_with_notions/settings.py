@@ -65,7 +65,6 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'crispy_forms',
     'crispy_bootstrap4',
-    'dotenv',
 ]
 
 SITE_ID = 1
