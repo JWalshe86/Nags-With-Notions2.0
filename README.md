@@ -59,6 +59,8 @@
 * As admin I want to be able to create events but users cannot create events #168
 * As admin I want to be able to update events so new information can be added or subtracted #167
 * As admin I want to be able to delete events #167
+* As admin I want to have my passwords safe [#113](https://github.com/JWalshe86/Nags-With-Notions2.0/issues/113)
+
 
 ### SCOPE 🔭<br>
 
@@ -215,6 +217,7 @@ The project will now be cloned locally for you to use.
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
 * [The Irish HORSEBOX bar hire](https://theirishhorseboxbarhire.com/) was used for inspiration.
+* [Django Python Environment Variables](https://youtu.be/0nFizjeNJl4?si=2nMinofCWIV-y_A7)
 * [Display data from database on browser - Codemy](https://youtu.be/H3joYTIRqKk?si=qAek5PaXluQp_lLa)
 * [Upload images with django - Codemy](https://youtu.be/bNXmU-941iY?si=3EYbBp2vkRvsg1hC)
 * [Style Django forms with Bootstrap - Codemy](https://youtu.be/6-XXvUENY_8?si=7Q3HWX7ivY8DhTAX)
