@@ -8,7 +8,7 @@
   
   
   .hero-image{
-    background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1600X1200.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1600X1200.webp);
     height: 1000px; 
     display: flex; 
     flex-direction: column; 
@@ -18,17 +18,17 @@
   }
   @media (max-width: 350px){
     .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image300px.png);
+      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image300px.webp);
     }
   }
   @media (max-width: 800px){
     .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-800px.png);
+      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-800px.webp);
     }
   }
   @media (max-width: 1200px){
     .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1200X900.png);
+      background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1200X900.webp);
     }
   }
   @media (max-width: 768px){

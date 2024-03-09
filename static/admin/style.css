@@ -13,7 +13,7 @@ body::after {
   height: 0;
   overflow: hidden;
   z-index: -1;
-  content: url(/static/images/hero-image-1600X1200.webp) url(/static/images/hero-image-1200X900.webp) url(/static/images/hero-image-800px.webp) url(/static/images/hero-image300px.webp); }
+  content: url(/static/images/hero-image-1600X1200.png) url(/static/images/hero-image-1200X900.png) url(/static/images/hero-image-800px.png) url(/static/images/hero-image300px.png); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -69,6 +69,9 @@ img {
   background-color: #f4c2c3; }
   .navbar .container {
     padding-bottom: 30px; }
+  @media screen and (max-width: 992px) {
+    .navbar .container {
+      display: inline-block !important; } }
   .navbar .collapse__content {
     font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
     color: black !important;
@@ -100,7 +103,7 @@ img {
   background-repeat: no-repeat !important; }
 
 .hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1200X900.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1600X1200.webp);
   height: 1000px;
   display: flex;
   flex-direction: column;

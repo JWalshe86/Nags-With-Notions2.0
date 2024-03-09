@@ -83,8 +83,8 @@ class BookingDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('view') 
     
 def view(request):
+    print(request)
     return render(request, "view.html", {} )
-    
-    
+
     
     

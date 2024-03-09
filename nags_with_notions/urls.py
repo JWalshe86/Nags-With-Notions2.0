@@ -28,3 +28,6 @@ urlpatterns = [
     path('', include('booking.urls')),
     path('admin/', admin.site.urls),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = 'nags_with_notions.views.handling_404'
