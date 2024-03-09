@@ -1,1 +1,9 @@
+# Hide passwords in settings.py #
 /nags_with_notions/settings.py
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
