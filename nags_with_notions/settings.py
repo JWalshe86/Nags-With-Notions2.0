@@ -11,11 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
 import os
 import dj_database_url
-
-load_dotenv()
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,10 +33,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-l(41ts68(20gmp-o8=)kmpqqr)nl-!&a*bfayt$mfify7ec45#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG') == 'TRUE'
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -110,7 +109,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'NAME': 'bxavbsbh',                     
         'USER': 'bxavbsbh',
-        'PASSWORD': os.environ.get('PASSWORD'),
+        'PASSWORD': 'BCi1AkMTZQzBfA0cyktpuMTwD5lzNrn9',
         'HOST': 'mel.db.elephantsql.com', 
         'PORT': '',              
     }
