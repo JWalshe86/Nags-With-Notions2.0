@@ -37,7 +37,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG') == True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -110,8 +110,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'NAME': 'bxavbsbh',                     
         'USER': 'bxavbsbh',
-        # 'PASSWORD': os.environ.get('PASSWORD'),
-        'PASSWORD': 'BCi1AkMTZQzBfA0cyktpuMTwD5lzNrn9',
+        'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': 'mel.db.elephantsql.com', 
         'PORT': '',              
     }

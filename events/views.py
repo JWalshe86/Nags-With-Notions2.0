@@ -1,48 +1,53 @@
 from django.contrib.auth.decorators import login_required, permission_required
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic.list import ListView
 from django.shortcuts import render, redirect
 from django.views import generic
+from django.urls import reverse_lazy
 from .models import Event
 from .forms import EventForm
 
 # Create your views here.
-class EventList(generic.ListView):
-    queryset = Event.objects.all()
+class EventList(ListView):
+   
+    model = Event
+    # context_object_name = 'events'
     template_name = "events/index.html"
     paginate_by = 3
 
-@permission_required("events.view_event")
-def createEvent(request):
-    form = EventForm()
-    if request.method == 'POST':
-        form = EventForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('/events')  
-        
-    context={'form': form}
-    return render(request, 'events/event_form.html', context)
+# @permission_required("events.view_event")
+class createEvent(SuccessMessageMixin, CreateView):
+    
+    model = Event
+    fields = ['title', 'content', 'event_image']
+    success_message = 'New Event Created'
+    success_url = reverse_lazy('events')
+    
+    # over-ride is valid method
+    def form_valid(self, form):
+        # user can't create bookings for other users
+        form.instance.user = self.request.user
+        return super(createEvent, self).form_valid(form)
 
-@permission_required("events.view_event")
-def updateEvent(request, pk):
-    event = Event.objects.get(id=pk)
-    form = EventForm(instance=event)
-    if request.method == 'POST':
-        form = EventForm(request.POST, request.FILES, instance=event)
-        if form.is_valid():
-            form.save()
-            return redirect('/events')
-    context = {'form': form}
-    return render(request, 'events/event_form.html', context)
+# @permission_required("events.view_event")
+class updateEvent(SuccessMessageMixin, UpdateView):
+    
+    model = Event
+    fields = ['title', 'content', 'event_image']
+    success_message = 'Event updated'
+    success_url = reverse_lazy('events')
     
     
-@permission_required("events.view_event")
-def deleteEvent(request, pk):
-    event = Event.objects.get(id=pk)
-    if request.method == "POST":
-        event.delete()
-        return redirect('/events')
-    context = {'event': event}
-    return render(request, 'events/delete.html', context)
+# @permission_required("events.view_event")
+
+class deleteEvent(SuccessMessageMixin, DeleteView):
+    
+    model = Event
+    context_object_name = 'events'
+    success_message = 'Event deleted'
+    success_url = reverse_lazy('events')
+    
     
     
     
