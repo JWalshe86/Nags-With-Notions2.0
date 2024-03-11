@@ -110,7 +110,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'NAME': 'bxavbsbh',                     
         'USER': 'bxavbsbh',
-        'PASSWORD': os.environ.get('PASSWORD'),
+        # 'PASSWORD': os.environ.get('PASSWORD'),
+        'PASSWORD': 'BCi1AkMTZQzBfA0cyktpuMTwD5lzNrn9',
         'HOST': 'mel.db.elephantsql.com', 
         'PORT': '',              
     }
