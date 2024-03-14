@@ -42,14 +42,25 @@ img {
 }
 
 #aboutImg {
-  width: 313px;
-  height: 250px;
+  width: 50rem;
+  height: 30rem;
+  border-radius: 30%;
+  margin-bottom: 15px;
+}
+
+.outerdiv {
+  background-color: #C4F5D1;
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+}
+.outerdiv div {
+  background-color: #C4F5D1;
 }
 
 .btn, .btn-primary, .btn-warning {
   min-width: 100px;
   padding: 10px;
   font-size: 12px;
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
   background-color: #e9e1eb;
   color: contrast-switch(#e9e1eb, #060305, #eee);
@@ -200,6 +211,16 @@ img {
 }
 
 /* menu style */
+body > div {
+  background-color: aliceblue;
+}
+body > div div.outerdiv > div > h1 {
+  padding-top: 3rem;
+}
+body > div div > div:nth-child(2) > p {
+  margin-top: 5rem;
+}
+
 #menu .nav-pills .nav-link {
   font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   background-color: #fff;
@@ -309,8 +330,10 @@ img {
 
 footer {
   background-color: #f4c2c3;
+  font-weight: bold;
   padding-top: 5vh;
   padding-bottom: 5vh;
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 }
 footer .footer-top div > div > div:nth-child(2) > h6 {
   padding-left: 3rem;
@@ -338,8 +361,7 @@ footer .col-lg-4 p {
   padding-left: 3rem;
 }
 footer .col-lg-4__logo__img {
-  padding-left: 6rem;
-  height: 5rem;
+  padding-left: 3rem;
 }
 footer .col-lg-4__social-links.mx-auto a {
   color: black;

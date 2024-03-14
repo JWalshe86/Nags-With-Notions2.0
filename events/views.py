@@ -1,12 +1,9 @@
-from django.contrib.auth.decorators import login_required, permission_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.list import ListView
-from django.shortcuts import render, redirect
-from django.views import generic
+
 from django.urls import reverse_lazy
 from .models import Event
-from .forms import EventForm
 
 # Create your views here.
 class EventList(ListView):

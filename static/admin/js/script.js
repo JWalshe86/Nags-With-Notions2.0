@@ -3,7 +3,7 @@
  */
 
 let menu = {
-    pizzas: $('.tab-pane.fade.show .menu-item img'),
+    pizzas: $('#pills-pizzas .menu-item img'),
     dips: $('#pills-dips .menu-item img'),
     drinks: $('#pills-drinks .menu-item img'),
 };
@@ -15,4 +15,3 @@ $(document).ready(function () {
     menu.drinks.after('<p id="priceTag" class="float-right t-1"><strong>€2</strong></p>'); //prices under all dips
 });
 
-console.log('yo yo yo');

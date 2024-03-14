@@ -37,9 +37,8 @@
 
    
 
-    <main class="flex-shrink-0 main-bg position-relative">
+    <div class="flex-shrink-0 main-bg position-relative">
 
-        <div>
             {% if messages %}
             {% for message in messages %}
             <div class="alert alert-{{ message.tags}}">
@@ -49,11 +48,8 @@
             {% endif %}
             {% block content %}
             {% endblock content %}
+       
         </div>
-
-        <p>{{name}}</p>
-
-    </main>
 
 
 

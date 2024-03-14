@@ -1,5 +1,17 @@
 /* menu style */
 
+body > div {
+  background-color: aliceblue;
+
+  div.outerdiv > div > h1{
+    padding-top: 3rem;
+  }
+  div > div:nth-child(2) > p{
+    margin-top: 5rem;
+  }
+}
+ 
+
 #menu .nav-pills .nav-link {
     font-family: $Rockwell;
     background-color: #fff;

@@ -34,7 +34,7 @@ ul {
 }
 
 img {
-  max-width: 100%;
+  max-width: 90%;
 }
 
 *, *::before, *::after {
@@ -52,7 +52,7 @@ img {
   font-size: 12px;
   font-weight: bold;
   background-color: #e9e1eb;
-  color: #060305;
+  color: contrast-switch(#e9e1eb, #060305, #eee);
   border: 1px solid #a21280;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -344,6 +344,7 @@ footer .col-lg-4__logo__img {
 footer .col-lg-4__social-links.mx-auto a {
   color: black;
   font-weight: normal;
+  font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   font-size: 5vh;
   margin-left: -15px;
   margin-right: 2vw;

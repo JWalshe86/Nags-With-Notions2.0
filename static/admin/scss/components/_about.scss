@@ -1,4 +1,16 @@
 #aboutImg{
-    width: 313px;
-    height: 250px;
+    width: 50rem;
+    height: 30rem;
+    border-radius: 30%;
+    margin-bottom: 15px;
+}
+
+.outerdiv{
+    
+    background-color: #C4F5D1;
+    font-family: $Rockwell;
+
+    div{
+        background-color: #C4F5D1;
+    }
 }
