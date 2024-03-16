@@ -6,37 +6,35 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <!-- Event Entries Column -->
-        <div class="col-xs-12 mt-3 left">
+        <div class="col-xs-12 mt-3">
             <div class="row">
                 {% for event in event_list %}
                 <div class="d-flex justify-content-center">
                     <div class=" shadow-lg p-3 mb-5 mt-5 bg-white rounded " style="width: 200%">
                         <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author text-center">Author: {{ event.author }}</p>
-                                </div>
-                            </div>
-                            <h2 class="card-title text-center">{{ event.title }}</h2>
-                                {% if event.event_image %}
-                                <h2 class="card-title"></h2>
-                                <div class="eventImage col-8 offset-2">
+                            <div class="image-container d-flex align-items-center flex-column">
+                                    <h2 class="card-title text-center">{{ event.title }}</h2>
+                                        {% if event.event_image %}
+                                    <h2 class="card-title"></h2>
+                                    <div class="eventImage">
                                     
                                         <img src="{{ event.event_image.url }}">
                                     
-                                </div>
-                                {% endif %}
-                            <hr />
-                            <div class="event-content text-center">
-                                {{ event.content}}
-                            </div>
+                                    </div>
+                                    {% endif %}
+                                    <hr />
+                                    <div class="event-content text-center">
+                                        {{ event.content}}
+                                    </div>
 
-                            <p class="card-text text-muted h6">{{ event.created_on}}
-                            </p>
-                            {% if perms.event.can_add_new_event %}
-                            <a class="btn btn-sm btn-info" href="{% url 'update_event' event.id %}">Update</a>
-                            <a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a>
-                            {% endif %}
+                                    <p class="card-text text-muted h6">{{ event.created_on}}
+                                    </p>
+                            </div>
+                           
+                                    {% if perms.event.can_add_new_event %}
+                                    <a class="btn btn-sm btn-info" href="{% url 'update_event' event.id %}">Update</a>
+                                    <a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a>
+                                    {% endif %}
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,6 @@
     }
     .collapse__content:hover {
       background-color: white;
-      border-radius: 23px;
     }
     .collapse__btn-primary {
       background-color: $light-blue;
@@ -41,3 +40,7 @@
     min-width: 100%;
   }
 
+  .navbar-dark .navbar-toggler {
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+  }

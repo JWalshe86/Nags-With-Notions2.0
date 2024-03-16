@@ -6,11 +6,12 @@ body > div {
   div.outerdiv > div > h1{
     padding-top: 3rem;
   }
-  div > div:nth-child(2) > p{
-    margin-top: 5rem;
-  }
+
 }
- 
+
+.bg-white{
+  background-color: transparent!important;
+}
 
 #menu .nav-pills .nav-link {
     font-family: $Rockwell;

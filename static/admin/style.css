@@ -45,15 +45,16 @@ img {
   width: 50rem;
   height: 30rem;
   border-radius: 30%;
-  margin-bottom: 15px;
+  margin-top: 3rem;
+  margin-bottom: 7rem;
 }
 
 .outerdiv {
-  background-color: #C4F5D1;
+  background-color: #f4c2c3;
   font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 }
 .outerdiv div {
-  background-color: #C4F5D1;
+  background-color: #f4c2c3;
 }
 
 .btn, .btn-primary, .btn-warning {
@@ -113,7 +114,6 @@ img {
 }
 .navbar .collapse__content:hover {
   background-color: white;
-  border-radius: 23px;
 }
 .navbar .collapse__btn-primary {
   background-color: #0860d4;
@@ -132,6 +132,11 @@ img {
 .navbar__logo__img {
   height: 5rem;
   min-width: 100%;
+}
+
+.navbar-dark .navbar-toggler {
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
 }
 
 /* page header */
@@ -217,8 +222,9 @@ body > div {
 body > div div.outerdiv > div > h1 {
   padding-top: 3rem;
 }
-body > div div > div:nth-child(2) > p {
-  margin-top: 5rem;
+
+.bg-white {
+  background-color: transparent !important;
 }
 
 #menu .nav-pills .nav-link {
@@ -422,7 +428,7 @@ footer .col-lg-4__social-links:hover, footer footer .col-lg-4 a:hover {
 }
 
 #id_message:hover, #id_guest_number:hover, #id_location:hover, #id_booking_date:hover {
-  background-color: #e95cb3;
+  background-color: rgba(199, 126, 189, 0.2);
 }
 
 #bookings_header {
