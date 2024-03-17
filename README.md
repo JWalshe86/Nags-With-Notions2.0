@@ -1,5 +1,5 @@
 # Nags With Notions2.0
-# Nags With Notions2.0
+
   - [OVERVIEW](#overview)
   - [UX/UI](#uxui)
     - [STRATEGY](#strategy)
@@ -24,7 +24,7 @@
   - [ACKNOWLEDGEMENTS](#acknowledgements)
 
 ## OVERVIEW 🚠
-
+This site was created to allow users book a portable pizza service. Users should be able to access the site and book the service for their event. Users can also view other events. The site mainly uses Django, Python, SASS, CSS, Javascript and python. CRUD functionality is found on both events and bookings. Only superusers can configure events. However, registered users can view their bookings and update/delete them as required. 
 
 ## UX/UI
 
@@ -71,6 +71,8 @@
 #### Database diagrams
 
 * [Database diagram #1](/static/pdfs/drawSQL-version1.png)
+
+The comments model was removes as it wasn't seen as essential, and other work took priority, such as testing.
 * [Database diagram #2](/static/pdfs/drawSQL-version2.png)
 
 
@@ -149,7 +151,7 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 ### Feature Testing
 
-
+[Feature tests PDF](/static/pdfs/testing/user-story-testing.pdf)
 
 ### Manual Tests to assess javascript functionality
 
@@ -158,17 +160,85 @@ All tests on functionality were passed.
 
 ### Model Testing
 
-Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database. [First successful use of Pytest](/static/pdfs/testing/first-successful-use-of-pytest.docx)
-
-### Booking Model tests
-
-
+Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database. [First successful use of Pytest](/static/pdfs/testing/first-successful-use-of-pytest.docx). Due to the complexity of this testing, and time constraints I moved onto manual tests. 
 
 #### User Stories Testing<br>
 
+* As a customer interested in hiring a pizzeria horsebox service, I can request to book the horsebox online so that I can use it for a personal event #3
+Achieved. See feature testing for more detail.
+[New booking created](/static/images/userstorytesting/newbookingcreated.png)
+
+* As a website user I can see what events have occurred or will be occurring, so I can keep informed.
+Achieved. See feature testing for more detail. 
+[Events list](/static/images/userstorytesting/canseeevents.png)
+
+* As a user I want to be able to see my current bookings displayed on the site.
+Achieved. See feature testing for more detail. 
+[Bookings list](/static/images/userstorytesting/canseebookings.png)
+
+* As a user I want to only see my own bookings, so my booking information is kept private #171 #154
+Achieved. See feature testing for more detail. 
+[See own bookings](/static/images/userstorytesting/canseebookings.png)
+
+* As a user I want to quickly see a 'book now' button which brings me to the booking form #163
+Achieved. See feature testing for more detail. 
+[Book Now 1](/static/images/userstorytesting/booknow1.png)
+[Book Now 2](/static/images/userstorytesting/booknow2.png)
+
+* As a user I want to be able to create bookings on the site #157
+Achieved. See feature testing for more detail. 
+[Create booking](/static/images/userstorytesting/newbookingcreated.png)
+
+* As a user I want to be able to update bookings on the site #159
+Achieved. See feature testing for more detail.
+[Update booking 1](/static/images/userstorytesting/update1.png)
+[Update booking 2](/static/images/userstorytesting/update2.png)
+[Update booking 3](/static/images/userstorytesting/update3.png)
+
+* As a user I want to be able to delete bookings on the site #156
+Achieved. See feature testing for more detail.
+[Delete booking 1](/static/images/userstorytesting/delete1.png)
+[Delete booking 2](/static/images/userstorytesting/delete2.png)
+[Delete booking 3](/static/images/userstorytesting/delete3.png)
+
+* As a user I want to be able to see the prices of all the food items #131 #45
+Client asked for prices to be removed and ratings used instead. 
+[See ratings](/static/images/userstorytesting/pizzaratings.png)
+
+* As a user I want to see the name of each food item underneath its image #44
+Achieved. See feature testing for more detail.
+[Item description](/static/images/userstorytesting/pizzaratings.png)
+
+* As a user I want to be able to see if I'm logged in #99
+Achieved username presents in header. 
+[Logged in](/static/images/userstorytesting/userloggedin.png)
 
 
-* As a customer interested in hiring a pizzeria horsebox service, I can request to book the horsebox online so that I can use it for a personal event. User Story #3
+* As a user I want to access my information once logged in #100
+Achieved. Restricted info for users not logged in. 
+[Limited info](/static/images/userstorytesting/‫limitedinfonotloggedin.png)
+
+* As a user I want to be able to register an account using a username and password
+Achieved. See feature testing for more detail.
+[Register 1](/static/images/userstorytesting/Register1.png)
+[Register 2](/static/images/userstorytesting/Register2.png)
+[Register 3](/static/images/userstorytesting/Register3.png)
+
+* As a user I want feedback when my form completion has been successful #93 #94
+Achieved. See feature testing for more detail.
+[success message](/static/images/userstorytesting/newbookingcreated.png)
+
+* As a user I want a dropdown toggle menu for mobile screen sizes #52
+Achieved. See feature testing for more detail.
+[Toggle Dropdown](/static/images/userstorytesting/toggledropdown.png)
+
+* As a user I want a responsive header with interactive links for ease of site navigation #51 #4
+Achieved. See feature testing for more detail.
+
+* As a user I want to be able to access social media sites from the footer #5
+Achieved. See feature testing for more detail.
+
+
 
 
 ## MODULES IMPORTED 👽
