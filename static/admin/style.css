@@ -148,11 +148,13 @@ img {
 
 .hero-image {
   background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1600X1200.webp);
-  height: 1000px;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-size: cover;
+  background-position: center;
   margin-top: -2%;
 }
 
@@ -169,6 +171,7 @@ img {
 @media (max-width: 1200px) {
   .hero-image {
     background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1200X900.webp);
+    height: 60vh;
   }
 }
 @media (max-width: 768px) {
