@@ -139,14 +139,43 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 ## Technologies used 🧑‍💻
 
+
+- Django was used as the framework for both the backend and frontend of the website.
+- HTML & CSS for the templates and styling
 - Snapedit to blur background in hero image 
 - Imagor to give pink hue & size images https://github.com/cshum/imagor
 - drawSQL to create database diagrams
 - tinypng.com to compress images
+- Bootstrap
+- Sass
+- Jquery
+
+### Django Packages
+
+- [Requirements.txt1](./static/images/requirements.txt1.png)
+- [Requirements.txt2](./static/images/requirements.txt2.png)
+
+Many of the packages here are dependencies of core packages. The main packages used were:
+- Django as the framework
+- django-allauth for user permissions
+- django-crispy forms to make forms look and perform better
+- factory-boy to create fake data for automated tests
+- pillow to manage images
+- python-dotenv to create a virtual python environment and keep dependencies local
+- waitress as a subtitute for gunicorn as I was using windows
+- whitenoise for static support when deploying to a server
+
+
+
+
+### Infastructural Technologies
+
+- PosterSQL - used as the database
+- Heroku - where site was deployed
 
 ## Languages used
 
-- Python 🐍
+- Python, Javascript 🐍
 
 ## BUGS OR ERRORS 🐛 😵// Issues which take me more than 2 hours to solve
 
