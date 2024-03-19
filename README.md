@@ -23,6 +23,9 @@
   - [TOOLS](#tools)
   - [ACKNOWLEDGEMENTS](#acknowledgements)
 
+
+![Responsiveness](/static/images/readme-responsiveness-image.png)
+
 ## OVERVIEW 🚠
 This site was created to allow users book a portable pizza service. Users should be able to access the site and book the service for their event. Users can also view other events. The site mainly uses Django, Python, SASS, CSS, Javascript and python. CRUD functionality is found on both events and bookings. Only superusers can configure events. However, registered users can view their bookings and update/delete them as required. 
 
@@ -290,6 +293,7 @@ The project will now be cloned locally for you to use.
 * Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
+* [flyUX-pp4](https://github.com/CarlMurray/flyUX-pp4) for inspiration on readme.
 * [The Irish HORSEBOX bar hire](https://theirishhorseboxbarhire.com/) was used for inspiration.
 * [Django Python Environment Variables](https://youtu.be/0nFizjeNJl4?si=2nMinofCWIV-y_A7)
 * [Display data from database on browser - Codemy](https://youtu.be/H3joYTIRqKk?si=qAek5PaXluQp_lLa)
