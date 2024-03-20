@@ -27,7 +27,7 @@ class CreateEvent(SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         # user can't create bookings for other users
         form.instance.user = self.request.user
-        return super().form_valid(form)
+        return super(CreateEvent, self).form_valid(form)
 
 # @permission_required("events.view_event")
 class UpdateEvent(SuccessMessageMixin, UpdateView):

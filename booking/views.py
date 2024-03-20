@@ -32,13 +32,13 @@ class RegisterPage(SuccessMessageMixin, FormView):
         user = form.save()
         if user is not None:
             login(self.request, user)
-        return super().form_valid(form)
+        return super(RegisterPage, self).form_valid(form)
 
     def get(self, *args, **kwargs):
         "function enables user to get own bookings"
         if self.request.user.is_authenticated:
             return redirect('view')
-        return super()
+        return super(RegisterPage, self).get(*args, **kwargs)
 
 class BookingList(LoginRequiredMixin, ListView):
     """
@@ -66,7 +66,7 @@ class BookingCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         # user can't create bookings for other users
         form.instance.user = self.request.user
-        return super().form_valid(form)
+        return super(BookingCreate, self).form_valid(form)
 
 class BookingUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     "This module allows users to update their bookings"
