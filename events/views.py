@@ -1,3 +1,4 @@
+"imports"
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.list import ListView

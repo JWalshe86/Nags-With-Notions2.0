@@ -1,3 +1,4 @@
+"imports"
 from django.urls import path
 from .views import EventList, CreateEvent, UpdateEvent, DeleteEvent
 
