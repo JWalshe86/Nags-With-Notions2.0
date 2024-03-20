@@ -34,7 +34,7 @@ box-sizing: inherit;
 
         &__btn-primary{
             @include btnStyle();
-        
+
         }
     }
 }
@@ -46,9 +46,6 @@ h1,h2,h3,h4,h5,h6{
     color: $textColor;
 }
 
-.bg-cover{
-    @include backgroundStyling();
-}
 
 // Slider Styling
 
@@ -61,7 +58,7 @@ h1,h2,h3,h4,h5,h6{
 
 // Menu styling
 
-// Intro text  
+// Intro text
 
 .intro-text {
     margin-bottom: 40px;
@@ -177,11 +174,11 @@ footer {
 
         max-width: none !important;
         margin-left: -17px;
-    
+
         &__logo__img{
             height: 5rem;
         }
-    
+
         &__social-links, a{
             color: black;
             font-weight: normal;
@@ -194,7 +191,7 @@ footer {
         &__social-links:hover, a:hover{
             color: $tertiaryBackgroundColor;
         }
-    
+
     }
 }
 

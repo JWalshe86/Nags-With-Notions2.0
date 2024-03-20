@@ -8,12 +8,21 @@
             </div>
             <div class="col-md-6">
                 <p> Nags with Notions provides delicious, fresh pizzas for any event. It is run by Caroline and Tamara, who would love
-                    to add to the uniqueness of your special occasion. Book our service so you can have delicious pizzas at your event.</p>
+                    to add to the uniqueness of your special occasion.
+                    <br><br>
+                    {% if not request.user.is_authenticated %}
+                    <a href="{% url 'view' %}" id="bknowlink" aria-label="brings user to booking page">
+                        Book our service so you can have delicious pizzas at your event
+                    </a>
+                    <div id="myAlert2" class="alert alert-warning collapse">
+                        <strong>You must login to book!</strong>
+                        <a id="linkClose2" href="#" class="close" >&times;</a>
+                    </div>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'create_booking' %}" class="btn btn-primary">Book our service so you can have delicious pizzas at your event</a>
+                    {% endif %}</p>
             </div>
         </div>
     </div>
 </div>
-
-
-
-

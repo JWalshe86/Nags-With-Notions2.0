@@ -124,11 +124,6 @@ img {
 }
 
 /* page header */
-.bg-cover {
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-}
 
 .hero-image {
   background: linear-gradient(rgba(0, 0, 0, 0.3), #000), url(/static/images/hero-image-1600X1200.webp);
@@ -159,9 +154,7 @@ img {
   #hero {
     height: 55vh !important;
   }
-  .bg-cover {
-    background-position: 0% !important;
-  }
+
   .hero-image {
     height: auto;
     background-position: center center !important;

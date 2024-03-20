@@ -1,4 +1,9 @@
 /* site header */
+body > nav > div > div.navbar-collapse.collapse.w-100.order-1.order-md-0.navbarNav > ul{
+  margin-right: inherit !important;
+}
+
+
 .navbar {
     background-color: $pink;
 
