@@ -182,6 +182,15 @@ Many of the packages here are dependencies of core packages. The main packages u
 
 ## BUGS OR ERRORS 🐛 😵// Issues which take me more than 2 hours to solve
 
+1. Getting the site deployed to Heroku from windows was very challenging. It probably took me 3 days and I almost gave up. Gunicorn doesn't
+work well with Windows. I was also using vscode which meant Code Institue support was compromised as they used codeanywhere. Eventually I came across waitress server. Using a combination of both stackoverflow and youtube I figured out how to get the procfile correct. Adding 'web: waitress-serve --port=$PORT nags_with_notions.wsgi:application' worked. The '--port=$PORT" was the biggest factor in getting the site deployed. I found this on an obscure youtube video. I was very grateful for the person who created that content.
+
+2. I was unable to get users content to stay specific to their logins. For example, if one user added a booking, this new booking could be seen by all users. The solution involved changing all my functions in views, to classes. I was then able to import django views, which did alot of the work behind then scenes and enabled me to compartmentalize user data. It also allowed me to import success messages.
+
+3. Getting images to upload when creating an event was challenging. It involved using whitenoise. It also involved figuring out how to get the path to correct correctly. A default path from the root had to be configured in settings.py. This took alot of trial and error but eventually it worked.
+
+4. During lighthouse testing I couldn't get the hero image to load under 5 seconds. However, in reality the image appears to load straight away. That said after alot of trial and error I was able to get the image to render in under a second on lighthouse but then it would increase again. I think it may be due to internet connection. I still haven't figured this out fully.
+
 ## Testing
 
 ### Feature Testing
@@ -276,8 +285,6 @@ Achieved. See feature testing for more detail.
 Achieved. See feature testing for more detail.
 
 
-
-
 ## MODULES IMPORTED 👽
 
 
@@ -343,24 +350,6 @@ for the confirmation email, logging in to book a table and showing available dat
 * [Make your Django Project Live on internet Fix Error While Deploying to Heroku Servers](https://youtu.be/lKijcNqLL7A?si=ezxh8rGUcP3PQ9pB)
 * [Bootstrap alert](https://youtu.be/UTZjhCH80Zg?si=w3inHIFfo3BFuTs5)
 * [How to set up tests and testing urls](https://youtu.be/0MrgsYswT1c?si=z0kcjuW3C6eQnEa6)
-### Suggested links from Slack Meeting 291123
-https://mf-pp4-kerry-surf-school.herokuapp.com/signuporlogin/
-https://github.com/IuliiaKonovalova/start-with-django
-[for testing](https://github.com/Abibubble/ms4-lead-shot-hazard)
-
-https://www.youtube.com/watch?v=ByGJQzlzxQg
-https://www.youtube.com/watch?v=cuEtnrL9-H0
-
-https://www.youtube.com/@ColtSteeleCode
-https://www.youtube.com/@KevinPowell
-
-https://wesbos.com/
-
-### Slack Meeting Suggestion 100124
-
-- Follow Sprints #TODO
-- Add user story points #TODO
-- Change comments to reviews #TODO
 
 ## TOOLS 🧰
 
