@@ -27,13 +27,13 @@
 
 
 ## OVERVIEW 🚠
-This site was created to allow users book a portable pizza service. Users should be able to access the site and book the service for their event. Users can also view other events. The site mainly uses Django, Python, SASS, CSS, Javascript and python. CRUD functionality is found on both events and bookings. Only superusers can configure events. However, registered users can view their bookings and update/delete them as required. 
+This site was created to allow users book a portable pizza service. Users should be able to access the site and book the service for their event. Users can also view other events. The site mainly uses Django, Python, SASS, CSS, Javascript and python. CRUD functionality is found on both events and bookings. Only superusers can configure events. However, registered users can view their bookings and update/delete them as required.
 
 ## UX/UI
 
 ### STRATEGY
 
-#### Goals 🥅<br> 
+#### Goals 🥅<br>
 
 [Customer Journey Map](/static/pdfs/nags-with-notions-customer-jouryney-map.pdf)
 
@@ -69,7 +69,7 @@ This site was created to allow users book a portable pizza service. Users should
 
 
 
-### STRUCTURE☠<br> 
+### STRUCTURE☠<br>
 
 #### Database diagrams
 
@@ -82,11 +82,11 @@ The comments model was removes as it wasn't seen as essential, and other work to
 ### FLOWCHARTS 📈<br>
 
 Reasoning to flowchart: A flowchart was created to present the entire user story visually. The user is initially presented
-with a welcoming landing page. The user is informed they can choose to book the pizza box for 
+with a welcoming landing page. The user is informed they can choose to book the pizza box for
 personal use or see when other events are on that they could attend and try some pizza. The pizza
 menu is displayed. If the user wishes to book they are shown the available dates. To book the user
-needs to login. If not already registered the user must sign up. Once the user is logged in they 
-can select their preferred dates. They then receive a confirmation email regarding their booking. The dates available, personal information and password data is then updated. 
+needs to login. If not already registered the user must sign up. Once the user is logged in they
+can select their preferred dates. They then receive a confirmation email regarding their booking. The dates available, personal information and password data is then updated.
 
 [Full Site Flowchart Sprint1](/static/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
@@ -103,7 +103,7 @@ Sprint 1 was overdue by one month as the django lms learning material took much 
 
 Sprint 2 saw the completion of 50% of its tasks. Story points were introduced to get a better grasp on the workload, and this may allow one to gain a better understanding of what can be realistically achieved in Sprint 3. Considerable time was put into automatic testing, which is not a requirement for the pass criteria; so in sprint 3 effort will be directed into other areas. During Sprint 2 much of the functional objectives were achieved. In Sprint 3 I hope to divest more energy into testing. 46 open issues were passed forward from Sprint 2 to Sprint 3. 159 story points were completed in Sprint 2. 147 story points have been passed for to Sprint 3, which makes this workload realistically achievable by the end of Sprint 3.
 
-* Sprint 3 
+* Sprint 3
 
 The last sprint was supposed to prioritise testing but during testing I found several bugs. One bug took several days to fix. This involved ensuring that the registered user could only see their own bookings in the view bookings tab. Connecting the user as a foreign key to my booking model and using the booking id as an argument to track whether the booking belonged to a specific user or not was quite challenging to figure out. Thus during this phase only 6 tasks were completed. For the next two weeks I intend to double down on testing: starting with ensuring all the booking functionality is correct and documenting this in the readme. Still several weeks until the Mar 22 deadline so things appear to be on track.
 
@@ -111,13 +111,13 @@ The last sprint was supposed to prioritise testing but during testing I found se
 
 * Sprint 4
 
-The 8 days overdue for sprint 4 was a result of extra work in my internship. However, a lot of manual testing was completed which was quite tedious. This testing also highlighted many errors which took time to fix. The main focus now is to complete the testing and the user stories. 
+The 8 days overdue for sprint 4 was a result of extra work in my internship. However, a lot of manual testing was completed which was quite tedious. This testing also highlighted many errors which took time to fix. The main focus now is to complete the testing and the user stories.
 
 [Sprint 4](https://github.com/JWalshe86/Nags-With-Notions2.0/milestones?state=closed)
 
 ### SURFACE/DESIGN<br>
 
-I chose the 'square' color harmony using Adobe's color wheel. The base color was the color associated with Nags with Notions Logo. However I swapped out #C4C9F5 for aliceblue as I felt #C4C9F5 was a bit too harsh. 
+I chose the 'square' color harmony using Adobe's color wheel. The base color was the color associated with Nags with Notions Logo. However I swapped out #C4C9F5 for aliceblue as I felt #C4C9F5 was a bit too harsh.
 
 ![Color Palette](/static/images/colorpalette.png)
 
@@ -128,7 +128,7 @@ I chose the 'square' color harmony using Adobe's color wheel. The base color was
 
 [Full Site Wireframe Sprint1](/assets/pdfs/nags-with-notions-wireframe-sprint1.pdf)
 
-Reasoning for Wireframe structure: As a user, I want to be able to see when the Pizza Horsebox is available for private hire. As the owner, I want customers to know they can hire the horse box and when it's available. Also, I want the user of the website to know that Nags with Notions also sells pizzas at events and when these events are on. The wireframe shows websites snippets where such features have been executed successfully. Having shown this wireframe to Nags With Notions they are happy to proceed. 
+Reasoning for Wireframe structure: As a user, I want to be able to see when the Pizza Horsebox is available for private hire. As the owner, I want customers to know they can hire the horse box and when it's available. Also, I want the user of the website to know that Nags with Notions also sells pizzas at events and when these events are on. The wireframe shows websites snippets where such features have been executed successfully. Having shown this wireframe to Nags With Notions they are happy to proceed.
 
 ## FEATURES
 
@@ -142,7 +142,7 @@ Reasoning for Wireframe structure: As a user, I want to be able to see when the 
 
 - Django was used as the framework for both the backend and frontend of the website.
 - HTML & CSS for the templates and styling
-- Snapedit to blur background in hero image 
+- Snapedit to blur background in hero image
 - Imagor to give pink hue & size images https://github.com/cshum/imagor
 - drawSQL to create database diagrams
 - tinypng.com to compress images
@@ -183,16 +183,18 @@ Many of the packages here are dependencies of core packages. The main packages u
 
 ### Feature Testing
 
-[Feature tests PDF](/static/pdfs/testing/user-story-testing.pdf)
+*PDF's open in github https://github.com/JWalshe86/Nags-With-Notions2.0?tab=readme-ov-file
+
+[Manual Testing](/static/pdfs/testing/manual-testing.pdf)
 
 ### Manual Tests to assess javascript functionality
 
-All tests on functionality were passed. 
+All tests on functionality were passed.
 [Javascript tests on functionality](/static/pdfs/testing/Manual%20Test%20to%20Assess%20Javascript%20Functionality.pdf)
 
 ### Model Testing
 
-Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database. [First successful use of Pytest](/static/pdfs/testing/first-successful-use-of-pytest.docx). Due to the complexity of this testing, and time constraints I moved onto manual tests. 
+Use of pytest-cov to see where tests may be required. I prioritised testing my custom code, as Django would have tested it's own code extensively. I installed factory-boy to insert fake data into the database. [First successful use of Pytest](/static/pdfs/testing/first-successful-use-of-pytest.docx). Due to the complexity of this testing, and time constraints I moved onto manual tests.
 
 #### User Stories Testing<br>
 
@@ -201,24 +203,24 @@ Achieved. See feature testing for more detail.
 [New booking created](/static/images/userstorytesting/newbookingcreated.png)
 
 * As a website user I can see what events have occurred or will be occurring, so I can keep informed.
-Achieved. See feature testing for more detail. 
+Achieved. See feature testing for more detail.
 [Events list](/static/images/userstorytesting/canseeevents.png)
 
 * As a user I want to be able to see my current bookings displayed on the site.
-Achieved. See feature testing for more detail. 
+Achieved. See feature testing for more detail.
 [Bookings list](/static/images/userstorytesting/canseebookings.png)
 
 * As a user I want to only see my own bookings, so my booking information is kept private #171 #154
-Achieved. See feature testing for more detail. 
+Achieved. See feature testing for more detail.
 [See own bookings](/static/images/userstorytesting/canseebookings.png)
 
 * As a user I want to quickly see a 'book now' button which brings me to the booking form #163
-Achieved. See feature testing for more detail. 
+Achieved. See feature testing for more detail.
 [Book Now 1](/static/images/userstorytesting/booknow1.png)
 [Book Now 2](/static/images/userstorytesting/booknow2.png)
 
 * As a user I want to be able to create bookings on the site #157
-Achieved. See feature testing for more detail. 
+Achieved. See feature testing for more detail.
 [Create booking](/static/images/userstorytesting/newbookingcreated.png)
 
 * As a user I want to be able to update bookings on the site #159
@@ -234,7 +236,7 @@ Achieved. See feature testing for more detail.
 [Delete booking 3](/static/images/userstorytesting/delete3.png)
 
 * As a user I want to be able to see the prices of all the food items #131 #45
-Client asked for prices to be removed and ratings used instead. 
+Client asked for prices to be removed and ratings used instead.
 [See ratings](/static/images/userstorytesting/pizzaratings.png)
 
 * As a user I want to see the name of each food item underneath its image #44
@@ -242,12 +244,12 @@ Achieved. See feature testing for more detail.
 [Item description](/static/images/userstorytesting/pizzaratings.png)
 
 * As a user I want to be able to see if I'm logged in #99
-Achieved username presents in header. 
+Achieved username presents in header.
 [Logged in](/static/images/userstorytesting/userloggedin.png)
 
 
 * As a user I want to access my information once logged in #100
-Achieved. Restricted info for users not logged in. 
+Achieved. Restricted info for users not logged in.
 [Limited info](/static/images/userstorytesting/‫limitedinfonotloggedin.png)
 
 * As a user I want to be able to register an account using a username and password
@@ -274,14 +276,14 @@ Achieved. See feature testing for more detail.
 
 
 ## MODULES IMPORTED 👽
- 
+
 
 ## DEPLOYMENT 🚀
 
 ### CREATING THE WEBSITE
 
 [Mentor Meeting 1 Feedback](/assets/pdfs/mentor-meeting1-291123-notes.txt)
-  
+
 ### DEPLOYING ON HEROKU
 
 - Install Gspread using pip install Gspread in the terminal
@@ -296,13 +298,13 @@ Achieved. See feature testing for more detail.
 ### FORK THE REPOSITORY 🍴
 
 If you would like to contribute to the project. You can:
-1. Open the pizza ordering system repository on my account and 
+1. Open the pizza ordering system repository on my account and
 press the fork button on the top right of the screen.
 2. Click create a new fork.
 3. Navigate to your fork of the original repository.
 4. Copy the URL for the repository.
 5. Type git clone into your terminal and paste the repository.
-6. You can then create a pull request which I will review. 
+6. You can then create a pull request which I will review.
 
 ### CLONE THE REPOSITORY ©
 
@@ -348,7 +350,7 @@ https://www.youtube.com/watch?v=cuEtnrL9-H0
 https://www.youtube.com/@ColtSteeleCode
 https://www.youtube.com/@KevinPowell
 
-https://wesbos.com/ 
+https://wesbos.com/
 
 ### Slack Meeting Suggestion 100124
 
@@ -364,4 +366,3 @@ https://wesbos.com/
 
 
 ## ACKNOWLEDGEMENTS 👏
-
