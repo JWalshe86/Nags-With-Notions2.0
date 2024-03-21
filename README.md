@@ -186,7 +186,7 @@ Many of the packages here are dependencies of core packages. The main packages u
 
 ### Feature Testing
 
-*PDF's open in github https://github.com/JWalshe86/Nags-With-Notions2.0?tab=readme-ov-file
+*If in Markdown: PDF's open in github https://github.com/JWalshe86/Nags-With-Notions2.0?tab=readme-ov-file
 
 [Manual Testing](/static/pdfs/testing/manual-testing.pdf)
 
@@ -285,7 +285,7 @@ Achieved. See feature testing for more detail.
 
 ### CREATING THE WEBSITE
 
-[Mentor Meeting 1 Feedback](/assets/pdfs/mentor-meeting1-291123-notes.txt)
+[Mentor Meeting 1 Feedback](/static/pdfs/mentor-meeting1-291123-notes.txt)
 
 ### DEPLOYING ON HEROKU
 
@@ -324,6 +324,7 @@ The project will now be cloned locally for you to use.
 
 ## CREDITS 💛
 
+* [Learn SASS and SCSS](https://www.udemy.com/course/learn-sass-and-scss/?couponCode=ST14MT32124)
 * Code adapted from [SA7MAN](https://youtu.be/KRENd1sv3tE?si=wOYRfPz9qjgKc5w-) for restaurant design using bootstrap
 * Websites [littlehotelier.com](littlehotelier.com), [opentable.ie](opentable.ie) and [brolmo](brolmo.com) were used as inspiration
 for the confirmation email, logging in to book a table and showing available dates in the wireframe.
@@ -369,3 +370,10 @@ https://wesbos.com/
 
 
 ## ACKNOWLEDGEMENTS 👏
+
+* I'd like to thank Code Institute Tutors Iris and Marco who supported and listend to myself, Abdul and Aongus every Wednesday.
+* To my mentor who gave great advice on the project
+* To everyone on youtube and stackoverflow who created content
+* To my friends, family and colleagues at 2Toucons (Chandeep) for reviewing the site
+* To Nags with Notions for giving me images and ideas and reviewing the site
+* Code Institute
