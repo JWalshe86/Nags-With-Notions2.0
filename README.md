@@ -35,9 +35,13 @@ This site was created to allow users book a portable pizza service. Users should
 
 #### Goals 🥅<br>
 
+The UX was explored using a customer journey map. The site then acted successfully on the insights taken from the map. The customer journey map detailed the journey and expected emotions of 3 standard users of the website. Goals and expectations are taken into account. This gave a general view of how to proceed with the project. User stories were then used to break these needs into tasks. The UI involved good use of navigation through anchor links and appropriate sizing for different devices. A toggle dropdown menu was used for smaller screens.
+
 [Customer Journey Map](/static/pdfs/nags-with-notions-customer-jouryney-map.pdf)
 
 #### User Stories 📖<br>
+
+**The number references here proceeded by the hash key refer to the issue number in the github projects.
 
 * As a customer interested in hiring a pizzeria horsebox service, I can request to book the horsebox online so that I can use it for a personal event #3
 * As a website user I can see what events have occurred or will be occurring, so I can keep informed.
@@ -62,7 +66,7 @@ This site was created to allow users book a portable pizza service. Users should
 * As admin I want to be able to create events but users cannot create events #168
 * As admin I want to be able to update events so new information can be added or subtracted #167
 * As admin I want to be able to delete events #167
-* As admin I want to have my passwords safe [#113](https://github.com/JWalshe86/Nags-With-Notions2.0/issues/113)
+* As admin I want to have my passwords safe #113
 
 
 ### SCOPE 🔭<br>
@@ -75,7 +79,7 @@ This site was created to allow users book a portable pizza service. Users should
 
 * [Database diagram #1](/static/pdfs/drawSQL-version1.png)
 
-The comments model was removes as it wasn't seen as essential, and other work took priority, such as testing.
+The comments model was removed as it wasn't seen as essential, and other work took priority, such as testing.
 * [Database diagram #2](/static/pdfs/drawSQL-version2.png)
 
 
@@ -88,32 +92,33 @@ menu is displayed. If the user wishes to book they are shown the available dates
 needs to login. If not already registered the user must sign up. Once the user is logged in they
 can select their preferred dates. They then receive a confirmation email regarding their booking. The dates available, personal information and password data is then updated.
 
-[Full Site Flowchart Sprint1](/static/pdfs/nags-with-notions-flowchart-sprint1.pdf)
+[Full Site Flowchart](/static/pdfs/nags-with-notions-flowchart-sprint1.pdf)
 
 #### Sprints
 
-* Sprint 1
-[Sprint 1](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/19)
+[Sprint 1](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/19) * This will be closed but closed issues can be viewed.
 
 Sprint 1 was overdue by one month as the django lms learning material took much longer than expected. The real project has started now and I expect to work through the issues at a quicker pace. Upon reflection, and advice from slack meeting 110124 I should implement story points to get a better grasp on what can be achieved between sprints and what to prioritise. I will also pivot towards putting crud functionality on bookings rather than comments
 
 * Sprint 2
 
-[Sprint 2](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/20)
+[Sprint 2](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/20) * This will be closed but closed issues can be viewed.
+
 
 Sprint 2 saw the completion of 50% of its tasks. Story points were introduced to get a better grasp on the workload, and this may allow one to gain a better understanding of what can be realistically achieved in Sprint 3. Considerable time was put into automatic testing, which is not a requirement for the pass criteria; so in sprint 3 effort will be directed into other areas. During Sprint 2 much of the functional objectives were achieved. In Sprint 3 I hope to divest more energy into testing. 46 open issues were passed forward from Sprint 2 to Sprint 3. 159 story points were completed in Sprint 2. 147 story points have been passed for to Sprint 3, which makes this workload realistically achievable by the end of Sprint 3.
 
-* Sprint 3
+* [Sprint 3](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/21) * This will be closed but closed issues can be viewed.
 
-The last sprint was supposed to prioritise testing but during testing I found several bugs. One bug took several days to fix. This involved ensuring that the registered user could only see their own bookings in the view bookings tab. Connecting the user as a foreign key to my booking model and using the booking id as an argument to track whether the booking belonged to a specific user or not was quite challenging to figure out. Thus during this phase only 6 tasks were completed. For the next two weeks I intend to double down on testing: starting with ensuring all the booking functionality is correct and documenting this in the readme. Still several weeks until the Mar 22 deadline so things appear to be on track.
+The previous sprint was supposed to prioritise testing but during testing I found several bugs. One bug took several days to fix. This involved ensuring that the registered user could only see their own bookings in the view bookings tab. Connecting the user as a foreign key to my booking model and using the booking id as an argument to track whether the booking belonged to a specific user or not was quite challenging to figure out. Thus during this phase only 6 tasks were completed. For the next two weeks I intend to double down on testing: starting with ensuring all the booking functionality is correct and documenting this in the readme. Still several weeks until the Mar 22 deadline so things appear to be on track.
 
-[Sprint 3](https://github.com/JWalshe86/Nags-With-Notions2.0/milestone/21)
 
-* Sprint 4
+[Sprint 4](https://github.com/JWalshe86/Nags-With-Notions2.0/milestones?state=closed) * This will be closed but closed issues can be viewed.
 
 The 8 days overdue for sprint 4 was a result of extra work in my internship. However, a lot of manual testing was completed which was quite tedious. This testing also highlighted many errors which took time to fix. The main focus now is to complete the testing and the user stories.
 
-[Sprint 4](https://github.com/JWalshe86/Nags-With-Notions2.0/milestones?state=closed)
+[Sprint 5](https://github.com/JWalshe86/Nags-With-Notions2.0/issues)
+
+The final sprint involved doubling down on testing. Python testing was completed. The readme was updated. My site was also tested by friends and work colleagues.
 
 ### SURFACE/DESIGN<br>
 
@@ -123,10 +128,8 @@ I chose the 'square' color harmony using Adobe's color wheel. The base color was
 
 #### Wireframes
 
-[Initial Landing Page Wireframe](/assets/wireframe/landing-page-wireframe.fig)
+[Initial Landing Page Wireframe](/static/pdfs/Nags-With-Notions-Wireframe.pdf)
 
-
-[Full Site Wireframe Sprint1](/assets/pdfs/nags-with-notions-wireframe-sprint1.pdf)
 
 Reasoning for Wireframe structure: As a user, I want to be able to see when the Pizza Horsebox is available for private hire. As the owner, I want customers to know they can hire the horse box and when it's available. Also, I want the user of the website to know that Nags with Notions also sells pizzas at events and when these events are on. The wireframe shows websites snippets where such features have been executed successfully. Having shown this wireframe to Nags With Notions they are happy to proceed.
 
