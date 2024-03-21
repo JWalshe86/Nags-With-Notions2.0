@@ -17,20 +17,10 @@
     background-size: 100%;
     background-position: 0% 32%;
   }
-  @media (max-width: 350px){
-    .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.1), #000), url(/static/images/hero-image-horsebox.jpg);
-    }
-  }
-  @media (max-width: 800px){
-    .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.1), #000), url(/static/images/hero-image-horsebox.jpg);
-    }
-  }
   @media (max-width: 1200px){
     .hero-image{
-      background: linear-gradient(rgba(0, 0, 0, 0.1), #000), url(/static/images/hero-image-1200X900.webp);
       height: 60vh;
+      width: 100vw;
     }
   }
   @media (max-width: 768px){
@@ -51,7 +41,7 @@
 
   #hero-text{
     font-family: $Rockwell;
-    background-color:  #f4c2c34f;
+    background-color: rgba(244, 194, 195, 0.509804);
     @include border-radius(10px);
     padding-top: 5px;
 
@@ -74,4 +64,8 @@
   .intro-text p {
     max-width: 500px;
     margin: 16px auto 0 auto;
+  }
+
+  #hero-text > h6 {
+    font-weight: 800;
   }

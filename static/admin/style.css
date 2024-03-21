@@ -57,10 +57,24 @@ img {
   background-color: #f4c2c3;
 }
 
+#bknowlink {
+  color: #0e6656;
+  font-weight: 900;
+}
+
+body > div > div.outerdiv > div > div > div:nth-child(2) > p:nth-child(1) {
+  margin-top: 10vh;
+}
+
+@media (max-width: 768px) {
+  body > div > div.outerdiv > div > div > div:nth-child(2) > p:nth-child(1) {
+    margin-top: -6vh;
+  }
+}
 .btn, .btn-primary, .btn-warning {
   min-width: 100px;
   padding: 10px;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
   background-color: #e9e1eb;
@@ -97,6 +111,8 @@ img {
 /* site header */
 body > nav > div > div.navbar-collapse.collapse.w-100.order-1.order-md-0.navbarNav > ul {
   margin-right: inherit !important;
+  font-size: 1.25rem;
+  background-color: #d9499a;
 }
 
 .navbar {
@@ -162,20 +178,10 @@ body > nav > div > div.navbar-collapse.collapse.w-100.order-1.order-md-0.navbarN
   background-position: 0% 32%;
 }
 
-@media (max-width: 350px) {
-  .hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), #000), url(/static/images/hero-image-horsebox.jpg);
-  }
-}
-@media (max-width: 800px) {
-  .hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), #000), url(/static/images/hero-image-horsebox.jpg);
-  }
-}
 @media (max-width: 1200px) {
   .hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), #000), url(/static/images/hero-image-1200X900.webp);
     height: 60vh;
+    width: 100vw;
   }
 }
 @media (max-width: 768px) {
@@ -194,7 +200,7 @@ body > nav > div > div.navbar-collapse.collapse.w-100.order-1.order-md-0.navbarN
 }
 #hero-text {
   font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-  background-color: rgba(244, 194, 195, 0.3098039216);
+  background-color: rgba(244, 194, 195, 0.509804);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -217,6 +223,10 @@ body > nav > div > div.navbar-collapse.collapse.w-100.order-1.order-md-0.navbarN
 .intro-text p {
   max-width: 500px;
   margin: 16px auto 0 auto;
+}
+
+#hero-text > h6 {
+  font-weight: 800;
 }
 
 /* menu style */
