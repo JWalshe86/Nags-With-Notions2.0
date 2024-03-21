@@ -37,7 +37,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -107,12 +107,12 @@ WSGI_APPLICATION = 'nags_with_notions.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': 'bxavbsbh',                     
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bxavbsbh',
         'USER': 'bxavbsbh',
         'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': 'mel.db.elephantsql.com', 
-        'PORT': '',              
+        'HOST': 'mel.db.elephantsql.com',
+        'PORT': '',
     }
 }
 
