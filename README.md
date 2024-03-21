@@ -120,6 +120,10 @@ The 8 days overdue for sprint 4 was a result of extra work in my internship. How
 
 The final sprint involved doubling down on testing. Python testing was completed. The readme was updated. My site was also tested by friends and work colleagues.
 
+Everything onn Kanban board was completed.
+
+[Kanban Board](/static/images/KanbanBoard.png)
+
 ### SURFACE/DESIGN<br>
 
 I chose the 'square' color harmony using Adobe's color wheel. The base color was the color associated with Nags with Notions Logo. However I swapped out #C4C9F5 for aliceblue as I felt #C4C9F5 was a bit too harsh.
