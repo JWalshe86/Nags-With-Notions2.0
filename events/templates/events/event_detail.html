@@ -4,12 +4,12 @@
 	<div class="row">
 		<div class="col-12 col-md-6 col-lg-4 offset-lg-2">
 			<div class="image-container my-5">
-				{% if event.image %}
-				<a href="{{ event.image.url }}" target="_blank">
+				{% if event.event_image %}
+				<a href="{{ event.event_image.url }}" target="_blank">
 					<img
 						class="card-img-top img-fluid"
-						src="{{ event.image.url }}"
-						alt="{{ event.name }}"
+						{{ event.event_image }}
+						alt="{{ event.title }}"
 					/>
 				</a>
 				{% else %}
@@ -17,7 +17,7 @@
 					<img
 						class="card-img-top img-fluid"
 						src="{{ MEDIA_URL }}noimage.png"
-						alt="{{ event.name }}"
+						alt="{{ event.title }}"
 					/>
 				</a>
 				{% endif %}
@@ -26,13 +26,14 @@
 		<div class="col-12 col-md-6 col-lg-4">
 			<div class="event-details-container mb-5 mt-md-5">
 				<p class="mb-0">{{ event.name }}</p>
+				<p class="lead mb-0 text-left font-weight-bold">${{ event.price }}</p>
                                 {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="{% url 'edit_event' event.id %}">Edit</a> | 
                                                     <a class="text-danger" href="{% url 'delete_event' event.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
-				<p class="mt-3">{{ event.description }}</p>
+				<p class="mt-3">{{ event.content }}</p>
 
 						<div class="col{% if s %}-12 mt-2{% endif %}">
 							<a
