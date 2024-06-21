@@ -1,53 +1,103 @@
-"imports"
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.decorators import permission_required
-from django.views.generic.list import ListView
-from django.urls import reverse_lazy
+from django.contrib import messages
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+from django.db.models.functions import Lower
+from django.shortcuts import get_object_or_404, redirect, render, reverse
+
 from .models import Event
+from .forms import EventForm
 
 
-# Create your views here.
-class EventList(ListView):
-    "renders a page where a user can view events"
+def all_events(request):
+    """A view to show all events, including sorting and search queries"""
 
-    model = Event
-    # context_object_name = 'events'
-    template_name = "events/index.html"
-    paginate_by = 3
+    events = Event.objects.all()
 
-
-@permission_required("events.create_event")
-class CreateEvent(SuccessMessageMixin, CreateView):
-    "renders form so superusers can create an event"
-
-    model = Event
-    fields = ["title", "content", "event_image"]
-    success_message = "New Event Created"
-    success_url = reverse_lazy("events")
-
-    # over-ride is valid method
-    def form_valid(self, form):
-        # user can't create bookings for other users
-        form.instance.user = self.request.user
-        return super(CreateEvent, self).form_valid(form)
+    context = {
+        "events": events,
+    }
+    return render(request, "events/index.html", context)
 
 
-@permission_required("events.create_event")
-class UpdateEvent(SuccessMessageMixin, UpdateView):
-    "renders form so superusers can update events"
+def event_detail(request, event_id):
+    """A view to show event details"""
 
-    model = Event
-    fields = ["title", "content", "event_image"]
-    success_message = "Event updated"
-    success_url = reverse_lazy("events")
+    event = get_object_or_404(Event, pk=event_id)
+
+    context = {
+        "event": event,
+    }
+    return render(request, "events/event_detail.html", context)
 
 
-@permission_required("events.create_event")
-class DeleteEvent(SuccessMessageMixin, DeleteView):
-    "renders form so users can delete events"
+@login_required
+def add_event(request):
+    """Add a event to the store"""
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
 
-    model = Event
-    context_object_name = "events"
-    success_message = "Event deleted"
-    success_url = reverse_lazy("events")
+    if request.method == "POST":
+        form = EventForm(request.POST, request.FILES)
+        if form.is_valid():
+            event = form.save()
+            messages.success(request, "Successfully added event!")
+            return redirect(reverse("event_detail", args=[event.id]))
+        else:
+            messages.error(
+                request,
+                "Failed to add event. Please ensure the form is valid.",
+            )
+    else:
+        form = EventForm()
+
+    template = "events/add_event.html"
+    context = {
+        "form": form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_event(request, event_id):
+    """Edit a event in the store"""
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+    event = get_object_or_404(Event, pk=event_id)
+    if request.method == "POST":
+        form = EventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully updated event!")
+            return redirect(reverse("event_detail", args=[event.id]))
+        else:
+            messages.error(
+                request,
+                "Failed to update event. Please ensure the form is valid.",
+            )
+    else:
+        form = EventForm(instance=event)
+        messages.info(request, f"You are editing {event.name}")
+
+    template = "events/edit_event.html"
+    context = {
+        "form": form,
+        "event": event,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_event(request, event_id):
+    """Delete a event from the store"""
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+    event = get_object_or_404(Event, pk=event_id)
+    event.delete()
+    messages.success(request, "Event deleted!")
+    return redirect(reverse("events"))

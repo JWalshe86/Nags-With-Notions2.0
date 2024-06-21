@@ -1,11 +1,12 @@
 "imports"
 from django.urls import path
-from .views import EventList, CreateEvent, UpdateEvent, DeleteEvent
+from . import views
 
 
 urlpatterns = [
-    path("", EventList.as_view(), name="events"),
-    path("events/", CreateEvent, name="create_event"),
-    path("update_event/<str:pk>", UpdateEvent.as_view(), name="update_event"),
-    path("delete_event/<str:pk>", DeleteEvent.as_view(), name="delete_event"),
+    path("events", views.Event, name="events"),
+    path("add_event", views.add_event, name="add_event"),
+    path("edit/<int:event_id>/", views.edit_event, name="edit_event"),
+    path("<int:event_id>/", views.event_detail, name="event_detail"),
+    path("delete/<int:event_id>/", views.delete_event, name="delete_event"),
 ]
