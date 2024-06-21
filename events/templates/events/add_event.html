@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="content-section d-flex justify-content-center">
+            <fieldset class="form-group shadow-lg p-3 col-md-9 mb-5 mt-5 bg-white rounded">
+                <h2 class="text-center">Add Event</h2>
+                <ul>
+                    <li>{{form.title | as_crispy_field }}</li>
+                    <li>{{form.content | as_crispy_field }}</li>
+                    <li>{{form.event_image | as_crispy_field}}</li>
+                </ul>
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </fieldset>
+        </div>
+    </form>
+
+
+{% endblock %}
