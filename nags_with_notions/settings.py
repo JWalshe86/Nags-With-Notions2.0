@@ -38,7 +38,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -109,11 +109,11 @@ WSGI_APPLICATION = "nags_with_notions.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "",
-        "USER": "",
-        "PASSWORD": "",
-        "HOST": "",
-        "PORT": "",
+        "NAME": "nwn",
+        "USER": "johnwalshe",
+        "PASSWORD": "Sunshine7!",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
