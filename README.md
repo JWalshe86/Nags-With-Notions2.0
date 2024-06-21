@@ -288,6 +288,9 @@ Achieved. See feature testing for more detail.
 * As a user I want to be able to access social media sites from the footer #5
 Achieved. See feature testing for more detail.
 
+## Auto-Testing
+
+[HTML INDEX PAGE W3C TEST](/static/pdfs/testing/w3c-html-index-page.png)
 
 ## MODULES IMPORTED 👽
 
