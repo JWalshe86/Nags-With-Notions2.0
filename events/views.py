@@ -1,9 +1,11 @@
 "imports"
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.decorators import permission_required
 from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from .models import Event
+
 
 # Create your views here.
 class EventList(ListView):
@@ -14,14 +16,15 @@ class EventList(ListView):
     template_name = "events/index.html"
     paginate_by = 3
 
-# @permission_required("events.view_event")
+
+@permission_required("events.create_event")
 class CreateEvent(SuccessMessageMixin, CreateView):
     "renders form so superusers can create an event"
 
     model = Event
-    fields = ['title', 'content', 'event_image']
-    success_message = 'New Event Created'
-    success_url = reverse_lazy('events')
+    fields = ["title", "content", "event_image"]
+    success_message = "New Event Created"
+    success_url = reverse_lazy("events")
 
     # over-ride is valid method
     def form_valid(self, form):
@@ -29,22 +32,22 @@ class CreateEvent(SuccessMessageMixin, CreateView):
         form.instance.user = self.request.user
         return super(CreateEvent, self).form_valid(form)
 
-# @permission_required("events.view_event")
+
+@permission_required("events.create_event")
 class UpdateEvent(SuccessMessageMixin, UpdateView):
     "renders form so superusers can update events"
 
     model = Event
-    fields = ['title', 'content', 'event_image']
-    success_message = 'Event updated'
-    success_url = reverse_lazy('events')
+    fields = ["title", "content", "event_image"]
+    success_message = "Event updated"
+    success_url = reverse_lazy("events")
 
 
-# @permission_required("events.view_event")
-
+@permission_required("events.create_event")
 class DeleteEvent(SuccessMessageMixin, DeleteView):
     "renders form so users can delete events"
 
     model = Event
-    context_object_name = 'events'
-    success_message = 'Event deleted'
-    success_url = reverse_lazy('events')
+    context_object_name = "events"
+    success_message = "Event deleted"
+    success_url = reverse_lazy("events")
