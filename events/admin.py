@@ -6,6 +6,6 @@ from .models import Event
 @admin.register(Event)
 class EventAdmin(SummernoteModelAdmin):
     "Adds Summernote functionality to db admin"
-    list_display = ('title', 'content', 'event_image')
-    search_fields = ['title']
-    summernote_fields = 'content'
+    list_display = ('name', 'description', 'image')
+    search_fields = ['name']
+    summernote_fields = 'description'

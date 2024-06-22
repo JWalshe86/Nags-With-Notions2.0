@@ -4,50 +4,9 @@
 	<div class="row">
 		<div class="col-12 col-md-6 col-lg-4 offset-lg-2">
 			<div class="image-container my-5">
-				{% if event.event_image %}
-				<a href="{{ event.event_image.url }}" target="_blank">
-					<img
-						class="card-img-top img-fluid"
-						{{ event.event_image }}
-						alt="{{ event.title }}"
-					/>
-				</a>
-				{% else %}
-				<a href="">
-					<img
-						class="card-img-top img-fluid"
-						src="{{ MEDIA_URL }}noimage.png"
-						alt="{{ event.title }}"
-					/>
-				</a>
-				{% endif %}
-			</div>
-		</div>
-		<div class="col-12 col-md-6 col-lg-4">
-			<div class="event-details-container mb-5 mt-md-5">
-				<p class="mb-0">{{ event.name }}</p>
-				<p class="lead mb-0 text-left font-weight-bold">${{ event.price }}</p>
-                                {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_event' event.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_event' event.id %}">Delete</a>
-                                                </small>
-                                            {% endif %}
-				<p class="mt-3">{{ event.content }}</p>
-
-						<div class="col{% if s %}-12 mt-2{% endif %}">
-							<a
-								href="{% url 'events' %}"
-								class="btn btn-outline-black rounded-0 mt-5"
-							>
-							</a>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
+				<img   src="{{ event.image.url }}"/>
 	</div>
-</div>
+		</div>
 {% endblock %}
 
 
