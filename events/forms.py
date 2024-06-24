@@ -9,4 +9,4 @@ class EventForm(forms.ModelForm):
     class Meta:
         "creates form using event model template"
         model = Event
-        fields = ["start_date", "description", "image"]
+        fields = ["start_date", "name", "description", "image"]

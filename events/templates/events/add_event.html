@@ -9,6 +9,7 @@
             <fieldset class="form-group shadow-lg p-3 col-md-9 mb-5 mt-5 bg-white rounded">
                 <h2 class="text-center">Add Event</h2>
                 <ul>
+                    <li>{{form.name | as_crispy_field }}</li>
                     <li>{{form.start_date | as_crispy_field }}</li>
                     <li>{{form.description | as_crispy_field }}</li>
                     <li>{{form.image | as_crispy_field}}</li>
