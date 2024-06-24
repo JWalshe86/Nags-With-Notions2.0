@@ -72,7 +72,7 @@ def edit_event(request, event_id):
         if form.is_valid():
             form.save()
             messages.success(request, "Successfully updated event!")
-            return redirect(reverse("event_detail", args=[event.id]))
+            return redirect(reverse("all_events"))
         else:
             messages.error(
                 request,
@@ -100,4 +100,4 @@ def delete_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     event.delete()
     messages.success(request, "Event deleted!")
-    return redirect(reverse("events"))
+    return redirect(reverse("all_events"))
