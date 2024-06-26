@@ -108,14 +108,11 @@ WSGI_APPLICATION = "nags_with_notions.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-if "DATABASE_URL" in os.environ:
-        DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "nwn",
-        "USER": "johnwalshe",
+        "NAME": "postgres",
+        "USER": "postgres",
         "PASSWORD": os.environ.get('DB-PASSWORD'),
         "HOST": "localhost",
         "PORT": "5432",
