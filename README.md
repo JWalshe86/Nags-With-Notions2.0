@@ -292,6 +292,10 @@ Achieved. See feature testing for more detail.
 
 [HTML INDEX PAGE W3C TEST](/static/pdfs/testing/w3c-html-index-page.png)
 
+**EXTRA TESTING**
+
+[Extra HTML TESTING](https://github.com/JWalshe86/Nags-With-Notions2.0/wiki/W3C-HTML-Test)
+
 ## MODULES IMPORTED 👽
 
 
