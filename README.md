@@ -222,6 +222,9 @@ Achieved. See feature testing for more detail.
 Achieved. See feature testing for more detail.
 [Events list](/static/images/userstorytesting/canseeevents.png)
 
+[**Extra Events Authorisation Tests**](https://github.com/JWalshe86/Nags-With-Notions2.0/wiki/Authorisation-Testing)
+
+
 * As a user I want to be able to see my current bookings displayed on the site.
 Achieved. See feature testing for more detail.
 [Bookings list](/static/images/userstorytesting/canseebookings.png)
