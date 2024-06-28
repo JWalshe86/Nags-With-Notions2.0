@@ -6,6 +6,7 @@ from booking.views import CustomLoginView
 
 # Create your views here.
 def myview(request):
+    """A view to display the main index page"""
     return render(request, "index.html", {})
 
 
