@@ -224,6 +224,7 @@ Achieved. See feature testing for more detail.
 
 [**Extra Events Authorisation Tests**](https://github.com/JWalshe86/Nags-With-Notions2.0/wiki/Authorisation-Testing)
 
+[**Extra Booking Authorisation Tests**](https://github.com/JWalshe86/Nags-With-Notions2.0/wiki/Authorisation-booking-tests)
 
 * As a user I want to be able to see my current bookings displayed on the site.
 Achieved. See feature testing for more detail.
