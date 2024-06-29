@@ -3,21 +3,22 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="content-section d-flex justify-content-center">
-            <fieldset class="form-group shadow-lg p-3 col-md-9 mb-5 mt-5 bg-white rounded">
-                <h2 class="text-center">Add Event</h2>
-                <ul>
-                    <li>{{form.name | as_crispy_field }}</li>
-                    <li>{{form.start_date | as_crispy_field }}</li>
-                    <li>{{form.description | as_crispy_field }}</li>
-                    <li>{{form.image | as_crispy_field}}</li>
-                </ul>
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
-            </fieldset>
+<div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'add_event' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+		    {% for field in form %}
+		        {% if field.name != 'image' %}
+                    {{ field | as_crispy_field }}
+		        {% else %}
+			   {{ field }}
+			{% endif %}
+		    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'all_events' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Add Event</button>
+                    </div>
+                </form>
+            </div>            
         </div>
-    </form>
-
-
 {% endblock %}
