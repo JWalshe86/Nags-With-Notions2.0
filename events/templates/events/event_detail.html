@@ -8,10 +8,10 @@
 				<h1> {{ event.name }} </h1>
 				<p> {{ event.start_date }}
 				{% if event.image %}
-				<a href="{{ event.image_url }}" target="_blank">
+				<a href="{{ event.image.url}}" target="_blank">
 					<img
 						class="card-img-top img-fluid"
-						src="{{ event.image_url }}"
+						src="{{ event.image.url }}"
 						alt="{{ event.name }}"
 					/>
 				</a>
