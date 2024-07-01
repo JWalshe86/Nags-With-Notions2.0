@@ -41,7 +41,7 @@ The UX was explored using a customer journey map. The site then acted successful
 
 #### User Stories 📖<br>
 
-**The number references here proceeded by the hash key refer to the issue number in the github projects.
+The number references here proceeded by the hash key refer to the issue number in the github projects.
 
 * As a customer interested in hiring a pizzeria horsebox service, I can request to book the horsebox online so that I can use it for a personal event #3
 * As a website user I can see what events have occurred or will be occurring, so I can keep informed.
