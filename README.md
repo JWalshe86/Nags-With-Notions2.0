@@ -195,7 +195,7 @@ work well with Windows. I was also using vscode which meant Code Institue suppor
 
 4. During lighthouse testing I couldn't get the hero image to load under 5 seconds. However, in reality the image appears to load straight away. That said after alot of trial and error I was able to get the image to render in under a second on lighthouse but then it would increase again. I think it may be due to internet connection. I still haven't figured this out fully.
 
-5. [When no image added to events error](https://github.com/JWalshe86/Nags-With-Notions2.0/wiki/Events-%E2%80%90-Bug-%E2%80%90-Error-if-no-img-added-when-creating-event) 
+5. [Fixed -When no image added to events error on heroku](https://github.com/JWalshe86/Nags-With-Notions2.0/wiki/Events-%E2%80%90-Bug-%E2%80%90-Error-if-no-img-added-when-creating-event) 
 
 ## Testing
 
