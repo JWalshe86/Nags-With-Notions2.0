@@ -1,330 +1,71 @@
-
 {% extends 'base.html' %}
 {% load static %}
-<body>
+
+{% block content %}
+
+<!-- Hero Image -->
+{% load static %}
+
+<style>
+    .hero-container {
+    background-image: url("{% static 'images/hero-image-horsebox.jpg' %}");
+    background-size: cover;
+    background-position: center; /* Default for larger screens */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .hero-container {
+        background-position: left; /* Focus on the left side of the image */
+        background-size: auto 100%; /* Ensure the height covers the container */
+    }
+}
+</style>
 
 
-    {% block content %}
+<div class="hero-container">
+    <div class="hero-image"> <!-- Apply the hero-image class -->
+        <div id="hero" class="jumbotron jumbotron-fluid">
+            <div id="hero-text" class="container" style="display: flex; flex-direction: column; align-items: center;">
 
-    <!-- Hero Image -->
+                <h6 class="display-4 text-white text-center">Nags With Notions</h6>
+                <h1 class="lead text-white">Bespoke pizzas for your special event</h1>
 
-    <div class="hero-container">
-        <div class="hero-image">
-            <div id="hero" class="jumbotron jumbotron-fluid">
-                <div id="hero-text" class="container" style="display: flex; flex-direction: column; align-items: center;">
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <h6 class="display-4 text-white text-center">Nags With Notions</h6>
-                    <h1 class="lead text-white">Bespoke pizza's for your special event</h1>
+<!-- /.Hero Image End -->
 
-                </div>
+{% include "about.html" %}
+
+<!-- Menu -->
+
+<section id="menu" class="bg-primary-subtle mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 intro-text">
+                <h2>Explore Our Menu</h2>
+                <p>All ingredients have been sourced locally!</p>
             </div>
         </div>
     </div>
 
-    <!-- /.Hero Image End -->
+    <div class="container">
+        <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+            <!-- Menu tabs and content -->
+            ...
+        </ul>
 
-    {% include "about.html" %}
-
-    <!-- Menu   -->
-
-    <section id="menu" class="bg-primary-subtle mb-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mt-5 intro-text">
-                    <h2>Explore Our Menu</h2>
-                    <p>All ingredients have been sourced locally!</p>
-                </div>
-            </div>
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Menu items -->
+            ...
         </div>
+    </div>
 
-        <div class="container">
-            <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+</section>
 
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-pizzas-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-pizzas" type="button" role="tab" aria-selected="true">Pizzas</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-dips"
-                        type="button" role="tab" aria-selected="true">Dips</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-drinks-tab" data-bs-toggle="pill" data-bs-target="#pills-drinks"
-                        type="button" role="tab" aria-selected="true">Drinks</button>
-                </li>
-            </ul>
-
-            <div class="tab-content" id="pills-tabContent">
-
-                <div class="tab-pane fade show active" role="tabpanel"
-                    aria-labelledby="pills-pizzas-tab" id="pills-pizzas" tabindex="0">
-
-                    <div class="row gy-4">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img class="img-fluid" src="/static/images/menu-images/blue-cheese-tiny420x560.png"
-                                    srcset="/static/images/menu-images/blue-cheese-tiny200-335.webp 200w"
-                                    sizes='100vw'
-                                    alt="image-of-blue-cheese-pizza">
-                                <div class="menu-item-content p-4">
-                                    <div>
-                                        <span class="stars">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </span>
-                                    </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Feeling A
-                                            Little Blue</a></h5>
-                                    <p class="small">Sourdough Base, Tomato Sauce, Mozzarella, Boyne Valley Cheese,
-                                        Carmelized
-                                        Onion, Pear, Walnuts, Fresh Rocket & Parmiganio Reggianio</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="menu-item2" class="img-fluid"
-                                    src="/static/images/menu-images/pony-soprano-tiny420x560.webp"
-                                    srcset="/static/images/menu-images/pony-soprano-tiny200x335.webp 200w"
-                                    sizes='100vw'
-                                    alt="image-of-pony-soprano-pizza">
-                                        <!-- should be 420x520 for large desktop -->
-                                <div class="menu-item-content p-4">
-                                    <div>
-                                        <span class="stars">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </span>
-                                    </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Pony
-                                            Soprano</a></h5>
-                                    <p class="small">Sourdough Base, Tomato Sauce, Mozzarella, Wooded Pig Pepperoni,
-                                        Garlic Oil & Fresh Rocket</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="menu-item3" class="img-fluid"
-                                    src="/static/images/menu-images/butternut-squash-tiny420x560.webp"
-                                    srcset="/static/images/menu-images/butternut-squash-tiny200x267.webp 200w"
-                                    sizes='100vw'
-                                    alt="image-of-butternut-squash-pizza">
-                                <div class="menu-item-content p-4">
-                                    <div>
-                                        <span class="stars">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </span>
-                                    </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Butternut
-                                            Squash</a></h5>
-                                    <p class="small">Sourdough Base, Mozzarella Cheese, Carmelised Onions,
-                                        Prosciutto
-                                        Ham, Butternut Squash, Extra Virgin Olive Oil
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="menu-item4" class="img-fluid"
-                                    src="/static/images/menu-images/margherita-for-mares-tiny420x560.png"
-                                    srcset="/static/images/menu-images/margherita-for-mares-tiny200x225.png 200w"
-                                    sizes='100vw'
-                                    alt="image-of-margerita-pizza">
-                                <div class="menu-item-content p-4">
-                                    <div>
-                                        <span class="stars">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </span>
-                                    </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Margerita
-                                            For Mares</a></h5>
-                                    <p class="small">Sourdough Base, Tomato Sauce, Parmiganio Reggianio, Mozzarella,
-                                        Fresh Bazil
-                                        Extra Virgin Olive Oil</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="menu-item5" class="img-fluid"
-                                    src="/static/images/menu-images/no-animals-here-resized-tiny420x560.webp"
-                                    alt="image-of-vegetarian-pizza">
-                                <div class="menu-item-content p-4">
-                                    <div>
-                                        <span class="stars">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                        </span>
-                                    </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">No
-                                            Animals
-                                            Here</a></h5>
-                                    <p class="small">Sourdough Base, Tomato Sauce, Vegan Mozzarella, Carmelised
-                                        Onion, Green Olives, Vegan Pesto & Fresh Rocket</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="menu-item6" class="img-fluid"
-                                    src="/static/images/menu-images/horse-to-france-pexels-tiny420x560.webp"
-                                    alt="image-of-vegetarian-pizza">
-                                <div class="menu-item-content p-4">
-                                    <div>
-                                        <span class="stars">
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-fill"></i>
-                                            <i class="ri-star-half-fill"></i>
-                                        </span>
-                                    </div>
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Who's
-                                            taking the Horse to France?</a></h5>
-                                    <p class="small">Sourdough Base with Garlic Butter, Mozzarella & Rosemary
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="tab-pane fade show" id="pills-dips" role="tabpanel" aria-labelledby="pills-dips"
-                    tabindex="0">
-                    <div class="row gy-4">
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="aioli" class="img-fluid" src="/static/images/menu-images/Garlic-aioli-8.webp"
-                                srcset="/static/images/menu-images/Garlic-aioli-200x300px.webp 200w"
-                                sizes='100vw'
-                                    alt="image-of-garlic-aioli-dip">
-                                <div class="menu-item-content p-4">
-                                    <div></div>
-                                    <!--empty div so jquery can catch it along with others with star div-->
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Garlic
-                                            Aioli</a></h5>
-                                    <p class="small">Mayonaisse, garlic, lemon juice, black pepper, salt</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img id="chili-honey" class="img-fluid w-100"
-                                    src="/static/images/menu-images/chili-honey-dip.jpg" alt="image-of-chili-dip">
-                                <div class="menu-item-content p-4">
-                                    <div></div>
-                                    <!--empty div so jquery can catch it along with others with star div-->
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Chili
-                                            Honey Dip</a></h5>
-                                    <p class="small">Chili flakes, chili powder, garlic & honey</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img class="img-fluid w-100" src="/static/images/menu-images/mayonaisse.jpg"
-                                    alt="image-of-mayonaisse-dip">
-                                <div class="menu-item-content p-4">
-                                    <div></div>
-                                    <!--empty div so jquery can catch it along with others with star div-->
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black"
-                                            href="#">Mayonaisse</a></h5>
-                                    <p class="small">Eggs, mustard, sunflower oil, lemon juice</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img class="img-fluid w-100" src="/static/images/menu-images/ketchup.jpg"
-                                    alt="image-of-ketchup-sauce">
-                                <div class="menu-item-content p-4">
-                                    <div></div>
-                                    <!--empty div so jquery can catch it along with others with star div-->
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black"
-                                            href="#">Ketchup</a></h5>
-                                    <p class="small">Tomato, vinegar, sugar, garlic, mustard</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade show" id="pills-drinks" role="tabpanel" aria-labelledby="pills-drinks-tab"
-                    tabindex="0">
-                    <div class="row gy-4">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img class="img-fluid w-100" src="/static/images/menu-images/limonata.webp"
-                                    srcset="/static/images/menu-images/limonata200x200.webp 200w" sizes='100vw'
-                                    alt="image-of-can-of-lemonade">
-                                <div class="menu-item-content p-4 text-center">
-
-                                    <h5 class="mt-1 mb-2"><a class="text-black text-decoration-none" href="#">Limonata</a></h5>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img class="img-fluid w-100" src="/static/images/menu-images/aranciata.webp"
-                                srcset="/static/images/menu-images/aranciata200x200.webp 200w" sizes='100vw'
-                                    alt="image-of-can of aranciata">
-                                <div class="menu-item-content p-4 text-center">
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black"
-                                            href="#">Aranciata</a></h5>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="menu-item bg-white shadow-on-hover">
-                                <img class="img-fluid w-100" src="/static/images/menu-images/aranciata-rossa.jpg"
-                                    alt="image-of-can of aranciata">
-                                <div class="menu-item-content p-4 text-center">
-                                    <h5 class="mt-1 mb-2"><a class="text-decoration-none text-black" href="#">Aranciata
-                                            Rossa</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-    {% endblock content %}
-
-    <!-- /.Menu    -->
+{% endblock content %}
 
 
-</body>
