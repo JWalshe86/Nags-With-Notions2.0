@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg shadow py-3">
     <div class="container">
-        <a class="navbar__logo" href="{% url 'home' %}">
+        <a class="navbar__logo" href="{% url 'index' %}">
             <img class="navbar__logo__img" src="{% static 'images/nags-with-notions-logo100x95px.webp' %}" alt="nags with notions logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'all_events' %}">Events</a>

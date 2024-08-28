@@ -4,8 +4,6 @@
 {% block content %}
 
 <!-- Hero Image -->
-{% load static %}
-
 <style>
     .hero-container {
         background-image: url("{% static 'images/hero-image-horsebox.jpg' %}");
@@ -34,20 +32,22 @@
 <div class="hero-container">
     <div id="hero" class="jumbotron jumbotron-fluid">
         <div id="hero-text" class="container" style="display: flex; flex-direction: column; align-items: center;">
-
             <h6 class="display-4 text-white text-center">Nags With Notions</h6>
             <h1 class="lead text-white">Bespoke pizzas for your special event</h1>
-
         </div>
     </div>
 </div>
-
 <!-- /.Hero Image End -->
 
+<!-- Contact Form -->
+<div class="container mt-5">
+    {% include "contact.html" %}
+</div>
+
+<!-- About Section -->
 {% include "about.html" %}
 
 <!-- Menu -->
-
 <section id="menu" class="bg-primary-subtle mb-4">
     <div class="container">
         <div class="row">
@@ -69,8 +69,6 @@
             ...
         </div>
     </div>
-
 </section>
 
 {% endblock content %}
-
