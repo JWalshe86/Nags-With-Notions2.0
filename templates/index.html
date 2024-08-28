@@ -8,30 +8,36 @@
 
 <style>
     .hero-container {
-    background-image: url("{% static 'images/hero-image-horsebox.jpg' %}");
-    background-size: cover;
-    background-position: center; /* Default for larger screens */
-}
-
-/* Media query for mobile screens */
-@media (max-width: 768px) {
-    .hero-container {
-        background-position: left; /* Focus on the left side of the image */
-        background-size: auto 100%; /* Ensure the height covers the container */
+        background-image: url("{% static 'images/hero-image-horsebox.jpg' %}");
+        background-size: cover; /* Ensure the image covers the entire container */
+        background-position: center; /* Default for larger screens */
+        background-repeat: no-repeat; /* Prevent repeating */
+        height: 100vh; /* Full viewport height */
+        width: 100vw; /* Full viewport width */
+        display: flex; /* Center content */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        overflow: hidden; /* Prevent scrolling issues */
     }
-}
+
+    /* Media query for mobile screens */
+    @media (max-width: 768px) {
+        .hero-container {
+            background-position: left center; /* Focus on the left side of the image */
+            background-size: cover; /* Ensure the image covers the container */
+            height: 100vh; /* Full viewport height on mobile */
+            width: 100vw; /* Full viewport width on mobile */
+        }
+    }
 </style>
 
-
 <div class="hero-container">
-    <div class="hero-image"> <!-- Apply the hero-image class -->
-        <div id="hero" class="jumbotron jumbotron-fluid">
-            <div id="hero-text" class="container" style="display: flex; flex-direction: column; align-items: center;">
+    <div id="hero" class="jumbotron jumbotron-fluid">
+        <div id="hero-text" class="container" style="display: flex; flex-direction: column; align-items: center;">
 
-                <h6 class="display-4 text-white text-center">Nags With Notions</h6>
-                <h1 class="lead text-white">Bespoke pizzas for your special event</h1>
+            <h6 class="display-4 text-white text-center">Nags With Notions</h6>
+            <h1 class="lead text-white">Bespoke pizzas for your special event</h1>
 
-            </div>
         </div>
     </div>
 </div>
@@ -67,5 +73,4 @@
 </section>
 
 {% endblock content %}
-
 

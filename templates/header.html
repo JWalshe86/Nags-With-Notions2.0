@@ -1,75 +1,66 @@
 {% load static %}
 
 <nav class="navbar navbar-dark navbar-expand-lg shadow py-3">
-
     <div class="container">
-
-        <div class="d-flex flex-row d-flex justify-content-between navbar__contain-logo-toggle">
-            <a class="navbar__logo" href="{% url 'home' %}">
-                <img class="navbar__logo__img" src="{% static 'admin/img/nags-with-notions-logo.webp' %}"
-                srcset="/static/admin/img/nags-with-notions-logo100x95px.webp 200w" sizes='100vw'
-                    alt="nags with notions logo">
-            </a>
-            <button class="navbar__toggler toggler Btn navbar-toggler align-self-center ml-auto" title="button"
-                type="button" data-toggle="collapse" data-target=".navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 navbarNav">
-            <ul class="navbar-nav mr-auto collapse__list mx-auto">
-                <li class="collapse__list__item border rounded">
-                    <a class="nav-link collapse__content nav-link
-                        {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'home' %}">Home</a>
+        <a class="navbar__logo" href="{% url 'home' %}">
+            <img class="navbar__logo__img" src="{% static 'images/nags-with-notions-logo100x95px.webp' %}" alt="nags with notions logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="collapse__list__item">
-                    <a class="collapse__content nav-link border" href="{% url 'all_events' %}">Events</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'all_events' %}">Events</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="collapse__list__item">
-                    <a class="collapse__content nav-link border" href="{% url 'view' %}">Your Bookings</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'view' %}">Your Bookings</a>
                 </li>
                 {% endif %}
                 {% if perms.event.can_add_new_event %}
-                <li class="collapse__list__item border">
-                    <a class="collapse__content nav-link" href="{% url 'add_event' %}">Create Event</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_event' %}">Create Event</a>
                 </li>
                 {% endif %}
-                <li>
+                <li class="nav-item">
                     {% if not request.user.is_authenticated %}
-                    <a href="{% url 'create_booking' %}" class="collapse__content nav-link border" aria-label="brings user to booking page" >Book Now!</a>
+                    <a href="{% url 'create_booking' %}" class="nav-link">Book Now!</a>
                     <div id="myAlert" class="alert alert-warning collapse">
                         <strong>You must login to book!</strong>
-                        <a id="linkClose" href="#" class="close" >&times;</a>
+                        <a id="linkClose" href="#" class="close">&times;</a>
                     </div>
                     {% endif %}
-
                     {% if user.is_authenticated %}
-                    <a href="{% url 'create_booking' %}" class="collapse__content nav-link border" aria-label="brings user to booking page" >Book Now!</a>
+                    <a href="{% url 'create_booking' %}" class="nav-link">Book Now!</a>
                     {% endif %}
                 </li>
             </ul>
-            </div>
-
-
-            <div class="p-1 m-3 list-unstyled">
+            <ul class="navbar-nav ml-auto">
                 {% if request.user.is_authenticated %}
-
-                        <div class="collapse__list__item nav-link text-dark">
-                <div class="collapse__content nav-link ui simple dropdown item">
-                {{request.user.username}} <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <form class="ui large form" method="post"  action="{% url 'logout' %}">
-                                {% csrf_token %}
-                            <input class="ui button" type="submit" value="Sign out">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">{{ request.user.username }}</a>
+                    <div class="dropdown-menu">
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button class="dropdown-item" type="submit">Sign out</button>
                         </form>
                     </div>
-                </div>
-                </div>
+                </li>
                 {% else %}
-                <a class="text-dark btn btn-primary" href="{% url 'login' %}">Login</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn-primary nav-link" href="{% url 'login' %}">Login</a>
+                    </div>
+                </li>
                 {% endif %}
-            </div>
+            </ul>
         </div>
+    </div>
 </nav>
-<script src="{% static 'js/script.js'%}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+

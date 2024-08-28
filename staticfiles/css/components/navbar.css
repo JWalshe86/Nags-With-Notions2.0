@@ -1,0 +1,69 @@
+/* Navbar container */
+.navbar {
+    background-color: #ff69b4; /* Pink background */
+    padding: 0.5rem 1rem; /* Padding for spacing */
+}
+
+/* Navbar logo */
+.navbar__logo__img {
+    max-height: 60px; /* Adjust logo size */
+    width: auto;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+    border: none; /* Remove default border */
+}
+
+/* Navbar items */
+.navbar-nav {
+    flex-direction: row; /* Align items horizontally */
+}
+
+.collapse__list__item {
+    margin: 0 0.5rem; /* Space between items */
+}
+
+.collapse__content {
+    color: #ffffff; /* White text */
+}
+
+/* Navbar links */
+.nav-link {
+    color: #ffffff; /* White text */
+    padding: 0.5rem 1rem; /* Padding for spacing */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+/* Hover effects */
+.nav-link:hover {
+    background-color: #007bff; /* Blue on hover */
+    color: #ffffff; /* White text */
+    border-radius: 0.25rem; /* Rounded corners */
+}
+
+/* Active link */
+.nav-link.active {
+    background-color: #ff1493; /* Darker pink for active link */
+}
+
+/* Dropdown menu */
+.menu {
+    background-color: #ff69b4; /* Match navbar background */
+}
+
+.ui.button {
+    background-color: #007bff; /* Blue button color */
+    color: #ffffff; /* Button text color */
+}
+
+.ui.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Alert */
+.alert-warning {
+    background-color: #ffcccb; /* Light pink for alert */
+    color: #a94442; /* Alert text color */
+}
+
