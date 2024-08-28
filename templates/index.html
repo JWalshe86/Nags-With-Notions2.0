@@ -16,6 +16,7 @@
         justify-content: center; /* Center content horizontally */
         align-items: center; /* Center content vertically */
         overflow: hidden; /* Prevent scrolling issues */
+        position: relative; /* Allow absolute positioning of the jumbotron */
     }
 
     /* Media query for mobile screens */
@@ -27,13 +28,34 @@
             width: 100vw; /* Full viewport width on mobile */
         }
     }
+
+    /* Jumbotron Styling */
+    .jumbotron {
+        background-color: rgba(246, 195, 198, 0.8); /* Soft coral pink with 80% opacity */
+        border-radius: 0.5rem; /* Rounded corners */
+        padding: 2rem; /* Padding inside the jumbotron */
+        color: #fff; /* White text color */
+        position: absolute; /* Position absolute to move it to the middle of the top half */
+        top: 25%; /* Move it to the middle of the top half */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+        width: 90%; /* Width of the jumbotron */
+        max-width: 800px; /* Max width for larger screens */
+        z-index: 10; /* Ensure it is above other content */
+    }
+
+    /* Text Shadow for better readability */
+    .jumbotron h6, .jumbotron h1 {
+        color: #fff; /* White text color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Dark shadow for text outline */
+    }
 </style>
 
 <div class="hero-container">
     <div id="hero" class="jumbotron jumbotron-fluid">
-        <div id="hero-text" class="container" style="display: flex; flex-direction: column; align-items: center;">
-            <h6 class="display-4 text-white text-center">Nags With Notions</h6>
-            <h1 class="lead text-white">Bespoke pizzas for your special event</h1>
+        <div id="hero-text" class="container text-center">
+            <h6 class="display-4">Nags With Notions</h6>
+            <h1 class="lead">Bespoke pizzas for your special event</h1>
         </div>
     </div>
 </div>

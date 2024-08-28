@@ -1,28 +1,86 @@
+{% load static %}
+
+{% block content %}
+<style>
+    .outerdiv {
+        background-color: #f8f9fa; /* Light background color */
+        padding: 3rem 0; /* Padding around the section */
+    }
+
+    .container {
+        max-width: 960px; /* Limit container width */
+    }
+
+    h1 {
+        margin-bottom: 2rem; /* Space below the heading */
+        font-size: 2.5rem; /* Larger font size */
+        color: #333; /* Darker text color */
+    }
+
+    .owner-img {
+        border-radius: 50%; /* Circular images */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        max-width: 150px; /* Limit image size */
+        margin-bottom: 1rem; /* Space below the image */
+    }
+
+    .about-text {
+        font-size: 1.1rem; /* Slightly larger text */
+        line-height: 1.6; /* Better line spacing */
+        color: #555; /* Slightly lighter text color */
+    }
+
+    .btn-primary {
+        background-color: #f76c6c; /* Soft coral pink */
+        border-color: #f76c6c; /* Match button border with background */
+    }
+
+    .btn-primary:hover {
+        background-color: #f59b9b; /* Slightly darker pink for hover */
+        border-color: #f59b9b;
+    }
+
+    .alert-warning {
+        background-color: #f8d7da; /* Soft pink background */
+        color: #721c24; /* Dark text color */
+    }
+</style>
 
 <div class="outerdiv">
     <div class="container">
         <h1 class="text-center">About Us</h1>
         <div class="row text-center">
-            <div class="col-md-6">
-                <img id="aboutImg" height="100" width="100" src="/static/images/about2.jpg" alt="contact info with several imgs">
+            <div class="col-md-6 mb-4">
+                <!-- Owner's Image -->
+                <img class="owner-img" src="{% static 'images/owner1.jpg' %}" alt="Caroline" />
+                <p class="about-text"><strong>Caroline</strong></p>
             </div>
-            <div class="col-md-6">
-                <p> Nags with Notions provides delicious, fresh pizzas for any event. It is run by Caroline and Tamara, who would love
-		to add to the uniqueness of your special occasion.</p>
-                    <br><br>
-                    {% if not request.user.is_authenticated %}
-                    <a href="{% url 'view' %}" id="bknowlink" aria-label="brings user to booking page">
-                        Book our service so you can have delicious pizzas at your event
-                    </a>
-                    <div id="myAlert2" class="alert alert-warning collapse">
-                        <strong>You must login to book!</strong>
-                        <a id="linkClose2" href="#" class="close" >&times;</a>
-                    </div>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'create_booking' %}" class="btn btn-primary">Book our service so you can have delicious pizzas at your event</a>
-                    {% endif %}
+            <div class="col-md-6 mb-4">
+                <!-- Owner's Image -->
+                <img class="owner-img" src="{% static 'images/owner2.jpg' %}" alt="Tamara" />
+                <p class="about-text"><strong>Tamara</strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="about-text">Nags with Notions provides delicious, fresh pizzas for any event. It is run by Caroline and Tamara, who would love to add to the uniqueness of your special occasion.</p>
+                <br>
+                {% if not request.user.is_authenticated %}
+                <a href="{% url 'view' %}" class="btn btn-primary" aria-label="brings user to booking page">
+                    Book our service so you can have delicious pizzas at your event
+                </a>
+                <div id="myAlert2" class="alert alert-warning collapse mt-3">
+                    <strong>You must login to book!</strong>
+                    <a id="linkClose2" href="#" class="close">&times;</a>
+                </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <a href="{% url 'create_booking' %}" class="btn btn-primary">Book our service so you can have delicious pizzas at your event</a>
+                {% endif %}
+            </div>
         </div>
     </div>
-    </div>
 </div>
+
+{% endblock content %}
+
