@@ -1,1 +1,3 @@
-web: waitress-serve --port=$PORT nags_with_notions.wsgi:application  
+release: python manage.py collectstatic --noinput
+web: gunicorn nags_with_notions.wsgi --log-file -
+
