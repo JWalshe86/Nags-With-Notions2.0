@@ -1,7 +1,7 @@
 *.swp
 *.Identifier
 .env
-/static/
+# /static/
 # Django #
 *.log
 *.pot
