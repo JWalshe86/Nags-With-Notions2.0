@@ -69,7 +69,7 @@ INSTALLED_APPS = [
     "pizza_system.apps.PizzaSystemConfig",
     "booking.apps.BookingConfig",
     "nags_with_notions",
-    "whitenoise.runserver_nostatic",  # Disable WhiteNoise's static file serving
+    # "whitenoise.runserver_nostatic",  # Disable WhiteNoise's static file serving
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
