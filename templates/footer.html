@@ -1,42 +1,51 @@
-<footer>
-
-    <div class="footer-top">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 mx-auto">
-                    <div class="col-lg-4">
-                        <img class="col-lg-4__logo__img mb-3" src="/static/admin/img/nags-with-notions-logo.webp"
-                        srcset="/static/admin/img/nags-with-notions-logo100x95px.webp 200w" sizes='100vw'
-                            alt="pink horse with Nags logo">
-                        <p>Sourdough Pizzas from Meaths finest food producers</p>
-                    </div>
+{% load static %}
+<footer style="background-color: #ffc0cb; color: #333;">
+    <div class="footer-top py-4">
+        <div class="container">
+            <div class="row text-center text-lg-start">
+                <!-- Logo Section -->
+                <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+                    <img class="mb-3" src="{% static 'images/nags-with-notions-logo.webp' %}"
+                        srcset="{% static 'images/nags-with-notions-logo100x95px.webp' %}" sizes='100vw'
+                        alt="pink horse with Nags logo" style="max-width: 100px;">
+                    <p>Sourdough Pizzas from Meaths finest food producers</p>
                 </div>
-                <div class="col-lg-4 mx-auto">
-                    <h6 class="mt-4">CONTACT</h6>
-                    <p class="mb-1">0863371314</p>
-                    <p class="mb-1">caroline@nagswithnotions.ie</p>
-                    <p class="mb-1">0867506453</p>
-                    <p class="mb-0">tamara@nagswithnotions.ie </p>
+                
+                <!-- Contact Section -->
+                <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+                    <h6 class="mt-4 mb-3" style="font-weight: bold;">CONTACT</h6>
+                    <ul class="list-unstyled" style="padding: 0; margin: 0;">
+                        <li class="mb-1"><a href="tel:0863371314" class="text-dark text-decoration-none">Phone: 0863371314</a></li>
+                        <li class="mb-1"><a href="mailto:caroline@nagswithnotions.ie" class="text-dark text-decoration-none">Email: caroline@nagswithnotions.ie</a></li>
+                        <li class="mb-1"><a href="tel:0867506453" class="text-dark text-decoration-none">Phone: 0867506453</a></li>
+                        <li><a href="mailto:tamara@nagswithnotions.ie" class="text-dark text-decoration-none">Email: tamara@nagswithnotions.ie</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 mx-auto">
-			<p><a class="text-dark" aria-label="facebook" href="https://m.facebook.com/p/Nags-with-Notions-Pizza-100094122740703/"><i class="fa-brands fa-facebook-f"></i> Facebook</a></p>
-		    <p><a class="text-dark" aria-label="instagram" href="https://www.instagram.com/nagswithnotions/"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
-		    <p><a class="text-dark" aria-label="github" href="https://github.com/JWalshe86/"><i class="fa-brands fa-github"></i> Github</a></p>
-		    <p><a class="text-dark" aria-label="linkedin" href="https://www.linkedin.com/in/john-walshe86/"><i class="fa-brands fa-linkedin"></i> Linkedin</a></p>
+                
+                <!-- Social Media Section -->
+                <div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
+                    <h6 class="mt-4 mb-3" style="font-weight: bold;">FOLLOW US</h6>
+                    <ul class="list-unstyled" style="padding: 0; margin: 0;">
+                        <li><a class="text-dark text-decoration-none" aria-label="facebook" href="https://m.facebook.com/p/Nags-with-Notions-Pizza-100094122740703/"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+                        <li><a class="text-dark text-decoration-none" aria-label="instagram" href="https://www.instagram.com/nagswithnotions/"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                        <li><a class="text-dark text-decoration-none" aria-label="github" href="https://github.com/JWalshe86/"><i class="fa-brands fa-github"></i> Github</a></li>
+                        <li><a class="text-dark text-decoration-none" aria-label="linkedin" href="https://www.linkedin.com/in/john-walshe86/"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom py-3" style="background-color: #e89bb8;">
         <div class="container">
-            <div class="row justify-content-between">
+            <div class="row justify-content-between text-center text-lg-start">
                 <div class="col-auto">
                     <p class="mb-0">Copyrights all rights reserved</p>
                 </div>
                 <div class="col-auto">
-                    <p class="mb-0">Designed by <a href="https://github.com/JWalshe86/">John</a></p>
+                    <p class="mb-0">Designed by <a href="https://github.com/JWalshe86/" class="text-dark text-decoration-none">John</a></p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
