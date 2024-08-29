@@ -21,6 +21,15 @@ STATICFILES_DIRS = [
 # Directory where static files are collected for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+
+print("STATICFILES_DIRS:")
+for path in STATICFILES_DIRS:
+    print(os.path.abspath(path))
+
+print("STATIC_ROOT:")
+print(os.path.abspath(STATIC_ROOT))
+
+
 # Media files (uploads)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
