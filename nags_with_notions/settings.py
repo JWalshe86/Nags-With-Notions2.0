@@ -11,14 +11,10 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-
-# Directories to look for static files during development
 STATICFILES_DIRS = [
     BASE_DIR / "static",   # Development static files
     BASE_DIR / "assets",   # Additional static files directory
 ]
-
-# Directory where static files are collected for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 print("STATICFILES_DIRS:")
@@ -32,7 +28,7 @@ print(os.path.abspath(STATIC_ROOT))
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# Set to True during development to see changes immediately
+# Set DEBUG based on environment
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -140,11 +136,21 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.example.com')  # Replace with your SMTP server
-EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'your-email@example.com')  # Your email address
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Your email password
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+if os.getenv('HEROKU_ENV', 'False') == 'True':
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.getenv('EMAIL_HOST')
+    EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+    EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+else:
+    # Local settings or development settings
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_HOST = 'localhost'
+    EMAIL_PORT = 1025
+    EMAIL_USE_TLS = False
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
