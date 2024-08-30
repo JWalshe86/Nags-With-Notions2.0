@@ -14,6 +14,7 @@ dj-database-url==2.2.0
 Django==5.0.6
 django-allauth==0.63.3
 django-crispy-forms==2.2
+django-nested-admin==4.1.1
 django-phone-verify==0.1.1
 django-phonenumber-field==8.0.0
 django-storages==1.14.3
@@ -32,6 +33,7 @@ psycopg2-binary==2.9.9
 PyJWT==2.8.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
+python-monkey-business==1.1.0
 requests==2.32.3
 s3transfer==0.10.2
 six==1.16.0
