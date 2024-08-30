@@ -32,28 +32,12 @@ print(os.path.abspath(STATIC_ROOT))
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# AWS S3 settings (commented out for local development)
-# if 'USE_AWS' in os.environ:
-#     AWS_STORAGE_BUCKET_NAME = 'nags-with-notions2.0'
-#     AWS_S3_REGION_NAME = 'eu-north-1'
-#     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-#
-#     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-#     STATICFILES_LOCATION = 'static'
-#     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-#     MEDIAFILES_LOCATION = 'media'
-#
-#     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-#     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
 # Set to True during development to see changes immediately
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -126,13 +110,17 @@ TEMPLATES = [
 WSGI_APPLICATION = "nags_with_notions.wsgi.application"
 
 DATABASES = {
-    "default": dj_database_url.config(default=os.environ.get('DATABASE_URL'), conn_max_age=600, ssl_require=True)
+    "default": dj_database_url.config(
+        default=os.getenv('DATABASE_URL'), conn_max_age=600, ssl_require=True
+    )
 }
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
     "https://nags-with-notions-f8a098968cba.herokuapp.com",
+    "https://www.nagswithnotions.ie",
+    "https://nagswithnotions.ie", 
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -153,10 +141,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.example.com'  # Replace with your SMTP server
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'jwalshedev@gmail.com'  # Your email address
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Your email password
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.example.com')  # Replace with your SMTP server
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'your-email@example.com')  # Your email address
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Your email password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
