@@ -21,8 +21,6 @@ STATICFILES_DIRS = [
 # Directory where static files are collected for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Use WhiteNoise to serve static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 print("STATICFILES_DIRS:")
 for path in STATICFILES_DIRS:
@@ -31,25 +29,26 @@ for path in STATICFILES_DIRS:
 print("STATIC_ROOT:")
 print(os.path.abspath(STATIC_ROOT))
 
+
 # Media files (uploads)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# AWS S3 settings (commented out for now)
-# if 'USE_AWS' in os.environ:
-#     AWS_STORAGE_BUCKET_NAME = 'nags-with-notions2.0'
-#     AWS_S3_REGION_NAME = 'eu-north-1'
-#     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS S3 settings
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'nags-with-notions2.0'
+    AWS_S3_REGION_NAME = 'eu-north-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-#     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#     STATICFILES_LOCATION = 'static'
-#     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#     MEDIAFILES_LOCATION = 'media'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
 
-#     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-#     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Set to True during development to see changes immediately
 DEBUG = True
@@ -70,7 +69,7 @@ INSTALLED_APPS = [
     "pizza_system.apps.PizzaSystemConfig",
     "booking.apps.BookingConfig",
     "nags_with_notions",
-    # "whitenoise.runserver_nostatic",  # Disable WhiteNoise's static file serving
+    "whitenoise.runserver_nostatic",  # Disable WhiteNoise's static file serving
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -87,6 +86,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "crispy_forms",
     "crispy_bootstrap4",
+    "storages",
 ]
 
 SITE_ID = 1
@@ -153,6 +153,7 @@ USE_I18N = True
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
