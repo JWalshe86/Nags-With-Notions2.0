@@ -1,7 +1,6 @@
 {% load static %}
 <!-- Menu -->
 
-
 <div class="container my-5" style="background-color: #ffc0cb; padding: 2rem;">
     <div class="container-fluid" style="background-color: #ffffff; padding: 2rem;">
         <div class="row text-center">
@@ -27,4 +26,19 @@
     </div>
 </div>
 
+<!-- Add the CSS here or in a separate stylesheet -->
+<style>
+    /* Ensure all images in the menu have the same size */
+    .card-img-top {
+        width: 100%; /* Make image fill the container width */
+        height: 200px; /* Fixed height */
+        object-fit: cover; /* Ensure the image covers the area, cropping if necessary */
+    }
+
+    @media (max-width: 768px) {
+        .card-img-top {
+            height: 150px; /* Adjust height for smaller screens */
+        }
+    }
+</style>
 

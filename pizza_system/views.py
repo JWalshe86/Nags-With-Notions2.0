@@ -54,7 +54,7 @@ def edit_pizza(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, 'Pizza updated successfully!')
-            return redirect('pizza_list')  # Redirect to the list or another page
+            return redirect('index')  # Redirect to the list or another page
     else:
         form = PizzaForm(instance=pizza)
     return render(request, 'edit_pizza.html', {'form': form})
@@ -66,8 +66,11 @@ def delete_pizza(request, pk):
     if request.method == 'POST':
         pizza.delete()
         messages.success(request, 'Pizza deleted successfully!')
-        return redirect('pizza_list')  # Redirect to the list or another page
+        return redirect('index')  # Redirect to the list or another page
     return render(request, 'confirm_delete.html', {'pizza': pizza})
 
 
+def pizza_list(request):
+    pizzas = Pizza.objects.all()
+    return render(request, 'menu.html', {'pizzas': pizzas})
 
