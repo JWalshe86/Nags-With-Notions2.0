@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Pizza
 
 class ContactForm(forms.Form):
     email = forms.EmailField(label='Email address', max_length=255)
@@ -17,3 +18,10 @@ class CustomUserCreationForm(UserCreationForm):
             'first_name' : 'Name', 
             'email' : 'Email',
         }
+
+
+class PizzaForm(forms.ModelForm):
+    class Meta:
+        model = Pizza
+        fields = ['title', 'description', 'image']
+

@@ -1,8 +1,7 @@
 from django.urls import path
 from django.views.generic import TemplateView
-from .views import contact_view, index_view
 from django.contrib.auth.views import LogoutView
-from . import views
+from .views import contact_view, index_view, edit_pizza, delete_pizza
 from booking.views import CustomLoginView, RegisterPage
 
 urlpatterns = [
@@ -12,7 +11,7 @@ urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('register/', RegisterPage.as_view(), name='register'),
-    path('', views.index_view, name='home'),
+    path('edit_pizza/<int:pk>/', edit_pizza, name='edit_pizza'),
+    path('delete_pizza/<int:pk>/', delete_pizza, name='delete_pizza'),
 ]
-
 
