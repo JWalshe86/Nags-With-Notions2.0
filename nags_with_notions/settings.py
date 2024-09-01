@@ -2,7 +2,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
+import django_heroku
 
+# Load environment variables from .env file
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -16,13 +18,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "assets",   # Additional static files directory
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-print("STATICFILES_DIRS:")
-for path in STATICFILES_DIRS:
-    print(os.path.abspath(path))
-
-print("STATIC_ROOT:")
-print(os.path.abspath(STATIC_ROOT))
 
 # Media files (uploads)
 MEDIA_URL = "/media/"
@@ -153,4 +148,7 @@ else:
     EMAIL_HOST_USER = ''
     EMAIL_HOST_PASSWORD = ''
     DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
