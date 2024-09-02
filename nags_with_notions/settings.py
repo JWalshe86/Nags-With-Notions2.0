@@ -7,7 +7,6 @@ import django_heroku
 # Load environment variables from .env file
 load_dotenv()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
@@ -18,17 +17,15 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",   # Development static files
     BASE_DIR / "assets",   # Additional static files directory
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files (uploads)
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+# MEDIA_ROOT is not used when deploying to cloud storage like AWS S3
 
 # Set DEBUG based on environment
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALLOWED_HOSTS = [
@@ -141,7 +138,6 @@ if os.getenv('HEROKU_ENV', 'False') == 'True':
     EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 else:
-    # Local settings or development settings
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     EMAIL_HOST = 'localhost'
     EMAIL_PORT = 1025
@@ -149,6 +145,27 @@ else:
     EMAIL_HOST_USER = ''
     EMAIL_HOST_PASSWORD = ''
     DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
+# AWS S3 settings (used only if USE_AWS is set to True)
+if os.getenv('USE_AWS', 'False') == 'True':
+    import django_heroku
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')  # optional
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+else:
+    # For local development
+    STATIC_ROOT = BASE_DIR / "staticfiles"
+    MEDIA_ROOT = BASE_DIR / "media"
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
