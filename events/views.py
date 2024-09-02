@@ -36,7 +36,7 @@ def add_event(request):
     """Add a event to the store"""
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
+        return redirect(reverse("index"))
 
     if request.method == "POST":
         form = EventForm(request.POST, request.FILES)
@@ -65,7 +65,7 @@ def edit_event(request, event_id):
     """Edit a event in the store"""
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
+        return redirect(reverse("index"))
     event = get_object_or_404(Event, pk=event_id)
     if request.method == "POST":
         form = EventForm(request.POST, request.FILES, instance=event)
@@ -96,7 +96,7 @@ def delete_event(request, event_id):
     """Delete a event from the store"""
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
+        return redirect(reverse("index"))
     event = get_object_or_404(Event, pk=event_id)
     event.delete()
     messages.success(request, "Event deleted!")
