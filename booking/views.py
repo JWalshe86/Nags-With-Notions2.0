@@ -17,7 +17,7 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy('home')
+        return reverse_lazy('index')
 
 class RegisterPage(SuccessMessageMixin, FormView):
     "This module renders a registeration form whereby a user can register to the site"
@@ -25,7 +25,7 @@ class RegisterPage(SuccessMessageMixin, FormView):
     form_class = UserCreationForm
     redirect_authenticated_user = True
     success_message = 'New Account Created'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('index')
 
    # automatically login user
     def form_valid(self, form):
