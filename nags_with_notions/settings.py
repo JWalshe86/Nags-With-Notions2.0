@@ -13,11 +13,10 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 
-import os
-from pathlib import Path
 
-# BASE_DIR is usually defined at the top of the settings.py
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Determine if we're using AWS S3
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
@@ -44,38 +43,47 @@ else:
     # Local static files settings
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
-        BASE_DIR / "static",   # Development static files
-        BASE_DIR / "assets",   # Additional static files directory
+        BASE_DIR / "assets",  # Directory where your static assets are located
     ]
     STATIC_ROOT = BASE_DIR / "staticfiles"
 
+    # Local media files settings
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
 
     # In local development, S3_BASE_URL can just point to the static directory
-    S3_BASE_URL = STATIC_URL  # Or another appropriate path if needed
+    S3_BASE_URL = STATIC_URL  # This is appropriate for local development
 
 # Ensure S3_BASE_URL is available in your templates
-from django.conf import settings
-
 def global_template_variables(request):
     return {
-        'S3_BASE_URL': settings.S3_BASE_URL,
+        'S3_BASE_URL': S3_BASE_URL,
         'ENVIRONMENT': 'production' if USE_AWS else 'development',
     }
 
-# In your TEMPLATES setting:
+# TEMPLATES setting
 TEMPLATES = [
     {
-        # Other settings here...
-        'OPTIONS': {
-            'context_processors': [
-                # Existing context processors...
-                'your_project.settings.global_template_variables',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [TEMPLATES_DIR],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                'nags_with_notions.settings.global_template_variables',
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
+            "builtins": [
+                "crispy_forms.templatetags.crispy_forms_tags",
+                "crispy_forms.templatetags.crispy_forms_field",
+            ]
         },
     },
 ]
+
+# Other settings...
 
 # Set DEBUG based on environment
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
