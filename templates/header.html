@@ -27,16 +27,7 @@
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    {% if not request.user.is_authenticated %}
-                    <a href="{% url 'create_booking' %}" class="nav-link">Book Now!</a>
-                    <div id="myAlert" class="alert alert-warning collapse">
-                        <strong>You must login to book!</strong>
-                        <a id="linkClose" href="#" class="close">&times;</a>
-                    </div>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'create_booking' %}" class="nav-link">Book Now!</a>
-                    {% endif %}
+                    <a href="#message" class="nav-link">Book Now!</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item dropdown">
