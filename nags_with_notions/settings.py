@@ -39,7 +39,7 @@ if USE_AWS:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
     # Add the S3 base URL for use in templates
-    S3_BASE_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/images/"
+    S3_BASE_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
 else:
     # Local static files settings
     STATIC_URL = '/static/'
