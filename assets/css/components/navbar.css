@@ -1,14 +1,20 @@
-/* Align the logo to the left */
-/* Assign background color */
+/* =========================
+   Navbar Container
+   ========================= */
+
 .navbar {
     display: flex;
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Centers items vertically */
-    background-color: #f6c3c6;
+    background-color: #f6c3c6; /* Soft coral background color */
 }
 
+/* =========================
+   Navbar Logo
+   ========================= */
+
 .navbar__logo {
-    flex: 0 1 auto; /* Prevents the logo from stretching */
+    margin-right: auto; /* Push logo to the far left */
 }
 
 .navbar__logo__img {
@@ -16,49 +22,61 @@
     height: auto; /* Maintain aspect ratio */
 }
 
-/* Push the links to the right */
-.navbar-collapse {
-    display: flex;
-    justify-content: flex-end; /* Aligns links to the right */
-}
-
+/* =========================
+   Navbar Links and Buttons
+   ========================= */
 .navbar-nav {
     display: flex;
-    gap: 1rem; /* Adds space between the nav items */
+    gap: 1rem;
+    flex-direction: row; /* Default: horizontal layout */
+    margin-left: auto; /* Ensure links are aligned to the right on larger screens */
 }
 
-.navbar-nav .nav-item .dropdown-toggle {
-    font-weight: bold;
+/* Align links to the left on smaller screens (mobile) */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        justify-content: flex-start; /* Align links to the left */
+        flex-direction: column; /* Stack the links vertically */
+        margin-left: 0; /* Reset margin on mobile */
+    }
+
+    .navbar-collapse {
+        justify-content: flex-start; /* Align the collapsible content to the left */
+    }
+}
+
+.navbar-collapse {
+    flex-grow: 1; /* Allow it to grow and take up available space */
+    display: flex;
 }
 
 /* Navbar links */
 .nav-link {
     color: #ffffff; /* White text color */
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
+    text-transform: uppercase; /* Uppercase text */
+    padding: 0.5rem 1rem; /* Padding for links */
+    font-weight: bold; /* Make text bold */
 }
 
 /* Hover effect for navbar links */
-.nav-link:hover {
-    background-color: #8ab6d6; /* Soft blue for hover effect */
-    border-radius: 0.25rem; /* Smooth corners */
-}
-
-/* Active link */
+.nav-link:hover,
 .nav-link.active {
-    background-color: #8ab6d6; /* Soft blue for active link */
+    background-color: #8ab6d6; /* Soft blue background */
     border-radius: 0.25rem; /* Smooth corners */
 }
 
-/* Dropdown items stacking vertically */
+/* =========================
+   Dropdown Menu
+   ========================= */
+
 .navbar-nav .dropdown-menu .dropdown-item {
-    color: #ffffff; /* White text color */
+    color: #333333; /* Darker text color for better readability */
     background-color: #f6c3c6; /* Soft coral background */
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
+    text-transform: uppercase; /* Uppercase text */
+    padding: 0.5rem 1rem; /* Padding for dropdown items */
     border-radius: 0.25rem; /* Smooth corners */
+    font-weight: bold; /* Make text bold */
 }
-
 
 /* Hover effect for dropdown items */
 .dropdown-item:hover {
@@ -66,12 +84,25 @@
     color: #ffffff; /* Ensure text remains white */
 }
 
-/* Ensures the login button matches the links */
+.navbar-toggler {
+    margin-left: auto; /* Pushes the toggle button to the right on mobile */
+}
+
+.navbar-nav .dropdown-menu {
+    text-align: center; /* Center the text in the dropdown */
+    padding: 0.5rem 1rem; /* Adjust padding for a nicer look */
+}
+
+/* =========================
+   Login Button
+   ========================= */
+
 .btn-primary.nav-link {
-    background-color: #8ab6d6;
-    color: #ffffff;
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
+    background-color: #8ab6d6; /* Matching background color */
+    color: #ffffff; /* White text color */
+    border-radius: 0.25rem; /* Smooth corners */
+    padding: 0.5rem 1rem; /* Padding for the button */
+    font-weight: bold; /* Make text bold */
 }
 
 .btn-primary.nav-link:hover {

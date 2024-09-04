@@ -9,7 +9,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a>
                 </li>
@@ -38,8 +38,6 @@
                     <a href="{% url 'create_booking' %}" class="nav-link">Book Now!</a>
                     {% endif %}
                 </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
                 {% if request.user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">{{ request.user.username }}</a>
