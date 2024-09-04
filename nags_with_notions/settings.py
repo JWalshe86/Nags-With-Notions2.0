@@ -13,14 +13,9 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 # Determine if we're using AWS S3
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
-
+DEBUG = True
 if USE_AWS:
     # AWS S3 settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
@@ -60,36 +55,6 @@ def global_template_variables(request):
         'S3_BASE_URL': S3_BASE_URL,
         'ENVIRONMENT': 'production' if USE_AWS else 'development',
     }
-
-# TEMPLATES setting
-TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATES_DIR],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                'nags_with_notions.settings.global_template_variables',
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-            ],
-            "builtins": [
-                "crispy_forms.templatetags.crispy_forms_tags",
-                "crispy_forms.templatetags.crispy_forms_field",
-            ]
-        },
-    },
-]
-
-# Other settings...
-
-# Set DEBUG based on environment
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
-
-CRISPY_TEMPLATE_PACK = "bootstrap4"
-SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -141,8 +106,8 @@ ROOT_URLCONF = "nags_with_notions.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATES_DIR],
-        "APP_DIRS": True,
+        "DIRS": [TEMPLATES_DIR],  # Project-level templates directory
+        "APP_DIRS": True,  # Enables Django to look for 'templates' directories in each app
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
