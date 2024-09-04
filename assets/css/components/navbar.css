@@ -1,7 +1,32 @@
-/* Navbar background */
+/* Align the logo to the left */
+/* Assign background color */
 .navbar {
+    display: flex;
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Centers items vertically */
     background-color: #f6c3c6;
 }
+
+.navbar__logo {
+    flex: 0 1 auto; /* Prevents the logo from stretching */
+}
+
+.navbar__logo__img {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Push the links to the right */
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end; /* Aligns links to the right */
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 1rem; /* Adds space between the nav items */
+}
+
 
 /* Navbar links */
 .nav-link {
@@ -30,6 +55,7 @@
     padding: 0.5rem 1rem;
     border-radius: 0.25rem; /* Smooth corners */
 }
+
 
 /* Hover effect for dropdown items */
 .dropdown-item:hover {
