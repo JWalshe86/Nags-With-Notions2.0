@@ -1,69 +1,52 @@
-/* Navbar container */
+/* Navbar background */
 .navbar {
-    background-color: #ff69b4; /* Pink background */
-    padding: 0.5rem 1rem; /* Padding for spacing */
-}
-
-/* Navbar logo */
-.navbar__logo__img {
-    max-height: 60px; /* Adjust logo size */
-    width: auto;
-}
-
-/* Navbar toggler */
-.navbar-toggler {
-    border: none; /* Remove default border */
-}
-
-/* Navbar items */
-.navbar-nav {
-    flex-direction: row; /* Align items horizontally */
-}
-
-.collapse__list__item {
-    margin: 0 0.5rem; /* Space between items */
-}
-
-.collapse__content {
-    color: #ffffff; /* White text */
+    background-color: #f6c3c6;
 }
 
 /* Navbar links */
 .nav-link {
-    color: #ffffff; /* White text */
-    padding: 0.5rem 1rem; /* Padding for spacing */
-    text-transform: uppercase; /* Uppercase text */
+    color: #ffffff; /* White text color */
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
 }
 
-/* Hover effects */
+/* Hover effect for navbar links */
 .nav-link:hover {
-    background-color: #007bff; /* Blue on hover */
-    color: #ffffff; /* White text */
-    border-radius: 0.25rem; /* Rounded corners */
+    background-color: #8ab6d6; /* Soft blue for hover effect */
+    border-radius: 0.25rem; /* Smooth corners */
 }
 
 /* Active link */
 .nav-link.active {
-    background-color: #ff1493; /* Darker pink for active link */
+    background-color: #8ab6d6; /* Soft blue for active link */
+    border-radius: 0.25rem; /* Smooth corners */
 }
 
-/* Dropdown menu */
-.menu {
-    background-color: #ff69b4; /* Match navbar background */
+/* Dropdown items stacking vertically */
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: #ffffff; /* White text color */
+    background-color: #f6c3c6; /* Soft coral background */
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem; /* Smooth corners */
 }
 
-.ui.button {
-    background-color: #007bff; /* Blue button color */
-    color: #ffffff; /* Button text color */
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #8ab6d6; /* Soft blue for hover effect */
+    color: #ffffff; /* Ensure text remains white */
 }
 
-.ui.button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+/* Ensures the login button matches the links */
+.btn-primary.nav-link {
+    background-color: #8ab6d6;
+    color: #ffffff;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
 }
 
-/* Alert */
-.alert-warning {
-    background-color: #ffcccb; /* Light pink for alert */
-    color: #a94442; /* Alert text color */
+.btn-primary.nav-link:hover {
+    background-color: #5f9ea0; /* Slightly different blue hover */
 }
+
 
