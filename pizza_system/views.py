@@ -17,6 +17,12 @@ def index_view(request):
     pizzas = Pizza.objects.all()  # Query all pizza objects
     return render(request, 'index.html', {'pizzas': pizzas})
 
+
+def gallery_view(request):
+    pizzas = Pizza.objects.all()  # Query all pizza objects
+    return render(request, 'pizza_system/gallery.html', {'pizzas': pizzas})
+
+
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

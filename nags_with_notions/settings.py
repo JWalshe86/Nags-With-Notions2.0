@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Determine if we're using AWS S3
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
-
+DEBUG = True
 if USE_AWS:
     # AWS S3 settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
@@ -141,8 +141,8 @@ ROOT_URLCONF = "nags_with_notions.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATES_DIR],
-        "APP_DIRS": True,
+        "DIRS": [TEMPLATES_DIR],  # Project-level templates directory
+        "APP_DIRS": True,  # Enables Django to look for 'templates' directories in each app
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
