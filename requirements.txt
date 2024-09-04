@@ -28,7 +28,6 @@ certifi==2024.7.4
 cffi==1.17.0
 charset-normalizer==3.3.2
 click==8.1.7
-command-not-found==0.3
 crispy-bootstrap4==2024.1
 crispy-bootstrap5==2024.2
 cryptography==42.0.8
