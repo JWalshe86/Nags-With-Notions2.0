@@ -13,8 +13,16 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 
-# Static files (CSS, JavaScript, Images)
-if os.getenv('USE_AWS', 'False') == 'True':
+import os
+from pathlib import Path
+
+# BASE_DIR is usually defined at the top of the settings.py
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Determine if we're using AWS S3
+USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
+
+if USE_AWS:
     # AWS S3 settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
@@ -29,6 +37,9 @@ if os.getenv('USE_AWS', 'False') == 'True':
 
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+    # Add the S3 base URL for use in templates
+    S3_BASE_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/images/"
 else:
     # Local static files settings
     STATIC_URL = '/static/'
@@ -41,6 +52,31 @@ else:
     # Local media files settings
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
+
+    # In local development, S3_BASE_URL can just point to the static directory
+    S3_BASE_URL = STATIC_URL  # Or another appropriate path if needed
+
+# Ensure S3_BASE_URL is available in your templates
+from django.conf import settings
+
+def global_template_variables(request):
+    return {
+        'S3_BASE_URL': settings.S3_BASE_URL,
+        'ENVIRONMENT': 'production' if USE_AWS else 'development',
+    }
+
+# In your TEMPLATES setting:
+TEMPLATES = [
+    {
+        # Other settings here...
+        'OPTIONS': {
+            'context_processors': [
+                # Existing context processors...
+                'your_project.settings.global_template_variables',
+            ],
+        },
+    },
+]
 
 # Set DEBUG based on environment
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
@@ -105,6 +141,7 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                'career.settings.global_template_variables',
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],

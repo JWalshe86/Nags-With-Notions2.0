@@ -1,13 +1,17 @@
 {% load static %}
-<!-- Menu -->
 
+<!-- Menu -->
 <div class="container my-5" style="background-color: #ffc0cb; padding: 2rem;">
     <div class="container-fluid" style="background-color: #ffffff; padding: 2rem;">
         <div class="row text-center">
             {% for pizza in pizzas %}
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card h-100 d-flex flex-column">
-                    <img src="{{ pizza.image.url }}" class="card-img-top" alt="{{ pizza.title }}">
+                    {% if ENVIRONMENT == 'production' %}
+                        <img src="{{ S3_BASE_URL }}{{ pizza.image.name }}" class="card-img-top" alt="{{ pizza.title }}">
+                    {% else %}
+                        <img src="{{ pizza.image.url }}" class="card-img-top" alt="{{ pizza.title }}">
+                    {% endif %}
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ pizza.title }}</h5>
                         <p class="card-text">{{ pizza.description }}</p>
