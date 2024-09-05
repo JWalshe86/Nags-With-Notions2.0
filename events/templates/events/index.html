@@ -28,10 +28,18 @@
             <div class="col-md-8">
                 {% for event in events %}
                     <div class="card mb-4 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        {% if event.image %}
-                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
-                        {% elif event.image_url %}
-                            <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                        {% if ENVIRONMENT == 'production' %}
+                            {% if event.image %}
+                                <img src="{{ S3_BASE_URL }}{{ event.image.name }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                            {% elif event.image_url %}
+                                <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                            {% endif %}
+                        {% else %}
+                            {% if event.image %}
+                                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                            {% elif event.image_url %}
+                                <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                            {% endif %}
                         {% endif %}
                         <div class="card-body">
                             <h4 class="card-title" style="color: #ff6f61;">
