@@ -28,25 +28,33 @@
             <div class="col-md-8">
                 {% for event in events %}
                     <div class="card mb-4 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        {% if ENVIRONMENT == 'production' %}
-                            {% if event.image %}
-                                <img src="{{ S3_BASE_URL }}{{ event.image.name }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
-                                <p>Image URL: {{ S3_BASE_URL }}{{ event.image.name }}</p>
-                            {% elif event.image_url %}
-                                <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
-                            {% else %}
-                                <p>No image available for this event.</p>
-                            {% endif %}
-                        {% else %}
-                            {% if event.image %}
-                                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
-                            {% elif event.image_url %}
-                                <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
-                            {% else %}
-                                <p>No image available for this event.</p>
-                            {% endif %}
-                        {% endif %}
-                        <div class="card-body">
+                       {% if ENVIRONMENT == 'production' %}
+    {% if event.image %}
+        <img src="{{ S3_BASE_URL }}{{ event.image.name }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+        <!-- Remove or comment out this line -->
+        <!-- <p>Image URL: {{ S3_BASE_URL }}{{ event.image.name }}</p> -->
+    {% elif event.image_url %}
+        <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+        <!-- Remove or comment out this line -->
+        <!-- <p>Image URL: {{ event.image_url }}</p> -->
+    {% else %}
+        <p>No image available for this event.</p>
+    {% endif %}
+{% else %}
+    {% if event.image %}
+        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+        <!-- Remove or comment out this line -->
+        <!-- <p>Image URL: {{ event.image.url }}</p> -->
+    {% elif event.image_url %}
+        <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+        <!-- Remove or comment out this line -->
+        <!-- <p>Image URL: {{ event.image_url }}</p> -->
+    {% else %}
+        <p>No image available for this event.</p>
+    {% endif %}
+{% endif %}
+ 
+			    <div class="card-body">
                             <h4 class="card-title" style="color: #ff6f61;">
                                 <a href="{% url 'event_detail' event.id %}">{{ event.name }}</a>
                             </h4>
