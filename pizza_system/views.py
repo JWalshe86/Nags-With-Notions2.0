@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import user_passes_test
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import CustomUserCreationForm, PizzaForm, ContactForm
-from .models import Pizza
+from pizza_system.models import Pizza  # Import Pizza model
+from events.models import Event  # Import Event model from the events app
 
 # Decorator to check if user is a superuser
 def superuser_required(function):
@@ -15,14 +16,23 @@ def superuser_required(function):
 # Index view
 def index_view(request):
     pizzas = Pizza.objects.all()  # Query all pizza objects
-    return render(request, 'index.html', {'pizzas': pizzas})
+    
+    # Get the latest event from the events app
+    latest_event = Event.objects.order_by('-id').first()  # Get the latest event or None if no events exist
+    
+    context = {
+        'pizzas': pizzas,
+        'upcoming_event': latest_event,  # Add the latest event to the context
+    }
+    
+    return render(request, 'index.html', context)
 
-
+# Gallery view
 def gallery_view(request):
     pizzas = Pizza.objects.all()  # Query all pizza objects
     return render(request, 'pizza_system/gallery.html', {'pizzas': pizzas})
 
-
+# Contact view
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -50,7 +60,6 @@ def contact_view(request):
     
     return render(request, 'contact.html', {'form': form})
 
-
 # Edit Pizza view
 @superuser_required
 def edit_pizza(request, pk):
@@ -75,7 +84,7 @@ def delete_pizza(request, pk):
         return redirect('index')  # Redirect to the list or another page
     return render(request, 'confirm_delete.html', {'pizza': pizza})
 
-
+# Pizza list view
 def pizza_list(request):
     pizzas = Pizza.objects.all()
     return render(request, 'menu.html', {'pizzas': pizzas})

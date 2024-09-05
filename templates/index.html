@@ -7,55 +7,104 @@
 <style>
     .hero-container {
         background-image: url("{% static 'images/hero-image-horsebox.jpg' %}");
-        background-size: cover; /* Ensure the image covers the entire container */
-        background-position: center; /* Default for larger screens */
-        background-repeat: no-repeat; /* Prevent repeating */
-        height: 100vh; /* Full viewport height */
-        width: 100vw; /* Full viewport width */
-        display: flex; /* Center content */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically */
-        overflow: hidden; /* Prevent scrolling issues */
-        position: relative; /* Allow absolute positioning of the jumbotron */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
     }
 
-    /* Media query for mobile screens */
     @media (max-width: 768px) {
         .hero-container {
-            background-position: left center; /* Focus on the left side of the image */
-            background-size: cover; /* Ensure the image covers the container */
-            height: 100vh; /* Full viewport height on mobile */
-            width: 100vw; /* Full viewport width on mobile */
+            background-position: left center;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
         }
     }
 
-    /* Jumbotron Styling */
     .jumbotron {
-        background-color: rgba(246, 195, 198, 0.8); /* Soft coral pink with 80% opacity */
-        border-radius: 0.5rem; /* Rounded corners */
-        padding: 2rem; /* Padding inside the jumbotron */
-        color: #fff; /* White text color */
-        position: absolute; /* Position absolute to move it to the middle of the top half */
-        top: 25%; /* Move it to the middle of the top half */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-        width: 90%; /* Width of the jumbotron */
-        max-width: 800px; /* Max width for larger screens */
-        z-index: 10; /* Ensure it is above other content */
+        background-color: rgba(246, 195, 198, 0.8);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        color: #fff;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 800px;
+        z-index: 10;
+        text-align: center;
     }
 
-    /* Text Shadow for better readability */
     .jumbotron h6, .jumbotron h1 {
-        color: #fff; /* White text color */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Dark shadow for text outline */
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .event-banner {
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem auto;
+        max-width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        color: #333;
+    }
+
+    .event-banner img {
+        max-width: 80px;
+        height: auto;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .event-banner .event-details {
+        flex: 1;
+    }
+
+    .event-banner a {
+        color: #007bff; /* Updated to a calm blue color */
+        text-decoration: none;
+    }
+
+    .event-banner a:hover {
+        text-decoration: underline;
     }
 </style>
 
 <div class="hero-container">
     <div id="hero" class="jumbotron jumbotron-fluid">
-        <div id="hero-text" class="container text-center">
+        <div id="hero-text" class="container">
             <h6 class="display-4">Nags With Notions</h6>
             <h1 class="lead">Sourdough Pizza using some of Meath's Finest Food Producers</h1>
+
+            <!-- Upcoming Event Banner inside the jumbotron -->
+            {% if upcoming_event %}
+                <div class="event-banner">
+                    {% if upcoming_event.image %}
+                        <img src="{{ upcoming_event.image.url }}" alt="{{ upcoming_event.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default-event.jpg' %}" alt="Default Event Image">
+                    {% endif %}
+                    <div class="event-details">
+                        <strong>Upcoming Event:</strong>
+                        <a href="{% url 'event_detail' upcoming_event.id %}">{{ upcoming_event.name }}</a>
+                        <p>{{ upcoming_event.start_date|date:"F j, Y" }}</p>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -70,3 +119,4 @@
 {% include "about.html" %}
 
 {% endblock content %}
+
