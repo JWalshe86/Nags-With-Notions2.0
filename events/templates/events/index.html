@@ -1,72 +1,59 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container bg-white">
+<!-- Full-width background container -->
+<div style="background-color: #f8f9fa; padding: 40px 0;">
+    <div class="container" style="background-color: white; padding: 20px; border-radius: 15px;">
         <div class="row justify-content-center text-center">
-            <div class="col-md-6 mt-3">
-                <h2 class="logo-font">Events</h2>
+            <div class="col-md-8 mt-3">
+                <h2 class="logo-font" style="color: #5a5a5a;">Events</h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'events' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                        <span class="p-2 mt-2 badge badge-light text-dark rounded-0 border border-primary">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
-                <hr class="w-50 mb-1">
             </div>
-	</div>{% if search_term %}
-                                <span class="small"><a href="{% url 'events' %}">Events Home</a> | </span>
+        </div>
+
+        {% if search_term %}
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <span class="small"><a href="{% url 'events' %}" style="color: #5a5a5a;">Events Home</a> | </span>
+                    <span class="text-dark">{{ events|length }} Events found for <strong>"{{ search_term }}"</strong></span>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                {% for event in events %}
+                    <div class="card mb-4 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                        {% elif event.image_url %}
+                            <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: #ff6f61;">
+                                <a href="{% url 'event_detail' event.id %}" class="text-decoration-none">{{ event.name }}</a>
+                            </h4>
+                            <p class="card-text text-secondary">{{ event.description }}</p>
+                            <p class="text-muted">
+                                <i class="far fa-calendar-alt mr-1"></i>{{ event.start_date|date:"F j, Y, g:i a" }}
+                            </p>
+                            {% if request.user.is_superuser %}
+                                <p class="text-right">
+                                    <a href="{% url 'edit_event' event.id %}" style="color: #5a5a5a;">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_event' event.id %}">Delete</a>
+                                </p>
                             {% endif %}
-                            {{ events|length }} Events{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    {% for event in events %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <div class="card-body pb-0">
-				    <a href="{% url 'event_detail' event.id %}"><p class="lead mb-0 text-left font-weight-bold">{{ event.name }}</p></a>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-					    <small class="text-muted"><i class="mr-1"></i>{{ event.start_date }}</small>
-					    {% if request.user.is_superuser %}
-					    <small class="ml-3">
-						    <a href="{% url 'edit_event' event.id  %}">Edit</a> | 
-						    <a class="text-danger" href="{% url 'delete_event' event.id  %}">Delete</a>
-                                                </small>
-
-
-					    {% endif  %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>	
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
