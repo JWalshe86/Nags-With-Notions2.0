@@ -88,4 +88,3 @@ def delete_pizza(request, pk):
 def pizza_list(request):
     pizzas = Pizza.objects.all()
     return render(request, 'menu.html', {'pizzas': pizzas})
-

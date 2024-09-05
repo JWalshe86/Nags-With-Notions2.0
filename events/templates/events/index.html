@@ -31,14 +31,22 @@
                         {% if ENVIRONMENT == 'production' %}
                             {% if event.image %}
                                 <img src="{{ S3_BASE_URL }}{{ event.image.name }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                                <p>Image URL: {{ S3_BASE_URL }}{{ event.image.name }}</p>
                             {% elif event.image_url %}
                                 <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                                <p>Image URL: {{ event.image_url }}</p>
+                            {% else %}
+                                <p>No image available for this event.</p>
                             {% endif %}
                         {% else %}
                             {% if event.image %}
                                 <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                                <p>Image URL: {{ event.image.url }}</p>
                             {% elif event.image_url %}
                                 <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
+                                <p>Image URL: {{ event.image_url }}</p>
+                            {% else %}
+                                <p>No image available for this event.</p>
                             {% endif %}
                         {% endif %}
                         <div class="card-body">
