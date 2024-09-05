@@ -51,25 +51,5 @@
                         {% endif %}
                         <div class="card-body">
                             <h4 class="card-title" style="color: #ff6f61;">
-                                <a href="{% url 'event_detail' event.id %}" class="text-decoration-none">{{ event.name }}</a>
-                            </h4>
-                            <p class="card-text text-secondary">{{ event.description }}</p>
-                            <p class="text-muted">
-                                <i class="far fa-calendar-alt mr-1"></i>{{ event.start_date|date:"F j, Y, g:i a" }}
-                            </p>
-                            {% if request.user.is_superuser %}
-                                <p class="text-right">
-                                    <a href="{% url 'edit_event' event.id %}" style="color: #5a5a5a;">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'delete_event' event.id %}">Delete</a>
-                                </p>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-{% endblock %}
+                                <a href="{% url '
 

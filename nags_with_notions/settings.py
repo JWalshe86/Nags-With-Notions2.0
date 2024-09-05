@@ -26,33 +26,31 @@ if USE_AWS:
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')  # optional
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')  # e.g., 'eu-north-1'
+    
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
 
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+    
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-    # Add the S3 base URL for use in templates
-    S3_BASE_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
+    
+    S3_BASE_URL = MEDIA_URL
 else:
-    # Local static files settings
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
-        BASE_DIR / "assets",  # Directory where your static assets are located
+        BASE_DIR / "assets",
     ]
     STATIC_ROOT = BASE_DIR / "staticfiles"
 
-    # Local media files settings
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
 
-    # In local development, S3_BASE_URL can just point to the static directory
-    S3_BASE_URL = STATIC_URL  # This is appropriate for local development
+    S3_BASE_URL = STATIC_URL
+
 
 # Ensure S3_BASE_URL is available in your templates
 def global_template_variables(request):
