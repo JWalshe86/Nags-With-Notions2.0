@@ -36,27 +36,32 @@ LOGGING = {
     },
 }
 
-# Determine if we're using AWS S3
+import logging
+
+logger = logging.getLogger(__name__)
+
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
+
 if USE_AWS:
-    # AWS S3 settings
+    logger.debug("Using AWS S3 for storage.")
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')  # e.g., 'eu-north-1'
-    
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
 
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
-    
+
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     
-    S3_BASE_URL = os.getenv('S3_BASE_URL')
+    S3_BASE_URL = os.getenv('S3_BASE_URL', MEDIA_URL)
+    logger.debug(f"S3_BASE_URL set to: {S3_BASE_URL}")
 else:
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
