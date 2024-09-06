@@ -3,8 +3,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
 import django_heroku
-import boto3
-from storages.backends.s3boto3 import S3Boto3Storage
+import logging
 
 # Load environment variables from .env file
 load_dotenv()
@@ -13,11 +12,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+# Logging configuration
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -40,8 +35,6 @@ LOGGING = {
         },
     },
 }
-
-
 
 # Determine if we're using AWS S3
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
@@ -76,7 +69,6 @@ else:
 
     S3_BASE_URL = STATIC_URL
 
-
 # TEMPLATES setting
 TEMPLATES = [
     {
@@ -87,7 +79,6 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
-                'nags_with_notions.settings.global_template_variables',
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
@@ -98,8 +89,6 @@ TEMPLATES = [
         },
     },
 ]
-
-# Other settings...
 
 # Set DEBUG based on environment
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
@@ -153,27 +142,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "nags_with_notions.urls"
-
-TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATES_DIR],  # Project-level templates directory
-        "APP_DIRS": True,  # Enables Django to look for 'templates' directories in each app
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                'nags_with_notions.settings.global_template_variables',
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-            ],
-            "builtins": [
-                "crispy_forms.templatetags.crispy_forms_tags",
-                "crispy_forms.templatetags.crispy_forms_field",
-            ]
-        },
-    },
-]
 
 WSGI_APPLICATION = "nags_with_notions.wsgi.application"
 
