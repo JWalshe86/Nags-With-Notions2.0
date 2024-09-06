@@ -18,6 +18,31 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        '': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+
+
 # Determine if we're using AWS S3
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
 DEBUG = True
@@ -51,13 +76,6 @@ else:
 
     S3_BASE_URL = STATIC_URL
 
-
-# Ensure S3_BASE_URL is available in your templates
-def global_template_variables(request):
-    return {
-        'S3_BASE_URL': S3_BASE_URL,
-        'ENVIRONMENT': 'production' if USE_AWS else 'development',
-    }
 
 # TEMPLATES setting
 TEMPLATES = [
