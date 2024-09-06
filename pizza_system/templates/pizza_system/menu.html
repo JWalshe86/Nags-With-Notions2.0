@@ -8,6 +8,7 @@
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card h-100 d-flex flex-column">
                     {% if ENVIRONMENT == 'production' %}
+		    <p>DEBUG: Current S3 Base URL: {{ S3_BASE_URL }}</p>
                         <img src="{{ S3_BASE_URL }}{{ pizza.image.name }}" class="card-img-top" alt="{{ pizza.title }}">
                     {% else %}
                         <img src="{{ pizza.image.url }}" class="card-img-top" alt="{{ pizza.title }}">

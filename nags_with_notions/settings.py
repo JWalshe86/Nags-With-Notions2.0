@@ -38,7 +38,7 @@ if USE_AWS:
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     
-    S3_BASE_URL = MEDIA_URL
+    S3_BASE_URL = os.getenv('S3_BASE_URL')
 else:
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [

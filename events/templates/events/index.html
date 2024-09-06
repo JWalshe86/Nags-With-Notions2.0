@@ -30,13 +30,10 @@
                     <div class="card mb-4 shadow-sm" style="border-radius: 15px; overflow: hidden;">
                        {% if ENVIRONMENT == 'production' %}
     {% if event.image %}
+        <p>DEBUG: Current S3 Base URL: {{ S3_BASE_URL }}</p>
         <img src="{{ S3_BASE_URL }}{{ event.image.name }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
         <!-- Remove or comment out this line -->
         <!-- <p>Image URL: {{ S3_BASE_URL }}{{ event.image.name }}</p> -->
-    {% elif event.image_url %}
-        <img src="{{ event.image_url }}" class="card-img-top" alt="{{ event.name }}" style="height: 300px; object-fit: cover;">
-        <!-- Remove or comment out this line -->
-        <!-- <p>Image URL: {{ event.image_url }}</p> -->
     {% else %}
         <p>No image available for this event.</p>
     {% endif %}
