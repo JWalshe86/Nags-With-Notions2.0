@@ -55,12 +55,12 @@ if USE_AWS:
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
 
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
+    MEDIA_URL = os.getenv('CLOUDFRONT_URL', f"https://{AWS_S3_CUSTOM_DOMAIN}/")
 
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     
-    S3_BASE_URL = os.getenv('S3_BASE_URL', MEDIA_URL)
+    S3_BASE_URL = os.getenv('CLOUDFRONT_URL', MEDIA_URL)
     logger.debug(f"S3_BASE_URL set to: {S3_BASE_URL}")
 else:
     STATIC_URL = '/static/'
