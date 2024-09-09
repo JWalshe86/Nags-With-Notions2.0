@@ -4,13 +4,17 @@ from dotenv import load_dotenv
 import dj_database_url
 import django_heroku
 import logging
+from decouple import config
+
 
 # Load environment variables from .env file
 load_dotenv()
 
 
 
-INSTAGRAM_ACCESS_TOKEN = os.getenv('INSTAGRAM_ACCESS_TOKEN')
+# Access token from environment variable
+INSTAGRAM_ACCESS_TOKEN = config('INSTAGRAM_ACCESS_TOKEN', default='default_local_value')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
