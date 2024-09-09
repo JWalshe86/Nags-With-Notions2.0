@@ -11,6 +11,7 @@ urlpatterns = [
     path("events/", include("events.urls"), name="events-urls"),
     path('', include('booking.urls')),
     path('admin/', admin.site.urls),
+    path('instagram/', include('insta.urls')),  # Include the URLs for the insta app
 ]
 
 # Serve static files in development

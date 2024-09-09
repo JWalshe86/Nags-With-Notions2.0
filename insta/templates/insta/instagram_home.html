@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Latest Instagram Post</h2>
+    {% if latest_post %}
+        <div class="instagram-post">
+            {% if latest_post.media_type == 'IMAGE' %}
+                <img src="{{ latest_post.media_url }}" alt="Instagram Post" class="img-fluid">
+            {% elif latest_post.media_type == 'VIDEO' %}
+                <video controls class="img-fluid">
+                    <source src="{{ latest_post.media_url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% elif latest_post.media_type == 'CAROUSEL_ALBUM' %}
+                {% for media in latest_post.carousel_media %}
+                    <img src="{{ media.media_url }}" alt="Instagram Post" class="img-fluid">
+                {% endfor %}
+            {% endif %}
+            <p>{{ latest_post.caption }}</p>
+            <a href="{{ latest_post.permalink }}" target="_blank">View on Instagram</a>
+        </div>
+    {% else %}
+        <p>No posts available.</p>
+    {% endif %}
+</div>
+
+<style>
+    .instagram-post {
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .instagram-post img, .instagram-post video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+    }
+
+    .instagram-post a {
+        display: inline-block;
+        margin-top: 0.5rem;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .instagram-post a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+{% endblock content %}
+

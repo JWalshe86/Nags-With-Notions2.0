@@ -8,6 +8,9 @@ import logging
 # Load environment variables from .env file
 load_dotenv()
 
+
+
+INSTAGRAM_ACCESS_TOKEN = os.getenv('INSTAGRAM_ACCESS_TOKEN')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
@@ -130,6 +133,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap4",
     "storages",
+    "insta",
 ]
 
 SITE_ID = 1
