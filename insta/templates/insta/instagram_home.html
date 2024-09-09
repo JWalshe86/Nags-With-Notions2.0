@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2>Latest Instagram Post</h2>
+    <h2 class="instagram-heading">Latest Instagram Post</h2>
     {% if latest_post %}
         <div class="instagram-post">
             {% if latest_post.media_type == 'IMAGE' %}
@@ -17,7 +17,7 @@
                     <img src="{{ media.media_url }}" alt="Instagram Post" class="img-fluid">
                 {% endfor %}
             {% endif %}
-            <p>{{ latest_post.caption }}</p>
+            <p class="instagram-caption">{{ latest_post.caption|slice:":80" }}</p> <!-- Display first 80 characters of caption -->
             <a href="{{ latest_post.permalink }}" target="_blank">View on Instagram</a>
         </div>
     {% else %}
@@ -27,18 +27,36 @@
 
 <style>
     .instagram-post {
+        background-color: #f8d7da; /* Pink background color */
         border: 1px solid #ddd;
         border-radius: 0.5rem;
         padding: 1rem;
-        background-color: #f9f9f9;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 2rem auto;
+        max-width: 90%;
         text-align: center;
     }
 
     .instagram-post img, .instagram-post video {
-        max-width: 100%;
-        height: auto;
+        width: 100%; /* Keep the width of the Instagram post */
+        max-height: 50vh; /* Half the viewport height */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure image covers the container */
         border-radius: 0.5rem;
+    }
+
+    .instagram-heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .instagram-caption {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 0.5rem;
     }
 
     .instagram-post a {
