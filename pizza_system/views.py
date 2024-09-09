@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import user_passes_test
 from django.core.mail import send_mail
 from django.conf import settings
+import requests
 from .forms import CustomUserCreationForm, PizzaForm, ContactForm
 from pizza_system.models import Pizza  # Import Pizza model
 from events.models import Event  # Import Event model from the events app
@@ -19,10 +20,23 @@ def index_view(request):
     
     # Get the latest event from the events app
     latest_event = Event.objects.order_by('-id').first()  # Get the latest event or None if no events exist
-    
+
+    # Instagram Data
+    access_token = settings.INSTAGRAM_ACCESS_TOKEN
+    url = f'https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token={access_token}'
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        latest_post = data['data'][0] if 'data' in data and len(data['data']) > 0 else None
+    except requests.RequestException as e:
+        latest_post = None
+
     context = {
         'pizzas': pizzas,
         'upcoming_event': latest_event,  # Add the latest event to the context
+        'latest_post': latest_post  # Add the latest Instagram post to the context
     }
     
     return render(request, 'index.html', context)
@@ -88,3 +102,4 @@ def delete_pizza(request, pk):
 def pizza_list(request):
     pizzas = Pizza.objects.all()
     return render(request, 'menu.html', {'pizzas': pizzas})
+
