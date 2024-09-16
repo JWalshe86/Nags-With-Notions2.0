@@ -6,7 +6,7 @@ class Event(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)  # Added upload_to
     description = models.TextField(max_length=1024, null=True, blank=True)
-    start_date = models.DateTimeField()
+    start_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         "returns name"
