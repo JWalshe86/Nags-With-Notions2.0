@@ -50,36 +50,73 @@ logger = logging.getLogger(__name__)
 USE_AWS = os.getenv('USE_AWS', 'False') == 'True'
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
+import os
+import logging
+
+logger = logging.getLogger(__name__)
+
+# Assuming USE_AWS is defined somewhere in your settings.
 if USE_AWS:
     logger.debug("Using AWS S3 for storage.")
+    
+    # Fetch AWS credentials and settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-
+    
+    # Check if all necessary AWS variables are set
+    if not all([AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME]):
+        logger.error("Missing AWS S3 environment variables. Please ensure all required AWS settings are provided.")
+    
+    # S3 settings
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
+    
+    # Set the custom domain for AWS S3 (either S3 or CloudFront)
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
-
+    logger.debug(f"AWS S3 Custom Domain: {AWS_S3_CUSTOM_DOMAIN}")
+    
+    # Define static and media URLs based on S3 or CloudFront
+    CLOUDFRONT_URL = os.getenv('CLOUDFRONT_URL')  # Optional CloudFront URL
+    MEDIA_URL = CLOUDFRONT_URL or f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+    
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
-    MEDIA_URL = os.getenv('CLOUDFRONT_URL', f"https://{AWS_S3_CUSTOM_DOMAIN}/")
-
+    logger.debug(f"STATIC_URL set to: {STATIC_URL}")
+    logger.debug(f"MEDIA_URL set to: {MEDIA_URL}")
+    
+    # Specify the storage backends for static and media files
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     
-    S3_BASE_URL = os.getenv('CLOUDFRONT_URL', MEDIA_URL)
+    # Determine S3 base URL
+    S3_BASE_URL = CLOUDFRONT_URL or MEDIA_URL
     logger.debug(f"S3_BASE_URL set to: {S3_BASE_URL}")
+    
 else:
+    # Local storage configuration
+    logger.debug("Using local storage for static and media files.")
+    
     STATIC_URL = '/static/'
+    logger.debug(f"STATIC_URL set to: {STATIC_URL}")
+    
     STATICFILES_DIRS = [
         BASE_DIR / "static",
     ]
+    logger.debug(f"STATICFILES_DIRS set to: {STATICFILES_DIRS}")
+    
     STATIC_ROOT = BASE_DIR / "staticfiles"
-
+    logger.debug(f"STATIC_ROOT set to: {STATIC_ROOT}")
+    
     MEDIA_URL = "/media/"
+    logger.debug(f"MEDIA_URL set to: {MEDIA_URL}")
+    
     MEDIA_ROOT = BASE_DIR / "media"
-
+    logger.debug(f"MEDIA_ROOT set to: {MEDIA_ROOT}")
+    
     S3_BASE_URL = STATIC_URL
+    logger.debug(f"S3_BASE_URL set to: {S3_BASE_URL}")
+
 
 # TEMPLATES setting
 TEMPLATES = [
