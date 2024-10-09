@@ -1,6 +1,7 @@
 *.swp
 *.Identifier
 .env
+.vs 
 # Django #
 *.log
 *.pot
