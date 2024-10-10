@@ -8,6 +8,6 @@
 *.pyc
 __pycache__
 db.sqlite3
-venv_nagswithnotions/
+nwn_venv/
 /venv
 /.venv/
